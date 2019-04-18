@@ -95,6 +95,19 @@ do::
     python setup.py develop
     pip install -r dev-requirements.txt
 
+------------------------
+Front-end Setup
+------------------------
+
+The front-end is set up with gulp.js.
+
+Install the required Node.js modules in fanstatic/, by executing::
+
+    npm install
+
+Rebuild front-end assets in fanstatic/, by executing::
+
+    npx gulp
 
 -----------------
 Running the Tests
