@@ -1,0 +1,82 @@
+body {
+    background: #FFF;
+}
+
+.homepage.layout-2 .stats {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 0px;
+    background-color: #ffffff;
+    padding: 0px 120px;
+    height: 100px;
+    width: 100%;
+    & h3 {
+        display: none;
+    }
+}
+
+.homepage.layout-2 .stat-content {
+    padding: 15px 0px;
+    width: 250px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    & a {
+        display: flex;
+    }
+    & .oval {
+        border-radius: 50%;
+        background-color: rgba(156, 36, 132, 0.1);
+        width: 50px;
+        height: 50px;
+        color: @brand-secondary;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+    & .content {
+        height: 50px;
+        display: inline-flex;
+        flex-direction: column;
+        text-align: left;
+        padding-left: 20px;
+    }
+    & .stat-number {
+        width: 100%;
+        font-size: 20px;
+        color: black;
+    }
+    & .stat-title {
+        font-size: 18px;
+        color: black;
+        text-transform: capitalize;
+    }
+}
+
+.stats-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
+.stats-wrapper:before {
+    content: "";
+    width: 25%;
+    height: 1px;
+    float: left;
+    background-color: grey;
+    display: flex;
+    align-self: center;
+}
+
+.stats-wrapper:after {
+    content: "";
+    width: 25%;
+    height: 1px;
+    float: right;
+    background-color: grey;
+    display: flex;
+    align-self: center;
+}
