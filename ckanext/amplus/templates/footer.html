@@ -16,19 +16,18 @@
           {% block footer_nav %}
           <div class="col-sm-4 col-xs-12 col-md-4 col-lg-2 mb-md-0 mb-3">
                 <p class="footer-nav-title">Navigation</p>
-    
                 <ul class="list-unstyled footer-nav">
                   <li>
-                    <a href="#!">Datasets</a>
+                    <a href="{{ h.url_for(controller='package', action='search') }}">Datasets</a>
                   </li>
                   <li>
-                    <a href="#!">Organizations</a>
+                    <a href="{{ h.url_for(controller='organization', action='index') }}">Organizations</a>
                   </li>
                   <li>
-                    <a href="#!">Groups</a>
+                    <a href="{{ h.url_for(controller='group', action='index') }}">Groups</a>
                   </li>
                   <li>
-                    <a href="#!">About</a>
+                    <a href="{{ h.url_for(controller='home', action='about') }}">About</a>
                   </li>
                 </ul>
             </div>
