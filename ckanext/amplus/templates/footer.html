@@ -7,7 +7,13 @@
             <ul class="list-unstyled">
               {% block footer_links %}
               <a class="logo" href="{{ h.url_for('home.index') }}"><img class="dada" src="{{ h.url_for_static('/base/images/Amplus-OpenDataPortal-logo.png') }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
-              <p class="text-description py-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eros elit, commodo eget feugiat ut, dictum eu ex. Proin eget erat quis augue maximus ultricies. Integer ipsum lectus, vehicula sed elementum sed, congue nec magna. Nulla non accumsan odio, et finibus ligula. Curabitur ut molestie orci.</p>
+              <p class="text-description py-20">
+                {% trans %} Globally productize client-based e-markets for mission-critical results. 
+                Efficiently communicate performance based networks with collaborative vortals. 
+                Distinctively myocardinate an expanded array of methodologies for best-of-breed web services. 
+                Objectively leverage other's efficient.
+                {% endtrans %}
+              </p>
               {% endblock %}
             </ul>
           {% endblock %}
@@ -15,56 +21,29 @@
         <div class="col-lg-8 col-md-12 col-sm-12 text-left footer-links">
           {% block footer_nav %}
           <div class="col-sm-4 col-xs-12 col-md-4 col-lg-2 mb-md-0 mb-3">
-                <p class="footer-nav-title">Navigation</p>
-                <ul class="list-unstyled footer-nav">
-                  <li>
-                    <a href="{{ h.url_for(controller='package', action='search') }}">Datasets</a>
-                  </li>
-                  <li>
-                    <a href="{{ h.url_for(controller='organization', action='index') }}">Organizations</a>
-                  </li>
-                  <li>
-                    <a href="{{ h.url_for(controller='group', action='index') }}">Groups</a>
-                  </li>
-                  <li>
-                    <a href="{{ h.url_for(controller='home', action='about') }}">About</a>
-                  </li>
-                </ul>
+            {% block header_site_navigation_tabs %} 
+              <p class="footer-nav-title">{{ _('Navigation')}}</p>
+              <ul class="list-unstyled footer-nav">
+                {{ h.build_nav_main( ('search', _('Datasets')), ('organizations_index', _('Organizations')),
+                    ('group_index', _('Groups')), ('home.about', _('About')) ) }} 
+              </ul>
+          </div>
+            <div class="col-sm-4 col-xs-12 col-md-4 col-lg-2 mb-md-0 mb-3">
+              <ul class="list-unstyled footer-nav">
+                {# Finalise implementation #}
+                {{ h.build_nav_main( ('home.index', _('News')), ('home.index', _('Our Blog')),
+                ('home.index', _('Link')), ('home.index', _('Link')) ) }} 
+              </ul>
             </div>
             <div class="col-sm-4 col-xs-12 col-md-4 col-lg-2 mb-md-0 mb-3">
-                    <ul class="list-unstyled footer-nav">
-                      <li>
-                        <a href="#!">News</a>
-                      </li>
-                      <li>
-                        <a href="#!">Our Blog</a>
-                      </li>
-                      <li>
-                        <a href="#!">Link</a>
-                      </li>
-                      <li>
-                        <a href="#!">Link</a>
-                      </li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 col-xs-12 col-md-4 col-lg-2 mb-md-0 mb-3">
-                        <p class="footer-nav-title">Follow Us</p>
-            
-                        <ul class="list-unstyled footer-nav">
-                          <li>
-                            <a href="#!">LinkedIn</a>
-                          </li>
-                          <li>
-                            <a href="#!">GitHub</a>
-                          </li>
-                          <li>
-                            <a href="#!">Twitter</a>
-                          </li>
-                          <li>
-                            <a href="#!">Facebook</a>
-                          </li>
-                        </ul>
-                    </div>
+              <p class="footer-nav-title">{{ _('Follow Us') }} </p>
+              <ul class="list-unstyled footer-nav">
+                {# Support social media link on backend #}
+                {{ h.build_nav_main( ('home.index', _('LinkedIn')), ('home.index', _('GitHub')),
+                ('home.index', _('Twitter')), ('home.index', _('Facebook')) ) }} 
+              </ul>
+            </div>
+            {% endblock %}
           {% endblock %}
         </div>
       </div>
