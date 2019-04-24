@@ -1,0 +1,27 @@
+{% set intro = g.site_intro_text %}
+
+<div class="module-content">
+
+  {% block home_image %}
+    <section class="featured media-overlay hidden-xs">
+      {% block home_image_content %}
+        <a class="media-image" href="#">
+          <img class="img-responsive hero-img" src="{{ h.url_for_static('/base/images/hero-illustration.png') }}" alt="Placeholder" />
+        </a>
+      {% endblock %}
+    </section>
+  {% endblock %}
+
+  <header>
+    {% if intro %}
+      {{ h.render_markdown(intro) }}
+    {% else %}
+      <h1 class="page-heading">{{ _("Open Data Portal") }}</h1>
+      <p>
+        {% trans %}Quickly reintermediate integrated resources after premium sources.
+        Conveniently maintain corporate catalysts for change 
+        {% endtrans %}
+      </p>
+    {% endif %}
+  </header>
+</div>
