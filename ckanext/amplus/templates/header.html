@@ -1,6 +1,6 @@
 {% block header_wrapper %} {% block header_account %}
 {% if c.userobj %}
-<header class="account-masthead" style="position: relative; z-index: 1000;">
+<header class="account-masthead" >
   <div class="container-fluid navigation-login bg-main">
     {% block header_account_container_content %} {% if c.userobj %}
     <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
@@ -88,7 +88,7 @@
           <ul class="nav nav-pills list-custom">
             {% block header_site_navigation_tabs %} {{ h.build_nav_main( ('search', _('Datasets')), ('organizations_index', _('Organizations')),
           ('group_index', _('Groups')), ('home.about', _('About')) ) }} {% endblock %}
-            <li class="navigation-setting-item navigation-search" style="padding: 1rem"><button
+            <li class="navigation-setting-item navigation-search"><button
                 data-target="#main-navigation-search" data-toggle="collapse" class="btn-search" type="button">
                 <img src="/base/images/search-icon.svg" />
               </button></li>
