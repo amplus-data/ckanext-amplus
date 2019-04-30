@@ -1,15 +1,17 @@
-@font-primary: "Barlow", sans-serif;
-@brand-light: #7A64A6;
+
 .masthead .navigation .nav-pills.list-custom {
   &>li {
+    &.active > a{
+      background-color: @brand-quaternary;
+    }
     & a {
-      padding: 2.2rem .8rem;
+      padding: 2.2rem 1.5rem;
       background-color: @brand-primary;
       border-radius: 0;
       font-size: 18px;
       font-weight: 500;
       &:hover {
-        background-color: @brand-light;
+        background-color: @brand-quaternary;
       }
     }
   }
@@ -18,8 +20,8 @@
   }
 }
 .logo-box {
-  padding: 1.5rem;
-  width: 370px;
+  max-width: 300px;
+  padding: 2rem 0 1rem 1.7rem;
 }
 .account.avatar.authed li {
   border-left: none;
