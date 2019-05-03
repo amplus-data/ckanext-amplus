@@ -42,31 +42,34 @@
         </div>
       </div>
       <div class="collapse navbar-collapse bg-main m-0 p-0" id="main-navigation-toggle">
-        {% block header_site_navigation %}
-        <nav class="section navigation">
-          <ul class="nav nav-pills list-custom">
-            {% block header_site_navigation_tabs %} {{ h.build_nav_main( ('search', _('Datasets')), ('organizations_index', _('Organizations')),
-          ('group_index', _('Groups')), ('home.about', _('About')) ) }} {% endblock %}
-            <li class="navigation-setting-item navigation-search"><button
-                data-target="#main-navigation-search" data-toggle="collapse" class="btn-search" type="button">
-                <img src="/base/images/search-icon.svg" />
-              </button></li>
-            {% if c.userobj %}
-            {%else%}
-            {% block header_account_notlogged %}
-            <li><a href="{{ h.url_for('/user/_login')  }}">
-                <div><img src="/base/images/login-icon.svg" /></div>
-              </a></li>
-            {% if h.check_access('user_create') %}
-            <li><a href="{{ h.url_for('/user/_register')  }}">
-                <div><img src="/base/images/register-icon.svg" /></div>
-              </a></li>
-            {% endif %}
-            {% endblock %}
-            {% endif %}
-          </ul>
-        </nav>
-        {% endblock %} {% block header_site_search %}
+          {% block header_site_navigation %}
+          <nav class="section navigation">
+            <ul class="nav nav-pills list-custom">
+              {% block header_site_navigation_tabs %}
+              {{super()}}
+              <li class="navigation-setting-item navigation-search"><button
+                  data-target="#main-navigation-search" data-toggle="collapse" class="btn-search" type="button">
+                  <img src="/base/images/search-icon.svg" />
+                </button></li>
+              {% if c.userobj %}
+              {%else%}
+              {% block header_account_notlogged %}
+              <li><a href="{{ h.url_for('/user/_login')  }}">
+                  <div><img src="/base/images/login-icon.svg" /></div>
+                </a></li>
+              {% if h.check_access('user_create') %}
+              <li><a href="{{ h.url_for('/user/_register')  }}">
+                  <div><img src="/base/images/register-icon.svg" /></div>
+                </a></li>
+              {% endif %}
+  
+              {% endblock %}
+              {% endif %}
+              {% endblock %}
+  
+            </ul>
+          </nav>
+          {% endblock %} {% block header_site_search %}
         {%endblock%}
       </div>
       <div class="collapse navbar-collapse search p-0" id="main-navigation-search">
