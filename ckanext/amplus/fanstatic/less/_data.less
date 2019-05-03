@@ -1,0 +1,33 @@
+.dataset-list {
+    font-family: 'Barlow';
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+    > .dataset-item {
+        flex: 1 0 33.3%;
+        padding: 20px;
+        margin: 0 20px 40px 20px;
+        background: @white;
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    }
+    & .dataset-content {
+        > div {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            color: @text-dark;
+        }
+        & .dataset-heading a {
+            font-size: 21px;
+            font-weight: 600;
+            color: @brand-secondary;
+        }
+    }
+    & .dataset-resources li .label {
+        background: transparent;
+        color: @silver;
+        border: 1px solid @silver;
+        border-radius: 15px;
+    }
+}
