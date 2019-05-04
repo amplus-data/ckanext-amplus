@@ -20,17 +20,16 @@
     min-width: 25%;
   }
   &>*:first-child {
-    max-width: 50%;
+    order: -2;
+    margin-right: 1.5rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    min-width: 48%;
   }
   &>p {
     max-width: 100%;
   }
   &>span {
     display: none;
-  }
-  & .search-input-group {
-    order: -2;
-    padding-right: 1.5rem;
   }
   &>h2 {
     order: -1;
@@ -47,6 +46,9 @@
     margin-left: 0;
     &>label {
       display: none;
+    }
+    & select{
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     }
   }
 }
