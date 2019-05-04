@@ -1,0 +1,52 @@
+.facet {
+  font-weight: 600;
+}
+.filtered.pill {
+  border-radius: 0;
+  padding: .4rem .8rem;
+  background-color: #E6E6E6;
+  color: @gray-medium;
+  margin: .5rem .2rem;
+  & a {
+    color: @gray-medium;
+  }
+}
+#dataset-search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  &>* {
+    min-width: 25%;
+  }
+  &>*:first-child {
+    max-width: 50%;
+  }
+  &>p {
+    max-width: 100%;
+  }
+  &>span {
+    display: none;
+  }
+  & .search-input-group {
+    order: -2;
+    padding-right: 1.5rem;
+  }
+  &>h2 {
+    order: -1;
+    color: @brand-secondary;
+    font-weight: 600;
+    padding: 0 1rem;
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+  & .control-order-by {
+    display: flex;
+    justify-content: flex-end;
+    padding-right:1.5rem;
+    margin-left: 0;
+    &>label {
+      display: none;
+    }
+  }
+}
