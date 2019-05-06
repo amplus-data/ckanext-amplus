@@ -1,0 +1,36 @@
+.page-header {
+  background-color: inherit;
+  border-bottom: none;
+}
+.nav-tabs>li {
+  &.active {
+    &>a {
+      color: @brand-primary;
+      
+      &:hover{
+        color: #fff;
+      }
+    } 
+  }
+  &>a {
+    background-color: @brand-primary;
+    color: #fff;
+    border-radius: 0;
+    &:hover {
+      background-color: @brand-light  !important;
+    }
+  }
+}
+.module-content{
+  & > .actions,
+  & > .content_action{
+    & > .btn{
+      color: #000;
+      background-color: #fff;
+      &:hover{
+        background-color: @brand-secondary;
+        color:#fff;
+      }
+    }
+  }
+}
