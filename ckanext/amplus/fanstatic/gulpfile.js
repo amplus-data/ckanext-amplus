@@ -34,4 +34,4 @@ gulp.task("watch", function () {
 });
 
 // The default Gulp.js task
-gulp.task('default', gulp.series('less', 'watch'));
+gulp.task('default', gulp.series('less', 'fonts', 'watch'));
