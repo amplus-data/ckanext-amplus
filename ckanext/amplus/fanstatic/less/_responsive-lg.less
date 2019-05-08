@@ -12,22 +12,23 @@
   .search-input-group {
     margin-bottom: 2rem;
   }
-
-  .search-form {
-    &>* {
-      min-width: 50%;
-    }
-
-    &>*:first-child {
-      min-width: 100%;
-      flex: 1 0 50%;
-    }
-
-    &>p {
-      max-width: 100%;
-    }
-    &> .control-order-by{
+  .primary {
+    .search-form {
+      &>* {
+        min-width: 50%;
+        width: 50%;
+      }
+      &>*:first-child {
+        min-width: 100%;
+        width: 100%;
+        flex: 1 0 50%;
+      }
+      &>h2{
+       padding-left: 0;
+      }
+      &>.control-order-by {
         padding-right: 0;
+      }
     }
   }
 }
