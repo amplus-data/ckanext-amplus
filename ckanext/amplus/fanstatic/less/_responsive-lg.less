@@ -9,24 +9,7 @@
     text-align: center;
   }
 
-  .search-input-group {
-    margin-bottom: 2rem;
-  }
-
-  .search-form {
-    &>* {
-      min-width: 50%;
-    }
-
-    &>*:first-child {
-      min-width: 100%;
-      flex: 1 0 50%;
-    }
-
-    &>p {
-      max-width: 100%;
-
-      .footer-links {
+    .footer-links {
         float: none;
         text-align: center;
       }
@@ -43,13 +26,32 @@
             }
           }
         }
+    }
+    .masthead .logo{
+      max-width: 250px;
+    }
+    > .control-order-by{
+        padding-right: 0;
+    }
+  
+  .search-input-group {
+    margin-bottom: 2rem;
+  }
+  .primary {
+    .search-form {
+      >* {
+        min-width: 50%;
+        width: 50%;
       }
-
-      .masthead .logo {
-        max-width: 250px;
+      >*:first-child {
+        min-width: 100%;
+        width: 100%;
+        flex: 1 0 50%;
       }
-
-      &>.control-order-by {
+      >h2{
+       padding-left: 0;
+      }
+      >.control-order-by {
         padding-right: 0;
       }
     }
