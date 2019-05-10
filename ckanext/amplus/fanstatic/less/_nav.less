@@ -1,66 +1,71 @@
+body {
+  background-color: @brand-primary;
+}
 
-@brand-light: #7A64A6;
-@brand-primary: #583D90;
-.masthead .navigation .nav-pills.list-custom {
+.account-masthead {
+  background: @brand-primary;
+
+  & .account {
+    & ul {
+      & li {
+        border-left: none;
+        &>a {
+          &:hover,
+          &:active {
+            background: @brand-quaternary;
+          }
+        }
+      }
+
+      & .notifications {
+        &>a {
+          & span.badge {
+            background-color: inherit;
+          }
+        }
+      }
+    }
+  }
+}
+
+.masthead {
+  background: @brand-primary;
+  padding: 0;
+
+  & .navbar-collapse {
+    padding: 0;
+  }
+}
+
+.masthead .navigation .nav-pills.nav {
+  background: @brand-primary;
+
   &>li {
-    &.active > a{
+    border-left: none;
+    &.active>a {
       background-color: @brand-quaternary;
     }
-    & a,
-    & button{
-      padding: 2.2rem 2rem;
+
+    & a{
+      padding: 2.5rem 2rem;
       background-color: @brand-primary;
       border-radius: 0;
       font-size: 18px;
       font-weight: 500;
+
       &:hover {
         background-color: @brand-quaternary;
       }
     }
   }
-  li {
-    border-left: none;
+}
+
+.masthead .logo {
+  max-width: 350px;
+  padding: 2.5rem 0 1rem 2.5rem;
+
+  &>img {
+    max-width: 100%;
   }
 }
-.logo-box {
-  max-width: 300px;
-  padding: 2rem 0 1rem 1.7rem;
-}
-.account.avatar.authed li {
-  border-left: none;
-}
-.search.collapse {
-  & .input-search {
-    width: 100vw;
-    height: 0;
-    overflow: hidden;
-  }
-}
-.search.collapsing {
-  & .input-search {
-    width: 100vw;
-  }
-}
-.search.collapse.in {
-  & .input-search {
-    width: 100vw;
-    height: auto;
-    overflow: visible;
-  }
-}
-.search{
-  overflow: hidden;
-}
-.search-box{
-  width: 50%;
-  padding: 2.5rem;
-  
-}
-#field-sitewide-search {
-  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
-  padding: 0 2.5rem;
-  height: 50px;
-  border-radius: 0;
-  outline: none;
-  border: none;
-}
+
