@@ -7,7 +7,7 @@
   background-color: #E6E6E6;
   color: @gray-medium;
   margin: .5rem .2rem;
-  & a {
+   a {
     color: @gray-medium;
   }
 }
@@ -18,20 +18,20 @@
     justify-content: space-between;
     flex-wrap: wrap;
     border-bottom: none;
-    &>* {
+    >* {
       min-width: 25%;
       width: 25%;
     }
-    &>*:first-child {
+    >*:first-child {
       order: -2;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
       min-width: 50%;
       width: 50%;
     }
-    &>span {
+    >span {
       display: none;
     }
-    &>h2 {
+    >h2 {
       order: -1;
       color: @brand-secondary;
       font-weight: 600;
@@ -39,7 +39,7 @@
       margin-bottom: 30px;
       margin-top: 0;
     }
-    & .control-order-by {
+    .control-order-by {
       display: flex;
       justify-content: flex-end;
       margin-left: 0;
@@ -70,7 +70,7 @@
       &>label {
         display: none;
       }
-      & select {
+      select {
         height: 46px;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
         padding-right: 4rem; 
@@ -80,8 +80,8 @@
       }
     }
   }
-  & .search-form .show-filters,
-  & .search-form .filter-list {
+  .search-form .show-filters,
+  .search-form .filter-list {
     min-width: auto;
     width: auto;
   }
