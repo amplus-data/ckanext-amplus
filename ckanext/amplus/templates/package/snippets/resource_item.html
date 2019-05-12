@@ -1,7 +1,7 @@
 {% ckan_extends %}
-{{ super()}}
+{{ super() }}
 {% block resource_item_title %}
-<a class="heading" href="{{ url }}" title="{{ res.name or res.description }}">
+<a class="resource-item-list" href="{{ url }}" title="{{ res.name or res.description }}">
   <div class="resource-img">
     <svg width="50px" height="50px">
       <g id="file-solid" class="{{ h.get_translated(res, 'format') }}" fill="#9C2484" fill-rule="nonzero">
@@ -17,12 +17,14 @@
     <h3 class=resource-title>
       {{ h.resource_display_name(res) | truncate(50) }}
     </h3>
-{%endblock%}
-{% block resource_item_description %}
     <p class="description">
       {% if res.description %}
       {{ h.markdown_extract(h.get_translated(res, 'description'), extract_length=80) }}
       {% endif %}
     </p>
   </div>
-{% endblock %}
+  {{ super() }}
+  {% endblock %}
+
+  {% block resource_item_description %}
+  {% endblock %}
