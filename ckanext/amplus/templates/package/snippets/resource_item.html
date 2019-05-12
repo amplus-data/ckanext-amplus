@@ -1,0 +1,30 @@
+{% ckan_extends %}
+{{ super() }}
+{% block resource_item_title %}
+<a class="resource-item-list" href="{{ url }}" title="{{ res.name or res.description }}">
+  <div class="resource-img">
+    <svg width="50px" height="50px">
+      <g id="file-solid" class="{{ h.get_translated(res, 'format') }}" fill="#9C2484" fill-rule="nonzero">
+        <path
+          d="M22.2457627,13.28125 L22.2457627,0 L2.38347458,0 C1.06263242,0 0,1.04492187 0,2.34375 L0,47.65625 C0,48.9550781 1.06263242,50 2.38347458,50 L35.7521186,50 C37.0729608,50 38.1355932,48.9550781 38.1355932,47.65625 L38.1355932,15.625 L24.6292373,15.625 C23.3183263,15.625 22.2457627,14.5703125 22.2457627,13.28125 Z M38.1355932,11.9042969 L38.1355932,12.5 L25.4237288,12.5 L25.4237288,0 L26.0295286,0 C26.6651218,0 27.2709216,0.244140625 27.7178231,0.68359375 L37.4404131,10.2539062 C37.8873146,10.6933594 38.1355932,11.2890625 38.1355932,11.9042969 Z"
+          id="Shape"></path>
+      </g>
+    </svg>
+    <span class="custom-label" property="dc:format"
+      data-format="{{ res.format.lower() or 'data' }}">{{ h.get_translated(res, 'format') }}</span>
+  </div>
+  <div class="resource-content" style="display: inline-block">
+    <h3 class=resource-title>
+      {{ h.resource_display_name(res) | truncate(50) }}
+    </h3>
+    <p class="description">
+      {% if res.description %}
+      {{ h.markdown_extract(h.get_translated(res, 'description'), extract_length=80) }}
+      {% endif %}
+    </p>
+  </div>
+  {{ super() }}
+  {% endblock %}
+
+  {% block resource_item_description %}
+  {% endblock %}

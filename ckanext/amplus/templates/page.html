@@ -1,48 +1,51 @@
 {% ckan_extends %}
-{%- block content %}
-{% block maintag %}{{ super() }}{% endblock %}
+
+{% block content %}
+{% block maintag %} {{ super() }} {% endblock %}
 <div id="content" class="container-fluid">
   {% block main_content %}
   {% block flash %}
   {{ super() }}
   {% endblock %}
-  <div class="row flex flex-justify-end flex-wrap {% if self.secondary()|trim == '' or c.action=='resource_read' %} no-nav{% endif %}">
-    {#
-              The pre_primary block can be used to add content to before the
-              rendering of the main content columns of the page.
-              #}
+
+  <div class="row flex flex-align-streach flex-wrap {% if self.secondary()|trim == '' or c.action=='resource_read' %} no-nav{% endif %}">
+  
     {% block pre_primary %}
     {{ super() }}
     {% endblock %}
-    {% block secondary %}
-    <aside class="secondary col-md-3 col-sm-12">
-      
-      {% block secondary_content %}{% endblock %}
-</aside>
-    {% endblock %}
-    <div class="col-md-9 col-xs-12 bg-light">
-    {% block primary %}
-    
-      <div class="row">
-    <div class="col-sm-12 ">
-      <div class="breadcrumb-box">
-        {% block toolbar %}
+    <aside class="secondary col-md-3 col-sm-12 col-xs-12">
+        {% block secondary_content %}
         {{ super() }}
         {% endblock %}
-     
-      {% block primary_content %}
-      {{ super() }}
-      {% endblock %}
-    </div>
-  </div>
-</div>
-</div>
+    </aside>
+    {% block secondary %}
+    
+   
     {% endblock %}
+
+    {% block primary %}
+    <div class="primary col-md-9 col-sm-12 col-xs-12 bg-light">
+        <div class="breadcrumb-box">
+            {% block toolbar %}
+            {{ super() }}
+            {% endblock %} 
+    
+          </div>
+      {% block primary_content %}
+       
+        {{ super() }}
+      {% endblock %}
+
+    </div>
+    {% endblock %}
+
   </div>
   {% endblock %}
+
 </div>
 </div>
-{% endblock -%}
+{% endblock %}
+
 {% block footer %}
 <footer class="site-footer">
   <div class="container-fluid">
