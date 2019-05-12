@@ -17,14 +17,24 @@
     &>* {
       min-width: 50%;
     }
-
-    &>*:first-child {
-      min-width: 100%;
-      flex: 1 0 50%;
+    .footer-links {
+        float: none;
+        text-align: center;
+    }  
+    .masthead .navigation .nav-pills.nav {
+        & > li {
+          & a{
+            padding: 2.2rem 1rem;
+            font-size: 15px;
+            & img{
+              max-width: 18px;
+              max-height: 18px;
+            }
+          }
+        }
     }
-
-    &>p {
-      max-width: 100%;
+    .masthead .logo{
+      max-width: 250px;
     }
     &> .control-order-by{
         padding-right: 0;
