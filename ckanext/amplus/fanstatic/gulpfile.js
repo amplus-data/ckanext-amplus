@@ -22,6 +22,11 @@ gulp.task('less', function () {
     .pipe(gulp.dest('css'));
 });
 
+gulp.task('fonts', function() {
+  return gulp.src('node_modules/typeface-barlow/files/*')
+    .pipe(gulp.dest('public/fonts'))
+})
+
 // Watch for LESS file changes
 gulp.task("watch", function () {
   gulp.watch(["less/**/*.less"],
@@ -29,4 +34,4 @@ gulp.task("watch", function () {
 });
 
 // The default Gulp.js task
-gulp.task('default', gulp.series('less', 'watch'));
+gulp.task('default', gulp.series('less', 'fonts', 'watch'));

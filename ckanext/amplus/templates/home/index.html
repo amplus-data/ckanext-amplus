@@ -4,3 +4,43 @@
 
 {% endblock %}
 
+    {% block blogs_wrapper %}
+    {% set blogs = h.get_recent_blog_posts(4) %}
+
+    {# g.homepage_blogs is returned as String not Boolean! #}
+    {% if g.homepage_blogs == 'True' and blogs %}
+    <div class="blogs">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                {% block blogs_heading %}
+                {{ super() }}
+              {% endblock %}
+              <div class="row">
+                  {% for item in blogs %}
+                      <div class="col-md-3 col-sm-4 col-xs-12">
+                          <div class="box">
+                              {% if item.image %}
+                              <a href="{{ h.url_for(controller='ckanext.pages.controller:PagesController', action='blog_show', page='/' + item.name) }}">
+                                <img src="{{ item.image }}" alt="{{ item.title }}" class="media-image item-image">
+                              </a>
+                              {% endif %}
+                              <div class="item-body">
+                                  <a href="{{ h.url_for(controller='ckanext.pages.controller:PagesController', action='blog_show', page='/' + item.name) }}">
+                                    <h3 class="title media-heading">{{ item.title }}</h3>
+                                  </a>
+                                  <p class="description">{{ item.content|striptags|truncate(300) }}</p>
+                              </div>
+                          </div>
+                      </div>
+                  {% endfor %}
+              </div>
+              {% block blog_archive_button %}
+                {{ super() }}
+              {% endblock %}
+            </div>
+          </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endblock %}
