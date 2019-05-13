@@ -1,3 +1,13 @@
+@media (min-width: @breakpoint-lg) {
+  body {
+    & [role=main] {
+      .secondary {
+        padding: 3rem;
+      }
+    }
+  }
+}
+
 @media (max-width: @breakpoint-lg) {
   .attribution {
     text-align: center;
@@ -9,46 +19,54 @@
     text-align: center;
   }
 
-    .footer-links {
-        float: none;
-        text-align: center;
-    }  
-    .masthead .navigation .nav-pills.nav {
-        & > li {
-          & a{
-            padding: 2.2rem 1rem;
-            font-size: 15px;
-            & img{
-              max-width: 18px;
-              max-height: 18px;
-            }
-          }
+  .footer-links {
+    float: none;
+    text-align: center;
+  }
+
+  .masthead .navigation .nav-pills.nav {
+    >li {
+      a {
+        padding: 2.2rem .8rem;
+        font-size: 15px;
+
+        & img {
+          max-width: 18px;
+          max-height: 18px;
         }
+      }
     }
-    .masthead .logo{
-      max-width: 250px;
-    }
-    > .control-order-by{
-        padding-right: 0;
-    }
-  
+  }
+
+  .masthead .logo {
+    max-width: 250px;
+  }
+
+  >.control-order-by {
+    padding-right: 0;
+  }
+
   .search-input-group {
     margin-bottom: 2rem;
   }
+
   .primary {
     .search-form {
       >* {
         min-width: 50%;
         width: 50%;
       }
+
       >*:first-child {
         min-width: 100%;
         width: 100%;
         flex: 1 0 50%;
       }
-      >h2{
-       padding-left: 0;
+
+      >h2 {
+        padding-left: 0;
       }
+
       >.control-order-by {
         padding-right: 0;
       }

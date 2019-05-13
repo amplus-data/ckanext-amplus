@@ -1,0 +1,50 @@
+body {
+  font-family: 'Barlow', sans-serif;
+  .main,
+  & [role=main] {
+    background: @brand-background;
+    & .secondary{
+        padding-right: 0;
+    }
+  }
+  & [role=main] {
+    min-height: auto;
+    padding: 0;
+  }
+  .primary {
+    background-color: transparent;
+  }
+}
+.masthead {
+  .debug {
+    top: 0;
+    background: transparent;
+  }
+}
+.secondary {
+  &,
+  .module-content {
+    background-color: #fff;
+  }
+  .module-heading {
+    background: @brand-background;
+  }
+}
+.form-control {
+  border-radius: 0;
+  border: none;
+  outline: none;
+}
+.btn {
+  border-radius: 0;
+  border: none;
+  outline: none;
+}
+.input-group-addon {
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+}
+a{
+    color: @brand-primary;
+}
