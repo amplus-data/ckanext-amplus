@@ -1,15 +1,10 @@
 .resource-list{
   display: flex;
   flex-wrap: wrap;
-  margin-left: -@gutter-medium;
-  margin-right: -@gutter-medium;
+  .content-margin-fix;
   .resource-item {
-    margin: @gutter-medium;
-    padding: @gutter-list-item-medium @gutter-list-item-small @gutter-list-item-medium @gutter-list-item-medium;
-    width:  calc(50% - @gutter-large);    
+    .content-item-layout;
     background: #fff;
-    box-shadow: @shadow-light;
-    border-radius: 0;
   &:hover {
     .hover-box();
     .resource-title{
