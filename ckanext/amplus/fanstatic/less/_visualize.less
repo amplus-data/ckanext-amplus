@@ -1,8 +1,3 @@
-body {
-    font-family: 'Barlow';
-    color: @text-dark;
-}
-
 a {
     color: @text-dark;
 }
@@ -40,29 +35,29 @@ a {
     background: @brand-background;
     padding: 100px 140px;
 
-    & .toggle-section {
+    .toggle-section {
         padding-bottom: 100px;
-        & .active {
+        .active {
             border-bottom: 4px solid @brand-secondary;
             > a {
                 background: transparent;
                 border: none;
-                &:hover {
+                :hover {
                     border: none;
                 }
             }
-            & .toggle-view {
+            .toggle-view {
                 color: @brand-secondary;
             }
         }
-        & .nav li > a:hover, .nav li > a:focus {
+        .nav li > a:hover, .nav li > a:focus {
             background: transparent;
             border: none;
             text-decoration: none;
         }
     }
 
-    & .toggle-view {
+    .toggle-view {
         font-size: 18px;
         font-weight: 700;
         letter-spacing: 1.8px;
