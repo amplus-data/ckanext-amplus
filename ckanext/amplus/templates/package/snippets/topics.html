@@ -1,0 +1,9 @@
+<h2 scope="row" class="side-heading">{{ _('Topics') }}</h2>
+{% if pkg_dict.groups %}
+{% for group in pkg_dict.groups %}
+<p>{{ group.title }}</p>
+{% endfor %}
+
+{% else %}
+<p>There arent any topics linked</p>
+{% endif %}
