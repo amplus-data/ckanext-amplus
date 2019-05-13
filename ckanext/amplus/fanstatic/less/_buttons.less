@@ -1,6 +1,14 @@
-.btn-primary{
+.btn-primary,
+.open > .dropdown-toggle.btn-primary {
   background-color: @brand-primary;
   border-radius: 0; 
+  &:hover,
+  &:active,
+  &:focus,
+  &:active:hover,
+  &.focus{
+    background-color: @brand-dark;
+  }
 }
 .btn-search{
   background-color: @brand-primary;
@@ -10,7 +18,7 @@
 }
 .btn-input-search{
   padding: 1.4rem;
-  color: #fff;
+  color: @white;
   background-color: @brand-primary;
   border: none;
   outline:none;
@@ -18,7 +26,7 @@
 .btn-default{
   border: none;
   &:hover{
-    color: #fff;
+    color: @white;
     background-color: @brand-secondary;
   }
 }
