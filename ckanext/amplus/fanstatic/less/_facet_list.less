@@ -1,0 +1,128 @@
+.module-heading {
+  color: @brand-primary;
+  background-color: @brand-background;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 7px 15px;
+  margin-bottom: 1rem;
+  & div {
+    margin-right: .5rem;
+    padding: .9rem;
+    border-radius: 50%;
+    background-color: #CDC4DD;
+    & .fa{
+      &:last-child{
+        margin-right: 0;
+      }
+      color: @brand-primary;
+      transform: translateX(1px)
+    }
+  }
+}
+.nav-simple,
+.nav-facet{
+  padding: 1rem 0;
+  & .nav-item  {
+    border-bottom: none;
+    &.active a{
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      background-color: @brand-extra-light;
+      &:after {
+        background-size: contain;
+        background-position: center;
+        width: 10px;
+        height: 10px;
+        transform: translate(-10px, 4px);
+      }
+    }
+     a {
+      padding: .3rem 2rem;
+      color: @gray-medium;
+      &:before{
+        display: none;
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background-color: @brand-extra-light;
+        
+        &:after {
+        background-size: contain;
+        background-position: center;
+        transform: translate(-10px, 4px);
+        width: 10px;
+        height: 10px;
+       
+        }
+      }
+    
+    }
+    &.active{
+      &:hover{
+        & span{
+          color: @brand-primary;
+        }
+      }
+    }
+  }
+} 
+.keyword-section{
+  order: -2;
+}
+.keyword-list {
+  padding: .5rem 0 0 1rem;
+  list-style: none;
+  li {
+    font-size: 12px;
+    font-weight: 500;
+    padding: .4rem .8rem;
+    background-color: @gray-extra-light;
+    margin: .4rem;
+    a{
+      color: @gray-medium; 
+    }
+  }
+}
+.content-side-box {
+  padding: @gutter-large;
+}
+.module-footer{
+  border-top: none;
+   i{
+    font-size: 10px;
+    color: @brand-primary;
+  }
+}
+.tags {
+  >ul {
+   outline:none;
+    background-color: inherit;
+    border: none;
+    li {
+      margin-right: 0;
+    }
+    .tag {
+      border-radius: 0;
+      border: none;
+      color: @gray-medium;
+      font-size: 12px;
+      padding: .4rem;
+      background-color: @gray-extra-light;
+      margin: .5rem .2rem;
+      &:hover{
+        border-top: @brand-primary;
+      }
+    }
+  }
+}
+.license{
+  >.module-content{
+    background-color:@white;
+    padding-left: 0px;
+  }
+}
+
