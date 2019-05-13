@@ -1,25 +1,19 @@
-body {
-  background-color: @brand-primary;
-}
-
 .account-masthead {
   background: @brand-primary;
-
-  & .account {
-    & ul {
-      & li {
+   .account {
+     ul {
+       li {
         border-left: none;
-        &>a {
+        >a {
           &:hover,
           &:active {
             background: @brand-quaternary;
           }
         }
       }
-
-      & .notifications {
-        &>a {
-          & span.badge {
+      .notifications {
+        >a {
+           span.badge {
             background-color: inherit;
           }
         }
@@ -27,32 +21,27 @@ body {
     }
   }
 }
-
 .masthead {
   background: @brand-primary;
   padding: 0;
-
-  & .navbar-collapse {
+  .navbar-collapse {
     padding: 0;
   }
 }
-
 .masthead .navigation .nav-pills.nav {
   background: @brand-primary;
-
-  &>li {
+  >li {
     border-left: none;
     &.active>a {
       background-color: @brand-quaternary;
     }
 
-    & a{
+     a{
       padding: 2.5rem 2rem;
       background-color: @brand-primary;
       border-radius: 0;
       font-size: 18px;
       font-weight: 500;
-
       &:hover {
         background-color: @brand-quaternary;
       }
@@ -60,12 +49,14 @@ body {
   }
 }
 
-.masthead .logo {
-  max-width: 350px;
-  padding: 2.5rem 0 1rem 2.5rem;
-
-  &>img {
-    max-width: 100%;
+.masthead  {
+   .logo{
+    max-width: 350px;
+    padding: 2rem 0 1rem 2.5rem;
+  
+    >img {
+      max-width: 100%;
+    }
   }
 }
 
