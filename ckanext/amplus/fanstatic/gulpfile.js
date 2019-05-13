@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
-var cleanCSS = require('gulp-clean-css');
 var autoprefixer = require('gulp-autoprefixer');
 // var sourcemaps = require('gulp-sourcemaps'); - Uncomment when developing
 
@@ -9,9 +8,6 @@ gulp.task('less', function () {
   return gulp.src('less/custom.less')
     // .pipe(sourcemaps.init()) - Uncomment when developing
     .pipe(less())
-    .pipe(cleanCSS({
-      compatibility: 'ie11'
-    }))
     .pipe(autoprefixer({
       browsers: [
         "last 5 versions",
