@@ -1,0 +1,22 @@
+{% ckan_extends %}
+{% block secondary_content %}
+
+<h2 class="module-heading flex flex-align-center">
+  <div class="flex flex-align-center flex-justify-center">
+    <i class="fa fa-folder-open "></i>
+  </div>
+  Additional Information
+</h2>
+{% block topics %}
+{% snippet "package/snippets/topics.html", pkg_dict=pkg %}
+{% endblock%}
+{% block package_tags %}
+{% snippet "package/snippets/tags.html", tags=pkg.tags %}
+{% endblock %}
+{% block package_license %}
+{% snippet "snippets/license.html", pkg_dict=pkg %}
+{% endblock %}
+{% block package_additional_info %}
+{% snippet "package/snippets/additional_info.html", pkg_dict=pkg %}
+{% endblock %}
+{% endblock %}
