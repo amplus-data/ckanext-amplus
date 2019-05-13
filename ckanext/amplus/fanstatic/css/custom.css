@@ -80,10 +80,74 @@ a {
   font-size: 24px;
   padding-left: 0.5rem;
 }
-.form-control {
+.form-control,
+.controls .form-control {
+  background-color: #FFFFFF;
   border: none;
   border-radius: 0;
   outline: none;
+}
+.side-heading {
+  color: #6033A7;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+.header-primary {
+  color: #414141;
+  font-weight: 400;
+  font-size: 40px;
+}
+.header-secondary {
+  font-size: 24px;
+  padding-left: 0.5rem;
+}
+.header-tertiary {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 600;
+}
+.module-content > h1 {
+  color: #414141;
+  font-weight: 400;
+  font-size: 40px;
+}
+.side-inner {
+  color: #414141;
+}
+.side-inner > a {
+  color: #414141;
+}
+.modal {
+  background-color: unset;
+}
+.control input {
+  background: #fff;
+}
+.module .read-more {
+  color: #6033A7;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.thin {
+  font-weight: 400;
+}
+.alert-warning {
+  background-color: #fff;
+  color: #6033A7;
+  border-color: #9F1A86;
+}
+.text-info {
+  color: #6033A7;
+}
+.text-info i {
+  color: #6033A7;
+}
+.resource-view-list.reordering li.ui-sortable-helper,
+.resource-view-list.reordering li.ui-sortable-helper .handle {
+  border: 1px solid #9F1A86;
 }
 .account-masthead {
   background: #6033A7;
@@ -447,6 +511,144 @@ a {
 }
 .btn-default:hover {
   background-color: #f7f7f7;
+}
+.module-heading {
+  color: #6033A7;
+  background-color: #efecf4;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 7px 15px;
+  margin-bottom: 1rem;
+}
+.module-heading div {
+  margin-right: 0.5rem;
+  padding: 0.9rem;
+  border-radius: 50%;
+  background-color: #CDC4DD;
+}
+.module-heading div .fa {
+  color: #6033A7;
+  -webkit-transform: translateX(1px);
+      -ms-transform: translateX(1px);
+          transform: translateX(1px);
+}
+.module-heading div .fa:last-child {
+  margin-right: 0;
+}
+.nav-simple,
+.nav-facet {
+  padding: 1rem 0;
+}
+.nav-simple .nav-item,
+.nav-facet .nav-item {
+  border-bottom: none;
+}
+.nav-simple .nav-item.active a,
+.nav-facet .nav-item.active a {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #EBD3E6;
+}
+.nav-simple .nav-item.active a:after,
+.nav-facet .nav-item.active a:after {
+  background-size: contain;
+  background-position: center;
+  width: 10px;
+  height: 10px;
+  -webkit-transform: translate(-10px, 4px);
+      -ms-transform: translate(-10px, 4px);
+          transform: translate(-10px, 4px);
+}
+.nav-simple .nav-item a,
+.nav-facet .nav-item a {
+  padding: 0.3rem 2rem;
+  color: #414141;
+}
+.nav-simple .nav-item a:before,
+.nav-facet .nav-item a:before {
+  display: none;
+}
+.nav-simple .nav-item a:hover,
+.nav-facet .nav-item a:hover,
+.nav-simple .nav-item a:active,
+.nav-facet .nav-item a:active,
+.nav-simple .nav-item a:focus,
+.nav-facet .nav-item a:focus {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #EBD3E6;
+}
+.nav-simple .nav-item a:hover:after,
+.nav-facet .nav-item a:hover:after,
+.nav-simple .nav-item a:active:after,
+.nav-facet .nav-item a:active:after,
+.nav-simple .nav-item a:focus:after,
+.nav-facet .nav-item a:focus:after {
+  background-size: contain;
+  background-position: center;
+  -webkit-transform: translate(-10px, 4px);
+      -ms-transform: translate(-10px, 4px);
+          transform: translate(-10px, 4px);
+  width: 10px;
+  height: 10px;
+}
+.nav-simple .nav-item.active:hover span,
+.nav-facet .nav-item.active:hover span {
+  color: #6033A7;
+}
+.keyword-section {
+  -webkit-box-ordinal-group: -1;
+      -ms-flex-order: -2;
+          order: -2;
+}
+.keyword-list {
+  padding: 0.5rem 0 0 1rem;
+  list-style: none;
+}
+.keyword-list li {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  background-color: #E6E6E6;
+  margin: 0.4rem;
+}
+.keyword-list li a {
+  color: #414141;
+}
+.content-side-box {
+  padding: 3rem;
+}
+.module-footer {
+  border-top: none;
+}
+.module-footer i {
+  font-size: 10px;
+  color: #6033A7;
+}
+.tags > ul {
+  outline: none;
+  background-color: inherit;
+  border: none;
+}
+.tags > ul li {
+  margin-right: 0;
+}
+.tags > ul .tag {
+  border-radius: 0;
+  border: none;
+  color: #414141;
+  font-size: 12px;
+  padding: 0.4rem;
+  background-color: #E6E6E6;
+  margin: 0.5rem 0.2rem;
+}
+.tags > ul .tag:hover {
+  border-top: #6033A7;
+}
+.license > .module-content {
+  background-color: #FFFFFF;
+  padding-left: 0px;
 }
 .facet {
   font-weight: 600;
