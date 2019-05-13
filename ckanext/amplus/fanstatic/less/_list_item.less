@@ -1,27 +1,23 @@
 .module-content .media-grid {
-  display: flex;
-  flex-wrap: wrap;
+  .content-margin-fix;
   background: transparent;
   border: none;
-  margin-left: -@gutter-medium;
-  margin-right: -@gutter-medium;
+  
 }
 .media-view {
   &:hover {
     box-shadow: none;
+    border:none;
   }
 }
 .media-item {
-  margin: @gutter-medium;
-  width: calc(50% - @gutter-large );
-  padding: @gutter-list-item-medium @gutter-list-item-small @gutter-list-item-medium @gutter-list-item-medium;
-  border-radius: 0;
-  box-shadow: @shadow-light;
+  .content-item-layout;
   &:hover {
     .hover-box();
     .media-heading {
       color: @brand-secondary;
       >a {
+        
         color: @brand-secondary;
       }
     }
