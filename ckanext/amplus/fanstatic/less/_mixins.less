@@ -1,4 +1,12 @@
-.hover-box() {
-  box-shadow: @shadow-brand;
-  border: 1px solid @brand-secondary;
+.btn-primary-reset {
+  background-color: @brand-primary;
+  border-radius: 0;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:active:hover,
+  &.focus {
+    background-color: @brand-dark;
+  }
 }
