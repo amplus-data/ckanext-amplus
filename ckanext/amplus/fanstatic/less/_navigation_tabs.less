@@ -2,13 +2,39 @@
   background-color: inherit;
   border-bottom: none;
 }
-.nav-tabs>li {
-  &.active {
-    &>a {
-      color: @brand-primary;
-      
-      &:hover{
+.module-content {
+  .nav-tabs.nav-tabs-plain,
+  .nav-tabs {
+    border: none;
+    >li {
+      margin-right: 1rem;
+      &.active {
+        background: #fff;
+        >a {
+          color: @brand-primary;
+          border: none;
+          background: #fff;
+          font-weight: 700;
+          &:hover {
+            color: #fff;
+            background-color: @brand-quaternary;
+          }
+        }
+      }
+      >a {
+        background-color: @brand-primary;
         color: #fff;
+        border-radius: 0;
+        font-weight: 700;
+        &:hover {
+          background-color: @brand-dark;
+          .badge {
+            background-color: @brand-dark;
+          }
+        }
+      }
+      .badge {
+        background-color: @brand-primary;
       }
     } 
   }
@@ -17,19 +43,26 @@
     color: #fff;
     border-radius: 0;
     &:hover {
-      background-color: @brand-light  !important;
+      background-color: @brand-dark;
     }
   }
 }
-.module-content{
-  & > .actions,
-  & > .content_action{
-    & > .btn{
+.module-content {
+  >.actions,
+  >.content_action {
+    >.btn {
       color: #000;
       background-color: #fff;
-      &:hover{
-        background-color: @brand-secondary;
-        color:#fff;
+      &:hover {
+        background-color: darken(@white, 3%);
+       
+      }
+    }
+    >.btn-danger {
+      color: #fff;
+      background-color: @brand-tertiary;
+      &:hover {
+        background-color: @brand-tertiary-light;
       }
     }
   }
