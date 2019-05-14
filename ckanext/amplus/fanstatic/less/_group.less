@@ -1,12 +1,3 @@
-body {
-    font-family: 'Barlow';
-    color: @text-dark;
-}
-
-a {
-    color: @text-dark;
-}
-
 .group-heading {
     font-size: 40px;
     text-align: center;
@@ -15,19 +6,22 @@ a {
 }
 
 .group-container {
-    background: @brand-background;
     padding: 100px 140px;
+}
 
-    & .module-heading {
-        height: 180px;
-        margin-bottom: 25px;
+.group-topics, .group-container {
+    background: @brand-background;
+
+    .module-heading {
+        height: 100%;
+        margin: 12px 0px;
         box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
 
-        & .module-image {
+        .module-image {
             padding: 10px 0 0 10px;
         }
 
-        & .group-icon {
+        .group-icon {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -36,23 +30,22 @@ a {
             background-color: @oval-bg;
             border-radius: 50%;
 
-            & i {
+            i {
                 font-size: 25px;
                 color: @brand-primary;
                 padding: 4px 0 0 6px;
             }
         }
 
-        & .media-heading, .group-item-desc {
-            width: 220px;
+        .media-heading, .group-item-desc {
             margin-left: 85px;
         }
 
-        & .group-item-desc {
+        .group-item-desc {
             font-size: 18px;
         }
 
-        & .media-heading {
+        .media-heading {
             margin-top: 20px;
             font-size: 25px;
             font-weight: 600;
