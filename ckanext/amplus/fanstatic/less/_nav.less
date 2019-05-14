@@ -26,6 +26,14 @@
   }
 }
 
+.nav {
+  >li {
+    >a {
+      padding: 6px 12px;
+    }
+  }
+}
+
 .masthead {
   background: @brand-primary;
   padding: 0;
@@ -43,9 +51,10 @@
           padding: 2.5rem 2rem;
           border-radius: 0;
           font-size: 18px;
-          font-weight: 500;
+          // font-weight: 500;
 
-          &:hover {
+          &:hover,
+          &:focus {
             background-color: @brand-quaternary;
           }
         }
