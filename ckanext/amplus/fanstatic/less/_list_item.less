@@ -2,32 +2,22 @@
   .content-margin-fix;
   background: transparent;
   border: none;
-  
 }
 .media-view {
   &:hover {
-    box-shadow: none;
-    border:none;
+    .hover-box();
   }
 }
 .media-item {
   .content-item-layout;
   &:hover {
-    .hover-box();
     .media-heading {
       color: @brand-secondary;
-      >a {
-        color: @brand-secondary;
-      }
     }
   }
   .media-heading {
     font-size: 21px;
     font-weight: 600;
-    a {
-      color: @gray-medium;
-      text-decoration: none;
-    }
   }
   .media-image {
     float: left;
