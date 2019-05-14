@@ -1,5 +1,5 @@
 {% block featured_item %}
-  <section class="group-list module module-narrow module-shallow">
+  <div class="group-item module module-narrow module-shallow">
     {% block featured_item_header %}
       <header class="module-heading">
         {% set truncate=truncate or 0 %}
@@ -13,9 +13,9 @@
             </a>
         {% endblock %}
         {% block featured_item_header_title %}
-          <p class="media-heading">
+          <h3 class="media-heading">
             <a href="{{ h.url_for(controller='group', action='read', id=group.name) }}">{{ group.title or group.name }}</a>
-          </p>
+          </h3>
         {% endblock %}
         {% block featured_item_header_description %}
           {% if group.description %}
@@ -30,5 +30,5 @@
     {% endblock %}
     {% block featured_item_content %}
     {% endblock %}
-  </section>
+  </div>
 {% endblock %}
