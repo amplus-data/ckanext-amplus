@@ -37,6 +37,107 @@
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
+.hero {
+  padding: 120px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #FFFFFF;
+}
+.hero .hero-img {
+  min-width: auto;
+  width: 196px;
+  height: 145px;
+}
+.hero .media-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.hero .page-heading {
+  padding-top: 30px;
+  font-size: 50px;
+  color: #6033A7;
+}
+.hero .promoted-desc {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+.group-topics .group-heading {
+  margin-top: 60px;
+}
+.group-topics-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.group-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 calc(100%/4);
+          flex: 1 1 calc(100%/4);
+  margin: 10px;
+}
+.group-topics,
+.group-container {
+  background: #efecf4;
+}
+.group-topics .module-heading,
+.group-container .module-heading {
+  height: 100%;
+  margin: 12px 0px;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+.group-topics .module-heading .module-image,
+.group-container .module-heading .module-image {
+  padding: 10px 0 0 10px;
+}
+.group-topics .module-heading .group-icon,
+.group-container .module-heading .group-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+  width: 50px;
+  background-color: #CFBEDC;
+  border-radius: 50%;
+}
+.group-topics .module-heading .group-icon i,
+.group-container .module-heading .group-icon i {
+  font-size: 25px;
+  color: #6033A7;
+  padding: 4px 0 0 6px;
+}
+.group-topics .module-heading .media-heading,
+.group-container .module-heading .media-heading,
+.group-topics .module-heading .group-item-desc,
+.group-container .module-heading .group-item-desc {
+  margin-left: 85px;
+}
+.group-topics .module-heading .group-item-desc,
+.group-container .module-heading .group-item-desc {
+  font-size: 18px;
+}
+.group-topics .module-heading .media-heading,
+.group-container .module-heading .media-heading {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 600;
+}
 .data {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,7 +186,7 @@
   font-size: 40px;
   text-align: center;
   font-weight: 400;
-  padding: 40px 0 80px 0;
+  padding: 80px 40px 40px;
 }
 .group-container {
   background: #efecf4;
@@ -161,6 +262,7 @@
 }
 body {
   font-family: 'Barlow', sans-serif;
+  background: #6033A7;
 }
 body .main,
 body [role=main] {
@@ -201,6 +303,11 @@ body .primary {
 a {
   color: #6033A7;
 }
+a:hover,
+a:focus,
+a:active {
+  color: inherit;
+}
 .module-resource {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
@@ -234,7 +341,8 @@ a {
 .account-masthead .account ul .notifications > a span.badge {
   background-color: inherit;
 }
-.nav > li > a {
+.masthead .nav > li > a,
+.primary .nav > li > a {
   padding: 6px 12px;
 }
 .masthead {
@@ -323,8 +431,11 @@ a {
   margin-bottom: 0;
 }
 .toolbar .breadcrumb {
-  margin: 1rem 1.5rem;
+  margin: 1rem;
   font-size: inherit;
+}
+.toolbar .breadcrumb a {
+  color: #414141;
 }
 .toolbar .breadcrumb > *:not(:first-child):before {
   content: ">";
@@ -340,9 +451,6 @@ a {
 .toolbar .breadcrumb li .active {
   color: #6033A7;
   font-weight: 400;
-}
-.toolbar .breadcrumb a {
-  color: #414141;
 }
 .module-content .nav-tabs > li.active a {
   color: inherit;
@@ -884,9 +992,6 @@ a {
   .homepage .insights {
     padding: 100px 50px;
   }
-  .homepage .insights {
-    padding: 100px 50px;
-  }
   .navbar-toggle {
     margin-right: 15px;
   }
@@ -897,5 +1002,8 @@ a {
   }
   .masthead .navigation .nav-pills.nav > li a {
     padding: 2.2rem 2.5rem;
+  }
+  .homepage .group-topics {
+    padding: 100px 10px;
   }
 }
