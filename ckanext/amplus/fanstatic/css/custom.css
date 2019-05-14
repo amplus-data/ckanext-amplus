@@ -37,6 +37,20 @@
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
+.nav-item-after {
+  background-size: contain;
+  background-position: center;
+  -webkit-transform: translate(-10px, 4px);
+      -ms-transform: translate(-10px, 4px);
+          transform: translate(-10px, 4px);
+  width: 10px;
+  height: 10px;
+}
+.nav-item-hover-active {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #EBD3E6;
+}
 .hero {
   padding: 120px 0px;
   display: -webkit-box;
@@ -345,15 +359,6 @@ a:active {
   font-weight: 400;
   font-size: 40px;
 }
-.header-secondary {
-  font-size: 24px;
-  padding-left: 0.5rem;
-}
-.header-tertiary {
-  color: #414141;
-  font-size: 18px;
-  font-weight: 600;
-}
 .module-content > h1 {
   color: #414141;
   font-weight: 400;
@@ -376,9 +381,6 @@ a:active {
   font-size: 13px;
   font-weight: 600;
   text-decoration: underline;
-}
-.thin {
-  font-weight: 400;
 }
 .alert-warning {
   background-color: #fff;
@@ -848,11 +850,11 @@ a:active {
 .nav-facet .nav-item .active a:after {
   background-size: contain;
   background-position: center;
-  width: 10px;
-  height: 10px;
   -webkit-transform: translate(-10px, 4px);
       -ms-transform: translate(-10px, 4px);
           transform: translate(-10px, 4px);
+  width: 10px;
+  height: 10px;
 }
 .nav-simple .nav-item a,
 .nav-facet .nav-item a {
