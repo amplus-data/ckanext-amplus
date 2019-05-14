@@ -1,5 +1,112 @@
 /* Please check https://docs.ckan.org/en/2.8/theming/ for the already existing stylesheets in CKAN core. */
 /* Add your custom LESS code here */
+a {
+  color: #414141;
+}
+.data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.data > .visualize-card {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 33.3%;
+          flex: 1 0 33.3%;
+  padding: 20px;
+  margin: 0 20px 40px 20px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+.tab-content > .active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+.group-heading {
+  font-size: 40px;
+  text-align: center;
+  font-weight: 400;
+  padding: 40px 0 80px 0;
+}
+.group-container {
+  background: #EFECF4;
+  padding: 100px 140px;
+}
+.group-container .toggle-section {
+  padding-bottom: 100px;
+}
+.group-container .toggle-section .active {
+  border-bottom: 4px solid #9F1A86;
+}
+.group-container .toggle-section .active > a {
+  background: transparent;
+  border: none;
+}
+.group-container .toggle-section .active > a :hover {
+  border: none;
+}
+.group-container .toggle-section .active .toggle-view {
+  color: #9F1A86;
+}
+.group-container .toggle-section .nav li > a:hover,
+.group-container .toggle-section .nav li > a:focus {
+  background: transparent;
+  border: none;
+  text-decoration: none;
+}
+.group-container .toggle-view {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: #9E9E9E;
+}
+.js .tab-content {
+  display: block;
+}
+.dataset-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  text-align: left;
+}
+.dataset-list > .dataset-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 33.3%;
+          flex: 1 0 33.3%;
+  padding: 20px;
+  margin: 0 20px 40px 20px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+.dataset-list .dataset-content > div {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  color: #414141;
+}
+.dataset-list .dataset-content .dataset-heading a {
+  font-size: 21px;
+  font-weight: 600;
+  color: #9F1A86;
+}
+.dataset-list .dataset-resources li .label {
+  background: transparent;
+  color: #9E9E9E;
+  border: 1px solid #9E9E9E;
+  border-radius: 15px;
+}
 body {
   font-family: 'Barlow', sans-serif;
 }
@@ -195,28 +302,52 @@ a {
   color: #414141;
 }
 @font-face {
-  font-family: 'Barlow';
+  font-family: "Barlow";
   font-style: normal;
   font-weight: 400;
-  src: url('../public/fonts/barlow-latin-400.woff2') format('woff2'), url('../public/fonts/barlow-latin-400.woff') format('woff');
+  src: url("../fonts/barlow-latin-400.woff2") format("woff2"), url("../fonts/barlow-latin-400.woff") format("woff");
 }
 @font-face {
-  font-family: 'Barlow';
+  font-family: "Barlow";
+  font-style: oblique;
+  font-weight: 400;
+  src: url("../fonts/barlow-latin-400italic.woff2") format("woff2"), url("../fonts/barlow-latin-400italic.woff") format("woff");
+}
+@font-face {
+  font-family: "Barlow";
   font-style: normal;
   font-weight: 500;
-  src: url('../public/fonts/barlow-latin-500.woff2') format('woff2'), url('../public/fonts/barlow-latin-500.woff') format('woff');
+  src: url("../fonts/barlow-latin-500.woff2") format("woff2"), url("../fonts/barlow-latin-500.woff") format("woff");
 }
 @font-face {
-  font-family: 'Barlow';
+  font-family: "Barlow";
+  font-style: oblique;
+  font-weight: 500;
+  src: url("../fonts/barlow-latin-500italic.woff2") format("woff2"), url("../fonts/barlow-latin-500italic.woff") format("woff");
+}
+@font-face {
+  font-family: "Barlow";
   font-style: normal;
   font-weight: 600;
-  src: url('../public/fonts/barlow-latin-600.woff2') format('woff2'), url('../public/fonts/barlow-latin-600.woff') format('woff');
+  src: url("../fonts/barlow-latin-600.woff2") format("woff2"), url("../fonts/barlow-latin-600.woff") format("woff");
 }
 @font-face {
-  font-family: 'Barlow';
+  font-family: "Barlow";
+  font-style: oblique;
+  font-weight: 600;
+  src: url("../fonts/barlow-latin-600italic.woff2") format("woff2"), url("../fonts/barlow-latin-600italic.woff") format("woff");
+}
+@font-face {
+  font-family: "Barlow";
   font-style: normal;
   font-weight: 700;
-  src: url('../public/fonts/barlow-latin-700.woff2') format('woff2'), url('../public/fonts/barlow-latin-700.woff') format('woff');
+  src: url("../fonts/barlow-latin-700.woff2") format("woff2"), url("../fonts/barlow-latin-700.woff") format("woff");
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: oblique;
+  font-weight: 700;
+  src: url("../fonts/barlow-latin-700italic.woff2") format("woff2"), url("../fonts/barlow-latin-700italic.woff") format("woff");
 }
 .btn-primary {
   background-color: #6033A7;
@@ -364,15 +495,6 @@ a {
   min-width: auto;
   width: auto;
 }
-@font-face {
-  font-family: 'Barlow';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../../fanstatic/public/fonts/barlow-latin-400.woff2') format('woff2'), url('../../fanstatic/public/fonts/barlow-latin-400.woff') format('woff'), url('/fanstatic/public/fonts/barlow-latin-500.woff2') format('woff2'), url('/fanstatic/public/fonts/barlow-latin-500.woff') format('woff');
-}
-body {
-  font-family: 'Barlow', sans-serif;
-}
 .site-footer {
   background: #FFFFFF;
   padding: 100px 120px;
@@ -398,9 +520,6 @@ body {
   color: #9E9E9E;
   font-size: 16px;
   font-weight: 600;
-}
-.col-md-2 {
-  float: right;
 }
 body {
   background: white;
@@ -485,6 +604,15 @@ body {
     float: none;
     text-align: center;
   }
+  .homepage .group-container .data div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
+    margin: 0 0 40px 0;
+  }
+  .homepage .group-container .toggle-section div {
+    border: none;
+  }
   .footer-links {
     float: none;
     text-align: center;
@@ -520,11 +648,20 @@ body {
   .primary .search-form > h2 {
     padding-left: 0;
   }
-  .primary .search-form > .control-order-by {
+  .primary .search-form > h2 > .control-order-by {
     padding-right: 0;
   }
 }
 @media only screen and (max-width: 990px) {
+  .footer-links div {
+    padding: 20px 0px;
+  }
+  .homepage .group-container {
+    padding: 100px 10px;
+  }
+  .homepage .insights {
+    padding: 100px 50px;
+  }
   .homepage .insights {
     padding: 100px 50px;
   }

@@ -1,0 +1,84 @@
+<div role="main" class="hero">
+        <div class="container">
+          <div class="row row1">
+            <div class="col-md-6 col1">
+              {% block search %}
+                {% snippet 'home/snippets/search.html' %}
+              {% endblock %}
+              {% block stats %}
+                {% snippet 'home/snippets/stats.html' %}
+              {% endblock %}
+            </div>
+            <div class="col-md-6 col2">
+              {% block promoted %}
+                {% snippet 'home/snippets/promoted.html' %}
+              {% endblock %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div role="main">
+        <div class="container">
+          <div class="row row2">
+            <div class="col-md-6 col2">
+              {% block featured_organization %}
+                {% snippet 'home/snippets/featured_organization.html' %}
+              {% endblock %}
+            </div>
+            <div class="col-md-6 col1">
+              {% block featured_group %}
+                {% snippet 'home/snippets/featured_group.html' %}
+              {% endblock %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group-container">
+        <p class="group-heading">{{_("Discover your data")}}</p>
+        <div class="container-fluid">
+          <div class="row text-center">
+              <div class="toggle-section">
+                <ul class="nav nav-tabs">
+                  <li class="col-md-4 col-sm-4 col-xs-4">
+                    <a class="toggle-view" href="#data" data-toggle="tab">
+                        <p>{{_("DATA")}}</p>
+                    </a>
+                  </li>
+                  <li class="active col-md-4 col-sm-4 col-xs-4">
+                    <a class="toggle-view" href="#visualize" data-toggle="tab">
+                        <p>{{_("VISUALIZE")}}</p>
+                    </a>
+                  </li>
+                  <li class="col-md-4 col-sm-4 col-xs-4">
+                    <a class="toggle-view" href="#locate" data-toggle="tab">
+                        <p>{{_("LOCATE")}}</p>
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+              <div class="tab-content">
+                <div class="data tab-pane fade" id="data">
+                    <!-- Latest Datasets Section -->
+                    {% set recent_datasets = h.amplus_get_recently_updated_datasets() %}
+                    {% if recent_datasets %}
+                      {{ h.snippet('snippets/package_list.html', packages=recent_datasets) }}
+                    {% else %}
+                      <p class="text-center">{{ _('No datasets available.') }}</p>
+                    {% endif %}
+                </div>
+                <div class="data tab-pane fade in active" id="visualize">
+                  {% block featured_charts %}
+                    {%- for featured_chart in h.c3charts_featured_charts(4) -%}
+                      {% snippet 'home/snippets/featured_chart_view.html', featured_chart=featured_chart %}
+                    {%- endfor -%}
+                  {% endblock %}
+                </div>
+                <div class="data tab-pane fade" id="locate">
+                  <!-- Map Section -->
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
