@@ -16,12 +16,14 @@
     {% if intro %}
       {{ h.render_markdown(intro) }}
     {% else %}
-      <p class="page-heading">{{ _("Open Data Portal") }}</p>
-      <p class="promoted-desc">
-        {% trans %}Quickly reintermediate integrated resources after premium sources.
-        Conveniently maintain corporate catalysts for change 
-        {% endtrans %}
-      </p>
+      {% if g.site_title %}
+        <p class="page-heading">{{ g.site_title }}</p>
+      {% endif %}
+      {% if g.site_description %}
+        <p class="promoted-desc">
+          {{ g.site_description }}
+        </p>
+      {% endif %}
     {% endif %}
   </header>
 </div>
