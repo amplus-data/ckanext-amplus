@@ -1,17 +1,22 @@
-a {
-    color: @text-dark;
-}
-
 .data {
     display: flex;
     flex-wrap: wrap;
-    > .visualize-card {
+    .visualize-card {
+        text-align: center;
         flex: 1 0 33.3%;
         padding: 20px;
-        margin: 0 20px 40px 20px;
+        margin: 20px;
         background: @white;
         box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
     }
+}
+
+.visualize-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
 }
 
 .tab-content > .active {
@@ -62,6 +67,7 @@ a {
         font-weight: 700;
         letter-spacing: 1.8px;
         color: @silver;
+        text-transform: uppercase;
     }
 }
 
