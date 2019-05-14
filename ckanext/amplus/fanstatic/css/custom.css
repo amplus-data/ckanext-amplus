@@ -1,25 +1,5 @@
 /* Please check https://docs.ckan.org/en/2.8/theming/ for the already existing stylesheets in CKAN core. */
 /* Add your custom LESS code here */
-.group-topics {
-  background: #EFECF4;
-  padding: 0 140px;
-}
-.group-topics .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-.group-topics .row > [class*='col-'] {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
 .hero {
   padding: 120px 0px;
   display: -webkit-box;
@@ -28,7 +8,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #EFECF4;
+  background: #FFFFFF;
 }
 .hero .hero-img {
   min-width: auto;
@@ -50,15 +30,23 @@
 }
 .hero .promoted-desc {
   font-size: 18px;
+  margin-bottom: 0;
 }
-.group-heading {
-  font-size: 40px;
-  text-align: center;
-  font-weight: 400;
-  padding: 40px 0 80px 0;
+.group-topics .group-heading {
+  margin-top: 60px;
 }
-.group-container {
-  padding: 100px 140px;
+.group-topics-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.group-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 calc(100%/4);
+          flex: 1 1 calc(100%/4);
+  margin: 10px;
 }
 .group-topics,
 .group-container {
@@ -161,7 +149,7 @@
   font-size: 40px;
   text-align: center;
   font-weight: 400;
-  padding: 40px 0 80px 0;
+  padding: 80px 40px 40px;
 }
 .group-container {
   background: #EFECF4;
@@ -237,6 +225,7 @@
 }
 body {
   font-family: 'Barlow', sans-serif;
+  background: #6033A7;
 }
 body .main,
 body [role=main] {
@@ -276,6 +265,11 @@ body .primary {
 }
 a {
   color: #6033A7;
+}
+a:hover,
+a:focus,
+a:active {
+  color: inherit;
 }
 .module-resource {
   -ms-flex-preferred-size: 100%;
@@ -327,7 +321,8 @@ a {
 .account-masthead .account ul .notifications > a span.badge {
   background-color: inherit;
 }
-.nav > li > a {
+.masthead .nav > li > a,
+.primary .nav > li > a {
   padding: 6px 12px;
 }
 .masthead {
@@ -416,8 +411,11 @@ a {
   margin-bottom: 0;
 }
 .toolbar .breadcrumb {
-  margin: 1rem 1.5rem;
+  margin: 1rem;
   font-size: inherit;
+}
+.toolbar .breadcrumb a {
+  color: #414141;
 }
 .toolbar .breadcrumb > *:not(:first-child):before {
   content: ">";
@@ -433,9 +431,6 @@ a {
 .toolbar .breadcrumb li .active {
   color: #6033A7;
   font-weight: 400;
-}
-.toolbar .breadcrumb a {
-  color: #414141;
 }
 .module-content .nav-tabs > li.active a {
   color: inherit;
