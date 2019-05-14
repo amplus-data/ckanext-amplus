@@ -11,17 +11,17 @@
       </div>
 
       <div class="group-topics">
-        <p class="group-heading">{{_("Explore Topics")}}</p>
         <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="row">
-                  {% block featured_group %}
-                    {% snippet 'home/snippets/custom_featured_group.html' %}
-                  {% endblock %}
-                </div> 
-              </div>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <p class="group-heading">{{_("Explore Topics")}}</p>
+                {% block featured_group %}
+                <div class="group-topics-list">
+                  {% snippet 'home/snippets/custom_featured_group.html' %}
+                </div>
+                {% endblock %}
             </div>
+          </div>
         </div>
       </div>
 
