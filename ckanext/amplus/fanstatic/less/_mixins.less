@@ -1,0 +1,23 @@
+.btn-primary-reset {
+  color: @white;
+  background-color: @brand-primary;
+  border-radius: 0;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.focus {
+    border-color: transparent;
+    background-color: @brand-dark;
+  }
+}
+
+.btn-default-reset {
+  color: inherit;
+  border: none;
+
+  &:hover {
+    border-color: transparent;
+    background-color: darken(@white, 3%);
+  }
+}

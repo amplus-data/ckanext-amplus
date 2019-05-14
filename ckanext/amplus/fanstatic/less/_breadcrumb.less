@@ -1,0 +1,35 @@
+// Add styles for active li and active a becouse in some cases there is not active class on li
+.toolbar {
+  padding: 0;
+  margin-bottom: 0;
+  .breadcrumb {
+    margin: 1rem 1.5rem;
+    font-size: inherit;
+
+    >*:not(:first-child) {
+      &:before {
+        content: ">";
+        color: @gray-medium;
+      }
+    }
+
+    li {
+      color: @gray-medium;
+
+      &.active {
+        >a {
+          color: @brand-primary;
+          font-weight: 400;
+        }
+      }
+
+      .active {
+        color: @brand-primary;
+        font-weight: 400;
+      }
+    }
+  }
+}
+.toolbar .breadcrumb a {
+  color: @gray-medium;
+}

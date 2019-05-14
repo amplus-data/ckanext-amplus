@@ -1,0 +1,77 @@
+.account-masthead {
+  background: @brand-primary;
+
+  .account {
+    ul {
+      li {
+        border-left: none;
+
+        >a {
+
+          &:hover,
+          &:active {
+            background: @brand-quaternary;
+          }
+        }
+      }
+
+      .notifications {
+        >a {
+          span.badge {
+            background-color: inherit;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  >li {
+    >a {
+      padding: 6px 12px;
+    }
+  }
+}
+
+.masthead {
+  background: @brand-primary;
+  padding: 0;
+
+  .navigation {
+    .nav-pills {
+      li {
+        &.active {
+          a {
+            background-color: @brand-quaternary;
+          }
+        }
+
+        a {
+          padding: 2.5rem 2rem;
+          border-radius: 0;
+          font-size: 18px;
+          // font-weight: 500;
+
+          &:hover,
+          &:focus {
+            background-color: @brand-quaternary;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-collapse {
+    padding: 0;
+  }
+
+  .logo {
+    max-width: 350px;
+    padding: 2rem 0 1rem 2.5rem;
+
+    >img {
+      max-width: 100%;
+    }
+  }
+}
