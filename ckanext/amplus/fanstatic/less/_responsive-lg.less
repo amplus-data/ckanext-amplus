@@ -9,71 +9,72 @@
 }
 
 @media (max-width: @breakpoint-lg) {
-  .attribution {
-    text-align: center;
-    padding: 0px 0px 30px 0px;
-  }
+    .attribution {
+        text-align: center;
+        padding:0px 0px 30px 0px;
+    }
+    .footer-links {
+        float: none;
+        text-align: center;
+    }
+    .homepage .group-container .data div {
+        flex: 1 0 100%;
+        margin: 0 0 40px 0;
+    }
+    .homepage .group-container .toggle-section div {
+        border: none;
+    }
 
-  .footer-links {
-    float: none;
-    text-align: center;
-  }
+    .footer-links {
+      float: none;
+      text-align: center;
+    }
 
-  .footer-links {
-    float: none;
-    text-align: center;
-  }
+    .masthead .navigation .nav-pills.nav {
+      >li {
+        a {
+          padding: 2.2rem .8rem;
+          font-size: 15px;
 
-  .masthead .navigation .nav-pills.nav {
-    >li {
-      a {
-        padding: 2.2rem .8rem;
-        font-size: 15px;
-
-        & img {
-          max-width: 18px;
-          max-height: 18px;
+          img {
+            max-width: 18px;
+            max-height: 18px;
+          }
         }
       }
     }
-  }
 
-  .masthead .logo {
-    max-width: 250px;
-  }
+    .masthead .logo {
+      max-width: 250px;
+    }
 
-  >.control-order-by {
-    padding-right: 0;
-  }
+    >.control-order-by {
+      padding-right: 0;
+    }
 
-  .search-input-group {
-    margin-bottom: 2rem;
-  }
+    .search-input-group {
+      margin-bottom: 2rem;
+    }
 
-  .primary {
-    .search-form {
-      >* {
-        min-width: 50%;
-        width: 50%;
-      }
+    .primary {
+      .search-form {
+        >* {
+          min-width: 50%;
+          width: 50%;
+        }
 
-      >*:first-child {
-        min-width: 100%;
-        width: 100%;
-        flex: 1 0 50%;
-      }
-
-      >h2 {
+        >*:first-child {
+          min-width: 100%;
+          width: 100%;
+          flex: 1 0 50%;
+        }
+        >h2{
         padding-left: 0;
-      }
 
-      >.control-order-by {
-        padding-right: 0;
+        >.control-order-by {
+          padding-right: 0;
+        }
       }
     }
-  }
-  .media-grid .media-item,
-  .resource-list .resource-item{
-    width: calc(100% - @gutter-small*2);
   }
 }
