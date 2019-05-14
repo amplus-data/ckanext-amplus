@@ -9,24 +9,13 @@
 {% endif %}
 {% block facet_list_item %}
 {% set title = title or h.get_facet_title(name) %}
-{% if title == "Tags" %}
-<section class="col-12 keyword-section {{ wrapper_class or 'module module-narrow module-shallow' }}">
-  {%else%}
-  <section class="col-12 {{ wrapper_class or 'module module-narrow module-shallow' }}">
-  {%endif%}
+<section class="{{ wrapper_class or 'module module-narrow module-shallow' }}">
   {% block facet_list_heading %}
   <h2 class="module-heading flex flex-align-center">
     <div class="flex flex-align-center flex-justify-center">
     <i class="fa fa-folder-open "></i>
   </div>
-    {% if title=="Tags" %}
-    {{ "Keywords" }}
-    {% elif title=="Organizations" %}
-    {{ "Name of the Organizations" }}
-    {% else %}
-    {{ title }}
-    {% endif %}
-   
+  {{ title }}
   </h2>
   {% endblock %}
   {% block facet_list_items %}
