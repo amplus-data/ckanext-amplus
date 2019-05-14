@@ -26,33 +26,32 @@
   }
 }
 
-.masthead .navigation .nav-pills.nav {
-  background: @brand-primary;
-
-  >li {
-    border-left: none;
-
-    &.active>a {
-      background-color: @brand-quaternary;
-    }
-
-    a {
-      padding: 2.5rem 2rem;
-      background-color: @brand-primary;
-      border-radius: 0;
-      font-size: 18px;
-      font-weight: 500;
-
-      &:hover {
-        background-color: @brand-quaternary;
-      }
-    }
-  }
-}
-
 .masthead {
   background: @brand-primary;
   padding: 0;
+
+  .navigation {
+    .nav-pills {
+      li {
+        &.active {
+          a {
+            background-color: @brand-quaternary;
+          }
+        }
+
+        a {
+          padding: 2.5rem 2rem;
+          border-radius: 0;
+          font-size: 18px;
+          font-weight: 500;
+
+          &:hover {
+            background-color: @brand-quaternary;
+          }
+        }
+      }
+    }
+  }
 
   .navbar-collapse {
     padding: 0;
