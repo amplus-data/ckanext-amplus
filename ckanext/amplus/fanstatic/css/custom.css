@@ -1,5 +1,25 @@
 /* Please check https://docs.ckan.org/en/2.8/theming/ for the already existing stylesheets in CKAN core. */
 /* Add your custom LESS code here */
+.group-topics {
+  background: #EFECF4;
+  padding: 0 140px;
+}
+.group-topics .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.group-topics .row > [class*='col-'] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 .hero {
   padding: 120px 0px;
   display: -webkit-box;
@@ -31,13 +51,6 @@
 .hero .promoted-desc {
   font-size: 18px;
 }
-body {
-  font-family: 'Barlow';
-  color: #414141;
-}
-a {
-  color: #414141;
-}
 .group-heading {
   font-size: 40px;
   text-align: center;
@@ -45,18 +58,24 @@ a {
   padding: 40px 0 80px 0;
 }
 .group-container {
-  background: #EFECF4;
   padding: 100px 140px;
 }
+.group-topics,
+.group-container {
+  background: #EFECF4;
+}
+.group-topics .module-heading,
 .group-container .module-heading {
-  height: 180px;
-  margin-bottom: 25px;
+  height: 100%;
+  margin: 12px 0px;
   -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
 }
+.group-topics .module-heading .module-image,
 .group-container .module-heading .module-image {
   padding: 10px 0 0 10px;
 }
+.group-topics .module-heading .group-icon,
 .group-container .module-heading .group-icon {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -72,19 +91,23 @@ a {
   background-color: #CFBEDC;
   border-radius: 50%;
 }
+.group-topics .module-heading .group-icon i,
 .group-container .module-heading .group-icon i {
   font-size: 25px;
   color: #6033A7;
   padding: 4px 0 0 6px;
 }
+.group-topics .module-heading .media-heading,
 .group-container .module-heading .media-heading,
+.group-topics .module-heading .group-item-desc,
 .group-container .module-heading .group-item-desc {
-  width: 220px;
   margin-left: 85px;
 }
+.group-topics .module-heading .group-item-desc,
 .group-container .module-heading .group-item-desc {
   font-size: 18px;
 }
+.group-topics .module-heading .media-heading,
 .group-container .module-heading .media-heading {
   margin-top: 20px;
   font-size: 25px;
@@ -831,9 +854,6 @@ a {
   .homepage .insights {
     padding: 100px 50px;
   }
-  .homepage .insights {
-    padding: 100px 50px;
-  }
   .navbar-toggle {
     margin-right: 15px;
   }
@@ -844,5 +864,8 @@ a {
   }
   .masthead .navigation .nav-pills.nav > li a {
     padding: 2.2rem 2.5rem;
+  }
+  .homepage .group-topics {
+    padding: 100px 10px;
   }
 }
