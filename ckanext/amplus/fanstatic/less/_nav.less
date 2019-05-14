@@ -37,6 +37,29 @@
   }
 }
 
+.nav-item,
+.nav-aside li {
+  &.active {
+    >a {
+      color: inherit;
+      background-color: @brand-extra-light;
+
+      &:hover {
+        color: inherit;
+        background-color: darken(@brand-extra-light, 10%);
+
+        &:before {
+          border-left-color: darken(@brand-extra-light, 10%);
+        }
+      }
+
+      &:before {
+        border-left-color: @brand-extra-light;
+      }
+    }
+  }
+}
+
 .masthead {
   background: @brand-primary;
   padding: 0;
