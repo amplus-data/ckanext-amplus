@@ -1,5 +1,5 @@
 {% ckan_extends %}
-{{ super() }}
+
 {% block resource_item_title %}
 <a class="resource-item-list" href="{{ url }}" title="{{ res.name or res.description }}">
   <div class="resource-img">
@@ -13,7 +13,7 @@
     <span class="custom-label" property="dc:format"
       data-format="{{ res.format.lower() or 'data' }}">{{ h.get_translated(res, 'format') }}</span>
   </div>
-  <div class="resource-content" style="display: inline-block">
+  <div class="resource-content">
     <h3 class=resource-title>
       {{ h.resource_display_name(res) | truncate(50) }}
     </h3>
@@ -23,8 +23,8 @@
       {% endif %}
     </p>
   </div>
-  {{ super() }}
+</a>
   {% endblock %}
-
+  {{ super() }}
   {% block resource_item_description %}
   {% endblock %}
