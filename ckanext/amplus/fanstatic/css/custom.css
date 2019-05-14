@@ -569,14 +569,14 @@ a {
 .nav-facet .nav-item {
   border-bottom: none;
 }
-.nav-simple .nav-item.active a,
-.nav-facet .nav-item.active a {
+.nav-simple .nav-item .active a,
+.nav-facet .nav-item .active a {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #EBD3E6;
 }
-.nav-simple .nav-item.active a:after,
-.nav-facet .nav-item.active a:after {
+.nav-simple .nav-item .active a:after,
+.nav-facet .nav-item .active a:after {
   background-size: contain;
   background-position: center;
   width: 10px;
