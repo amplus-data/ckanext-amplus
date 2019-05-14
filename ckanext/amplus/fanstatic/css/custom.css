@@ -1,5 +1,42 @@
 /* Please check https://docs.ckan.org/en/2.8/theming/ for the already existing stylesheets in CKAN core. */
 /* Add your custom LESS code here */
+.btn-primary-reset {
+  color: #FFFFFF;
+  background-color: #6033A7;
+  border-radius: 0;
+}
+.btn-primary-reset:hover,
+.btn-primary-reset:focus,
+.btn-primary-reset:active,
+.btn-primary-reset.focus {
+  border-color: transparent;
+  background-color: #4f2b8a;
+}
+.btn-default-reset {
+  color: inherit;
+  border: none;
+}
+.btn-default-reset:hover {
+  border-color: transparent;
+  background-color: #f7f7f7;
+}
+.hover-box {
+  border-radius: 0;
+  -webkit-box-shadow: 0 0 10px 0 rgba(96, 51, 167, 0.3);
+          box-shadow: 0 0 10px 0 rgba(96, 51, 167, 0.3);
+}
+.content-margin-fix {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+.content-item-layout {
+  width: calc(50% - 3rem);
+  margin: 1.5rem;
+  padding: 4rem;
+  border-radius: 0;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
 .hero {
   padding: 120px 0px;
   display: -webkit-box;
@@ -50,7 +87,7 @@
 }
 .group-topics,
 .group-container {
-  background: #EFECF4;
+  background: #efecf4;
 }
 .group-topics .module-heading,
 .group-container .module-heading {
@@ -152,7 +189,7 @@
   padding: 80px 40px 40px;
 }
 .group-container {
-  background: #EFECF4;
+  background: #efecf4;
   padding: 100px 140px;
 }
 .group-container .toggle-section {
@@ -200,7 +237,7 @@
   -webkit-box-flex: 1;
       -ms-flex: 1 0 33.3%;
           flex: 1 0 33.3%;
-  padding: 20px;
+  padding: 3rem;
   margin: 20px;
   background: #FFFFFF;
   -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
@@ -229,7 +266,7 @@ body {
 }
 body .main,
 body [role=main] {
-  background: #EFECF4;
+  background: #efecf4;
 }
 body .main .secondary,
 body [role=main] .secondary {
@@ -251,7 +288,7 @@ body .primary {
   background-color: #FFFFFF;
 }
 .secondary .module-heading {
-  background: #EFECF4;
+  background: #efecf4;
 }
 .form-control {
   border-radius: 0;
@@ -279,25 +316,11 @@ a:active {
   background-color: inherit;
   border-bottom: none;
 }
-.btn-primary-reset {
-  color: #FFFFFF;
-  background-color: #6033A7;
+.modal-content {
   border-radius: 0;
 }
-.btn-primary-reset:hover,
-.btn-primary-reset:focus,
-.btn-primary-reset:active,
-.btn-primary-reset.focus {
-  border-color: transparent;
-  background-color: #4f2b8a;
-}
-.btn-default-reset {
-  color: inherit;
-  border: none;
-}
-.btn-default-reset:hover {
-  border-color: transparent;
-  background-color: #f7f7f7;
+.item-count {
+  margin: auto 5px;
 }
 .header-secondary {
   font-size: 24px;
@@ -324,6 +347,24 @@ a:active {
 .masthead .nav > li > a,
 .primary .nav > li > a {
   padding: 6px 12px;
+}
+.nav-item.active > a,
+.nav-aside li.active > a {
+  color: inherit;
+  background-color: #EBD3E6;
+}
+.nav-item.active > a:hover,
+.nav-aside li.active > a:hover {
+  color: inherit;
+  background-color: #dbb0d2;
+}
+.nav-item.active > a:hover:before,
+.nav-aside li.active > a:hover:before {
+  border-left-color: #dbb0d2;
+}
+.nav-item.active > a:before,
+.nav-aside li.active > a:before {
+  border-left-color: #EBD3E6;
 }
 .masthead {
   background: #6033A7;
@@ -433,45 +474,34 @@ a:active {
   font-weight: 400;
 }
 .module-content .nav-tabs > li.active a {
-  color: inherit;
   border: none;
-}
-.module-content .nav-tabs > li.active a:hover {
-  border-color: transparent;
-  background-color: #f7f7f7;
-}
-.module-content .nav-tabs > li a {
   color: #FFFFFF;
   background-color: #6033A7;
   border-radius: 0;
 }
-.module-content .nav-tabs > li a:hover,
-.module-content .nav-tabs > li a:focus,
-.module-content .nav-tabs > li a:active,
-.module-content .nav-tabs > li a.focus {
+.module-content .nav-tabs > li.active a:hover,
+.module-content .nav-tabs > li.active a:focus,
+.module-content .nav-tabs > li.active a:active,
+.module-content .nav-tabs > li.active a.focus {
   border-color: transparent;
   background-color: #4f2b8a;
 }
-.module-content .nav-tabs.nav-tabs-plain,
-.module-content .nav-tabs {
+.module-content .nav-tabs > li a {
+  color: inherit;
   border: none;
-}
-.module-content .nav-tabs.nav-tabs-plain > li,
-.module-content .nav-tabs > li {
-  margin-right: 1rem;
-}
-.module-content .nav-tabs.nav-tabs-plain > li .badge,
-.module-content .nav-tabs > li .badge {
-  background-color: #6033A7;
-}
-.module-content > .actions > .btn,
-.module-content > .content_action > .btn {
-  color: #000000;
   background-color: #FFFFFF;
 }
-.module-content > .actions > .btn:hover,
-.module-content > .content_action > .btn:hover {
+.module-content .nav-tabs > li a:hover {
+  border-color: transparent;
   background-color: #f7f7f7;
+}
+.module-content .nav-tabs,
+.module-content .nav-tabs.nav-tabs-plain {
+  border: none;
+}
+.module-content .nav-tabs > li,
+.module-content .nav-tabs.nav-tabs-plain > li {
+  margin-right: 1rem;
 }
 .module-content > .actions > .btn-danger,
 .module-content > .content_action > .btn-danger {
@@ -481,6 +511,137 @@ a:active {
 .module-content > .actions > .btn-danger:hover,
 .module-content > .content_action > .btn-danger:hover {
   background-color: #b50a57;
+}
+.module-content .media-grid {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  background: transparent;
+  border: none;
+}
+.media-view:hover {
+  border-radius: 0;
+  -webkit-box-shadow: 0 0 10px 0 rgba(96, 51, 167, 0.3);
+          box-shadow: 0 0 10px 0 rgba(96, 51, 167, 0.3);
+}
+.media-item {
+  width: calc(50% - 3rem);
+  margin: 1.5rem;
+  padding: 4rem;
+  border-radius: 0;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+.media-item:hover .media-heading {
+  color: #9F1A86;
+}
+.media-item .media-heading {
+  font-size: 21px;
+  font-weight: 600;
+}
+.media-item .media-image {
+  float: left;
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+.resource-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+.resource-list .resource-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(50% - 3rem);
+  margin: 1.5rem;
+  padding: 4rem;
+  border-radius: 0;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  background: #FFFFFF;
+}
+.resource-list .resource-item .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.resource-list .resource-item .description {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+}
+.resource-list .resource-item:hover {
+  border-radius: 0;
+  -webkit-box-shadow: 0 0 10px 0 rgba(96, 51, 167, 0.3);
+          box-shadow: 0 0 10px 0 rgba(96, 51, 167, 0.3);
+}
+.resource-list .resource-item:hover .resource-title {
+  color: #9F1A86;
+}
+.resource-list .resource-item > a {
+  color: #414141;
+  text-decoration: none;
+}
+.resource-list .resource-item .btn-group {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.resource-list .resource-item .resource-item-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.resource-list .resource-item .format-label {
+  position: inherit;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+  margin-right: 1.5rem;
+}
+.resource-list .validation-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: 3rem;
+}
+.resource-content {
+  padding: 2rem 2rem;
+}
+.resource-title {
+  margin-top: 0;
+}
+.dropdown-backdrop {
+  position: relative;
+}
+.resource-img {
+  position: relative;
+  height: 50px;
+}
+.custom-label {
+  position: absolute;
+  color: #FFFFFF;
+  left: 0;
+  bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 75%;
 }
 @font-face {
   font-family: "Barlow";
@@ -587,7 +748,7 @@ a:active {
 .filtered.pill {
   border-radius: 0;
   padding: 0.4rem 0.8rem;
-  background-color: #E6E6E6;
+  background-color: #EBD3E6;
   color: #414141;
   margin: 0.5rem 0.2rem;
 }
@@ -837,6 +998,10 @@ a:active {
   }
   .primary .search-form > h2 > .control-order-by {
     padding-right: 0;
+  }
+  .media-grid .media-item,
+  .resource-list .resource-item {
+    width: calc(100% - 1rem*2);
   }
 }
 @media only screen and (max-width: 990px) {
