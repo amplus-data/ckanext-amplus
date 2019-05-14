@@ -1,8 +1,5 @@
 /* Please check https://docs.ckan.org/en/2.8/theming/ for the already existing stylesheets in CKAN core. */
 /* Add your custom LESS code here */
-a {
-  color: #414141;
-}
 .data {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10,15 +7,32 @@ a {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.data > .visualize-card {
+.data .visualize-card {
+  text-align: center;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 33.3%;
           flex: 1 0 33.3%;
   padding: 20px;
-  margin: 0 20px 40px 20px;
+  margin: 20px;
   background: #FFFFFF;
   -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+.visualize-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: auto;
 }
 .tab-content > .active {
   display: -webkit-box;
@@ -67,25 +81,26 @@ a {
   font-weight: 700;
   letter-spacing: 1.8px;
   color: #9E9E9E;
+  text-transform: uppercase;
 }
 .js .tab-content {
   display: block;
 }
-.dataset-list {
+.primary .dataset-list,
+.tab-content .dataset-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
-  text-align: left;
 }
 .dataset-list > .dataset-item {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 33.3%;
           flex: 1 0 33.3%;
   padding: 20px;
-  margin: 0 20px 40px 20px;
+  margin: 20px;
   background: #FFFFFF;
   -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
@@ -131,7 +146,7 @@ body .primary {
 }
 .secondary,
 .secondary .module-content {
-  background-color: #fff;
+  background-color: #FFFFFF;
 }
 .secondary .module-heading {
   background: #EFECF4;
@@ -141,29 +156,41 @@ body .primary {
   border: none;
   outline: none;
 }
-.btn {
-  border-radius: 0;
-  border: none;
-  outline: none;
-}
 .input-group-addon {
   border: none;
   border-radius: 0;
-  background-color: #fff;
+  background-color: #FFFFFF;
 }
 a {
   color: #6033A7;
 }
+.module-resource {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+.page-header {
+  background-color: inherit;
+  border-bottom: none;
+}
 .btn-primary-reset {
+  color: #FFFFFF;
   background-color: #6033A7;
   border-radius: 0;
 }
 .btn-primary-reset:hover,
-.btn-primary-reset:active,
 .btn-primary-reset:focus,
-.btn-primary-reset:active:hover,
+.btn-primary-reset:active,
 .btn-primary-reset.focus {
+  border-color: transparent;
   background-color: #4f2b8a;
+}
+.btn-default-reset {
+  color: inherit;
+  border: none;
+}
+.btn-default-reset:hover {
+  border-color: transparent;
+  background-color: #f7f7f7;
 }
 .header-secondary {
   font-size: 24px;
@@ -187,31 +214,27 @@ a {
 .account-masthead .account ul .notifications > a span.badge {
   background-color: inherit;
 }
+.nav > li > a {
+  padding: 6px 12px;
+}
 .masthead {
   background: #6033A7;
   padding: 0;
 }
-.masthead .navbar-collapse {
-  padding: 0;
-}
-.masthead .navigation .nav-pills.nav {
-  background: #6033A7;
-}
-.masthead .navigation .nav-pills.nav > li {
-  border-left: none;
-}
-.masthead .navigation .nav-pills.nav > li.active > a {
+.masthead .navigation .nav-pills li.active a {
   background-color: #7A64A6;
 }
-.masthead .navigation .nav-pills.nav > li a {
+.masthead .navigation .nav-pills li a {
   padding: 2.5rem 2rem;
-  background-color: #6033A7;
   border-radius: 0;
   font-size: 18px;
-  font-weight: 500;
 }
-.masthead .navigation .nav-pills.nav > li a:hover {
+.masthead .navigation .nav-pills li a:hover,
+.masthead .navigation .nav-pills li a:focus {
   background-color: #7A64A6;
+}
+.masthead .navbar-collapse {
+  padding: 0;
 }
 .masthead .logo {
   max-width: 350px;
@@ -301,9 +324,25 @@ a {
 .toolbar .breadcrumb a {
   color: #414141;
 }
-.page-header {
-  background-color: inherit;
-  border-bottom: none;
+.module-content .nav-tabs > li.active a {
+  color: inherit;
+  border: none;
+}
+.module-content .nav-tabs > li.active a:hover {
+  border-color: transparent;
+  background-color: #f7f7f7;
+}
+.module-content .nav-tabs > li a {
+  color: #FFFFFF;
+  background-color: #6033A7;
+  border-radius: 0;
+}
+.module-content .nav-tabs > li a:hover,
+.module-content .nav-tabs > li a:focus,
+.module-content .nav-tabs > li a:active,
+.module-content .nav-tabs > li a.focus {
+  border-color: transparent;
+  background-color: #4f2b8a;
 }
 .module-content .nav-tabs.nav-tabs-plain,
 .module-content .nav-tabs {
@@ -313,53 +352,14 @@ a {
 .module-content .nav-tabs > li {
   margin-right: 1rem;
 }
-.module-content .nav-tabs.nav-tabs-plain > li.active,
-.module-content .nav-tabs > li.active {
-  background: #fff;
-}
-.module-content .nav-tabs.nav-tabs-plain > li.active > a,
-.module-content .nav-tabs > li.active > a {
-  color: #6033A7;
-  border: none;
-  background: #fff;
-  font-weight: 700;
-}
-.module-content .nav-tabs.nav-tabs-plain > li.active > a:hover,
-.module-content .nav-tabs > li.active > a:hover {
-  color: #fff;
-  background-color: #7A64A6;
-}
-.module-content .nav-tabs.nav-tabs-plain > li > a,
-.module-content .nav-tabs > li > a {
-  background-color: #6033A7;
-  color: #fff;
-  border-radius: 0;
-  font-weight: 700;
-}
-.module-content .nav-tabs.nav-tabs-plain > li > a:hover,
-.module-content .nav-tabs > li > a:hover {
-  background-color: #4f2b8a;
-}
-.module-content .nav-tabs.nav-tabs-plain > li > a:hover .badge,
-.module-content .nav-tabs > li > a:hover .badge {
-  background-color: #4f2b8a;
-}
 .module-content .nav-tabs.nav-tabs-plain > li .badge,
 .module-content .nav-tabs > li .badge {
   background-color: #6033A7;
 }
-.module-content > a {
-  background-color: #6033A7;
-  color: #fff;
-  border-radius: 0;
-}
-.module-content > a:hover {
-  background-color: #4f2b8a;
-}
 .module-content > .actions > .btn,
 .module-content > .content_action > .btn {
-  color: #000;
-  background-color: #fff;
+  color: #000000;
+  background-color: #FFFFFF;
 }
 .module-content > .actions > .btn:hover,
 .module-content > .content_action > .btn:hover {
@@ -367,7 +367,7 @@ a {
 }
 .module-content > .actions > .btn-danger,
 .module-content > .content_action > .btn-danger {
-  color: #fff;
+  color: #FFFFFF;
   background-color: #DE0064;
 }
 .module-content > .actions > .btn-danger:hover,
@@ -422,26 +422,34 @@ a {
   font-weight: 700;
   src: url("../fonts/barlow-latin-700italic.woff2") format("woff2"), url("../fonts/barlow-latin-700italic.woff") format("woff");
 }
+.btn {
+  border-radius: 0;
+  border: none;
+  outline: none;
+  font-weight: inherit;
+}
 .btn-primary {
+  color: #FFFFFF;
   background-color: #6033A7;
   border-radius: 0;
 }
 .btn-primary:hover,
-.btn-primary:active,
 .btn-primary:focus,
-.btn-primary:active:hover,
+.btn-primary:active,
 .btn-primary.focus {
+  border-color: transparent;
   background-color: #4f2b8a;
 }
 .open > .dropdown-toggle.btn-primary {
+  color: #FFFFFF;
   background-color: #6033A7;
   border-radius: 0;
 }
 .open > .dropdown-toggle.btn-primary:hover,
-.open > .dropdown-toggle.btn-primary:active,
 .open > .dropdown-toggle.btn-primary:focus,
-.open > .dropdown-toggle.btn-primary:active:hover,
+.open > .dropdown-toggle.btn-primary:active,
 .open > .dropdown-toggle.btn-primary.focus {
+  border-color: transparent;
   background-color: #4f2b8a;
 }
 .btn-search {
@@ -458,9 +466,11 @@ a {
   outline: none;
 }
 .btn-default {
+  color: inherit;
   border: none;
 }
 .btn-default:hover {
+  border-color: transparent;
   background-color: #f7f7f7;
 }
 .facet {
@@ -534,7 +544,7 @@ a {
   position: absolute;
   right: 16px;
   border-style: solid;
-  background: #fff;
+  background: #FFFFFF;
   border-color: transparent #414141;
   pointer-events: none;
   -webkit-transform: rotate(90deg);
@@ -593,10 +603,6 @@ a {
   color: #9E9E9E;
   font-size: 16px;
   font-weight: 600;
-}
-body {
-  background: white;
-  color: #414141;
 }
 .homepage .blogs {
   background: #FFFFFF;
