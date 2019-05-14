@@ -1,30 +1,37 @@
-.module-content .media-grid {
-  .content-margin-fix;
-  background: transparent;
-  border: none;
-}
-.media-view {
-  &:hover {
-    .hover-box();
+.module-content {
+  .media-grid {
+    .content-margin-fix;
+    background: transparent;
+    border: none;
   }
 }
+
+.media-view {
+  &:hover {
+    .hover-box;
+  }
+}
+
 .media-item {
   .content-item-layout;
+
   &:hover {
     .media-heading {
       color: @brand-secondary;
     }
   }
+
   .media-heading {
     font-size: 21px;
     font-weight: 600;
   }
+
   .media-image {
     float: left;
     width: 100px;
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
-    margin: @gutter-list-item-small @gutter-list-item-small @gutter-list-item-small 0;
+    margin-right: @gutter-list-item-small;
   }
 }

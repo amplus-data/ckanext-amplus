@@ -4,6 +4,7 @@
       &.active {
         a {
           .btn-default-reset;
+          background-color: inherit;
         }
       }
 
@@ -13,15 +14,13 @@
     }
   }
 
-  .nav-tabs.nav-tabs-plain,
   .nav-tabs {
-    border: none;
+    &,
+    &.nav-tabs-plain {
+      border: none;
 
-    >li {
-      margin-right: 1rem;
-
-      .badge {
-        background-color: @brand-primary;
+      >li {
+        margin-right: 1rem;
       }
     }
   }
@@ -31,15 +30,6 @@
 
   >.actions,
   >.content_action {
-    >.btn {
-      color: @black;
-      background-color: @white;
-
-      &:hover {
-        background-color: darken(@white, 3%);
-
-      }
-    }
 
     >.btn-danger {
       color: @white;
