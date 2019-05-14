@@ -1,5 +1,6 @@
 body {
   font-family: 'Barlow', sans-serif;
+  background: @brand-primary;
 
   .main,
   & [role=main] {
@@ -53,6 +54,12 @@ body {
 
 a {
   color: @brand-primary;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: inherit;
+  }
 }
 
 .module-resource {
@@ -62,4 +69,12 @@ a {
 .page-header {
   background-color: inherit;
   border-bottom: none;
+}
+
+.modal-content {
+  border-radius: 0;
+}
+
+.item-count{
+  margin: auto 5px;
 }

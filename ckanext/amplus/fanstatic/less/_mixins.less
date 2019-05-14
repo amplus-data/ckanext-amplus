@@ -21,3 +21,21 @@
     background-color: darken(@white, 3%);
   }
 }
+
+.hover-box {
+  border-radius: 0;
+  box-shadow: 0 0 10px 0 fade(@brand-primary, 30%);
+}
+
+.content-margin-fix {
+  margin-left: -@gutter-medium;
+  margin-right: -@gutter-medium;
+}
+
+.content-item-layout {
+  width: calc(50% - @gutter-large );
+  margin: @gutter-medium;
+  padding: @gutter-list-item-medium;
+  border-radius: 0;
+  box-shadow: @shadow-light;
+}

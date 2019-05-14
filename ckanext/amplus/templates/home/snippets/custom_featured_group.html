@@ -1,0 +1,5 @@
+{% set groups = h.get_featured_groups(10) %}
+
+{% for group in groups %}
+    {% snippet 'snippets/custom_group_item.html', group=group, truncate=50, truncate_title=35 %}
+{% endfor %}

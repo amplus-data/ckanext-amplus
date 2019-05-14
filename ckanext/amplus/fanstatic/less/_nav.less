@@ -26,10 +26,36 @@
   }
 }
 
-.nav {
-  >li {
+.masthead,
+.primary {
+  .nav {
+    >li {
+      >a {
+        padding: 6px 12px;
+      }
+    }
+  }
+}
+
+.nav-item,
+.nav-aside li {
+  &.active {
     >a {
-      padding: 6px 12px;
+      color: inherit;
+      background-color: @brand-extra-light;
+
+      &:hover {
+        color: inherit;
+        background-color: darken(@brand-extra-light, 10%);
+
+        &:before {
+          border-left-color: darken(@brand-extra-light, 10%);
+        }
+      }
+
+      &:before {
+        border-left-color: @brand-extra-light;
+      }
     }
   }
 }

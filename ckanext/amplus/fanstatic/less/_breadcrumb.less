@@ -2,9 +2,14 @@
 .toolbar {
   padding: 0;
   margin-bottom: 0;
+
   .breadcrumb {
-    margin: 1rem 1.5rem;
+    margin: 1rem;
     font-size: inherit;
+
+    a {
+      color: @gray-medium;
+    }
 
     >*:not(:first-child) {
       &:before {
@@ -29,7 +34,4 @@
       }
     }
   }
-}
-.toolbar .breadcrumb a {
-  color: @gray-medium;
 }
