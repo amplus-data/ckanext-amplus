@@ -4,14 +4,10 @@
       {% block footer_attribution %}
         <ul class="list-unstyled">
           {% block footer_links %}
-          <a class="logo" href="{{ h.url_for('home.index') }}"><img class="dada" src="{{ h.url_for_static('/base/images/Amplus-OpenDataPortal-logo.png') }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
-          <p class="text-description py-20">
-            {% trans %} Globally productize client-based e-markets for mission-critical results.
-            Efficiently communicate performance based networks with collaborative vortals.
-            Distinctively myocardinate an expanded array of methodologies for best-of-breed web services.
-            Objectively leverage other's efficient.
-            {% endtrans %}
-          </p>
+          <a class="logo" href="{{ h.url_for('home.index') }}"><img class="img-fluid" src="{{ h.url_for_static('/base/images/Amplus-OpenDataPortal-logo.png') }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
+            {% if g.site_about %}
+              <p class="text-description py-20">{{ h.render_markdown(g.site_about) }}</p>
+            {% endif %}
           {% endblock %}
         </ul>
       {% endblock %}
@@ -20,27 +16,26 @@
       {% block footer_nav %}
       <div class="col-sm-4 col-xs-12 col-md-4 col-lg-2 mb-md-0 mb-3">
         {% block header_site_navigation_tabs %}
-          <p class="footer-nav-title">{{ _('Navigation')}}</p>
+          <h5 class="footer-nav-title">{{ _('Navigation')}}</h5>
           <ul class="list-unstyled footer-nav">
             {{ h.build_nav_main( ('search', _('Datasets')), ('organizations_index', _('Organizations')),
                 ('group_index', _('Groups')), ('home.about', _('About')) ) }}
           </ul>
       </div>
         <div class="col-sm-4 col-xs-12 col-md-4 col-lg-2 mb-md-0 mb-3">
-          <ul class="list-unstyled footer-nav">
-            {# Finalise implementation #}
-            {{ h.build_nav_main( ('home.index', _('News')), ('home.index', _('Our Blog')),
-            ('home.index', _('Link')), ('home.index', _('Link')) ) }}
-          </ul>
+          {% if g.footer_links %}
+            {{ h.render_markdown(g.footer_links) }}
+          {% else %}
+            {{ _('Please add your additional links in the Sysadmin settings.') }}
+          {% endif %}
         </div>
         <div class="col-sm-4 col-xs-12 col-md-4 col-lg-2 mb-md-0 mb-3">
-          <p class="footer-nav-title">{{ _('Follow Us') }} </p>
-          <ul class="list-unstyled footer-nav">
-            <li><a href="https://www.linkedin.com/company/amplusdata/" target="_blank">{{ _('LinkedIn') }}</a></li>
-            <li><a href="https://github.com/amplus-data/" target="_blank">{{ _('GitHub') }}</a></li>
-            <li><a href="https://twitter.com/AmplusData/" target="_blank">{{ _('Twitter') }}</a></li>
-            <li><a href="https://www.facebook.com/AmplusData/" target="_blank">{{ _('Facebook') }}</a></li>
-          </ul>
+          <h5 class="footer-nav-title">{{ _('Follow Us') }} </h5>
+          {% if g.social_media_links %}
+            {{ h.render_markdown(g.social_media_links) }}
+          {% else %}
+            {{ _('Please add your social media links in the Sysadmin settings.') }}
+          {% endif %}
         </div>
         {% endblock %}
       {% endblock %}
