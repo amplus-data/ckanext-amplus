@@ -1,34 +1,7 @@
 {% ckan_extends %}
 
-{{ super() }}
 {% block primary_content %}
-<section class="module">
-  <div class="module-content">
-    <div class="group-topics-list">
-      {% snippet 'home/snippets/custom_featured_group.html' %}
-    </div>
-    {% block page_primary_action %}
-    {{ super() }}
-    {% endblock %}
-
-    {% block form %}
-    {{ super() }}
-    {% endblock %}
-
-    {% block package_search_results_list %}
-    {{ h.snippet('snippets/package_list.html', packages=c.page.items) }}
-    {% endblock %}
-
-  </div>
-
-  {% block page_pagination %}
-  {{ c.page.pager(q=c.q) }}
-  {% endblock %}
-
-</section>
-
-{% block package_search_results_api %}
-{{ super() }}
+  {% snippet 'home/snippets/featured_groups.html', items=4 %}
+  {{ super() }}
 {% endblock %}
 
-{% endblock %}
