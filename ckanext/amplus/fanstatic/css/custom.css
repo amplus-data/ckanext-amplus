@@ -72,6 +72,10 @@
 .group-topics .group-heading {
   margin-top: 60px;
 }
+.group-container .empty {
+  margin: auto;
+  font-size: 20px;
+}
 .group-topics-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -83,7 +87,7 @@
   -webkit-box-flex: 1;
       -ms-flex: 1 1 calc(100%/4);
           flex: 1 1 calc(100%/4);
-  margin: 10px;
+  margin: 1.5rem;
 }
 .group-topics,
 .group-container {
@@ -231,14 +235,15 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 100%;
+  min-width: 100%;
+  margin: auto -1.5rem;
 }
 .dataset-list > .dataset-item {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 33.3%;
           flex: 1 0 33.3%;
   padding: 3rem;
-  margin: 20px;
+  margin: 1rem 1.5rem;
   background: #FFFFFF;
   -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
@@ -580,6 +585,12 @@ a:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.resource-list .resource-item .display-name {
+  margin: auto 1.5rem;
 }
 .resource-list .resource-item .description {
   -webkit-box-flex: 0;
@@ -613,7 +624,6 @@ a:active {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
-  margin-right: 1.5rem;
 }
 .resource-list .validation-badge {
   position: absolute;
