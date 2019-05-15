@@ -4,100 +4,63 @@
   border: none;
   font-size: 18px;
   font-weight: 600;
-  padding: 7px 15px;
+  padding: 1.2rem 1rem;
   margin-bottom: 1rem;
-  > div {
-    margin-right: .5rem;
-    padding: .9rem;
-    border-radius: 50%;
-    background-color: #CDC4DD;
-    & .fa{
-      &:last-child{
-        margin-right: 0;
-      }
-      color: @brand-primary;
-      transform: translateX(1px)
-    }
-  }
-}
-.nav-simple,
-.nav-facet{
-  padding: 1rem 0;
-  .nav-item  {
-    border-bottom: none;
-    .active a{
-      .nav-item-hover-active;
-      &:after {
-        .nav-item-after;
-      }
-    }
-     a {
-      padding: .3rem 2rem;
-      color: @gray-medium;
-      &:before{
-        display: none;
-      }
-      &:hover,
-      &:active,
-      &:focus {
-        .nav-item-hover-active;
-        &:after {
-          .nav-item-after;
-        }
-      }
-    }
-  }
-} 
-.keyword-list {
-  padding: .5rem 0 0 1rem;
-  list-style: none;
-  li {
-    font-size: 12px;
-    font-weight: 500;
-    padding: .4rem .8rem;
-    background-color: @gray-extra-light;
-    margin: .4rem;
-    a{
-      color: @gray-medium; 
-    }
-  }
-}
-.content-side-box {
-  padding: @gutter-large;
-}
-.module-footer{
-  border-top: none;
-   i{
-    font-size: 10px;
-    color: @brand-primary;
-  }
-}
-.tags {
-  >ul {
-   outline:none;
-    background-color: inherit;
-    border: none;
-    li {
-      margin-right: 0;
-    }
-    .tag {
-      border-radius: 0;
-      border: none;
-      color: @gray-medium;
-      font-size: 12px;
-      padding: .4rem;
-      background-color: @gray-extra-light;
-      margin: .5rem .2rem;
-      &:hover{
-        border-top: @brand-primary;
-      }
-    }
-  }
-}
-.license{
-  .module-content{
-    background-color:@white;
-    padding-left: 0px;
+
+  i {
+    padding: .5rem;
   }
 }
 
+.side-heading,
+.license .module-heading{
+  background-color: transparent;
+  color: @brand-primary;
+  font-size: 18px;
+  font-weight: 600;
+  padding: .7rem 0;
+  margin: 0;
+  >i{
+    display: none;
+  }
+}
+.license {
+  .module-content {
+    padding-left: 0px;
+  }
+}
+.keyword-list {
+  padding: 1rem 0 0 0;
+  list-style: none;
+
+  li {
+    .tag-list-item;
+
+    a {
+      color: inherit;
+    }
+  }
+}
+
+.nav-simple {
+  >li {
+    border-bottom: none;
+  }
+}
+
+.tags {
+  >ul {
+    outline: none;
+    background-color: inherit;
+    border: none;
+    padding-left: 0;
+
+    .tag {
+      .tag-list-item;
+    }
+  }
+}
+
+.module-footer {
+  border-top: none;
+}
