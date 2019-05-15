@@ -1,0 +1,9 @@
+{% ckan_extends %}
+
+{% block resource_item_title %}
+<a class="heading" href="{{ url }}" title="{{ res.name or res.description }}">
+    <span class="display-name">{{ h.resource_display_name(res) | truncate(50) }}</span>
+    <span class="format-label" property="dc:format" data-format="{{ res.format.lower() or 'data' }}">{{ h.get_translated(res, 'format') }}</span>
+    <span class="views-count">{{ h.popular('views', res.tracking_summary.total, min=10) }}</span>
+</a>
+{% endblock %}
