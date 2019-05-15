@@ -18,3 +18,14 @@ class AmplusPlugin(plugins.SingletonPlugin):
             'amplus_get_recently_updated_datasets':
                 helpers.get_recently_updated_datasets
         }
+
+    def update_config_schema(self, schema):
+        ignore_missing = toolkit.get_validator('ignore_missing')
+        validators = [ignore_missing, unicode]
+
+        schema.update({
+            'footer_links': validators,
+            'social_media_links': validators,
+        })
+
+        return schema
