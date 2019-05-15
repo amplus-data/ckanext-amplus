@@ -1,0 +1,19 @@
+{% set groups = h.get_featured_groups(items or 10) %}
+
+{% block featured_groups %}
+  <div class="group-topics">
+    {% block featured_groups_title %}
+      {% if c.controller == 'home' %}
+      <h2 class="group-heading">{{_("Explore Topics")}}</h2>
+      {% endif %}
+    {% endblock %}
+
+    {% if groups %}
+      <div class="group-topics-list">
+        {% for group in groups %}
+        {% snippet 'snippets/custom_group_item.html', group=group, truncate=50, truncate_title=35 %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
