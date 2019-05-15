@@ -51,18 +51,24 @@
                 {% if recent_datasets %}
                   {{ h.snippet('snippets/package_list.html', packages=recent_datasets) }}
                 {% else %}
-                  <p class="text-center">{{ _('No datasets available.') }}</p>
+                  <p class="empty">{{ _('No datasets have been added yet') }}</p>
                 {% endif %}
             </div>
             <div class="data tab-pane fade in active" id="visualize">
               {% block featured_charts %}
-                {%- for featured_chart in h.c3charts_featured_charts(4) -%}
-                  {% snippet 'home/snippets/featured_chart_view.html', featured_chart=featured_chart %}
-                {%- endfor -%}
+                {% set featured_charts = h.c3charts_featured_charts(4) %}
+                {% if featured_charts %}
+                  {% for featured_chart in featured_charts %}
+                    {% snippet 'home/snippets/featured_chart_view.html', featured_chart=featured_chart %}
+                  {% endfor %}
+                {% else %}
+                  <p class="empty">{{ _('No chart views have been created yet') }}</p>
+                {% endif %}
               {% endblock %}
             </div>
             <div class="data tab-pane fade" id="locate">
               <!-- Map Section -->
+              <p class="empty">{{ _('No map views have been created yet') }}</p>
             </div>
           </div>
       </div>

@@ -3,15 +3,16 @@
   .dataset-list {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    min-width: 100%;
+    margin: auto -@gutter-medium;
   }
 }
 
 .dataset-list {
   >.dataset-item {
     flex: 1 0 33.3%;
-    padding: 3rem;
-    margin: 20px;
+    padding: @gutter-large;
+    margin: @gutter-small @gutter-medium;
     background: @white;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
   }
