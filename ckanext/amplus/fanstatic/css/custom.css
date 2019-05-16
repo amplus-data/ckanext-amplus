@@ -819,29 +819,14 @@ a:active {
   color: #6033A7;
   background-color: #efecf4;
   border: none;
-  font-size: 18px;
+  padding: 1.5rem;
+  font-size: 17px;
   font-weight: 600;
-  padding: 1.2rem 1rem;
-  margin-bottom: 1rem;
 }
-.module-heading i {
-  padding: 0.5rem;
-}
-.side-heading,
-.license .module-heading {
-  background-color: transparent;
+.side-heading {
   color: #6033A7;
-  font-size: 18px;
   font-weight: 600;
-  padding: 0.7rem 0;
-  margin: 0;
-}
-.side-heading > i,
-.license .module-heading > i {
-  display: none;
-}
-.license .module-content {
-  padding-left: 0px;
+  margin: 1rem 0;
 }
 .keyword-list {
   padding: 1rem 0 0 0;
