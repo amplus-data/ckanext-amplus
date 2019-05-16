@@ -47,7 +47,6 @@
   font-size: 12px;
 }
 .hero {
-  padding: 120px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -391,7 +390,7 @@ a:active {
   font-size: 40px;
 }
 .control input {
-  background: #fff;
+  background: #FFFFFF;
 }
 .module .read-more {
   color: #6033A7;
