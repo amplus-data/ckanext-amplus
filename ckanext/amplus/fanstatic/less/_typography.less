@@ -1,10 +1,30 @@
-.header-secondary{
+.header-secondary {
   font-size: 24px;
   padding-left: .5rem;
 }
-.form-control{
+
+.form-control,
+.controls .form-control {
+  background-color: @white;
   border: none;
   border-radius: 0;
-  outline:none;
-
+  outline: none;
+}
+.module-content {
+  &>h1 {
+    color: @gray-medium;
+    font-weight: 400;
+    font-size: 40px;
+  }
+}
+.control {
+  & input {
+    background: #fff;
+  }
+}
+.module .read-more {
+  color: @brand-primary;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
 }

@@ -37,6 +37,15 @@
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
+.tag-list-item {
+  padding: 0.4rem 0.8rem;
+  margin: 0.4rem;
+  background-color: #E6E6E6;
+  border-radius: 0;
+  border: none;
+  color: #414141;
+  font-size: 12px;
+}
 .hero {
   padding: 120px 0px;
   display: -webkit-box;
@@ -369,10 +378,26 @@ a:active {
   font-size: 24px;
   padding-left: 0.5rem;
 }
-.form-control {
+.form-control,
+.controls .form-control {
+  background-color: #FFFFFF;
   border: none;
   border-radius: 0;
   outline: none;
+}
+.module-content > h1 {
+  color: #414141;
+  font-weight: 400;
+  font-size: 40px;
+}
+.control input {
+  background: #fff;
+}
+.module .read-more {
+  color: #6033A7;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
 }
 .account-masthead {
   background: #6033A7;
@@ -789,6 +814,56 @@ a:active {
 .btn-default:hover {
   border-color: transparent;
   background-color: #f7f7f7;
+}
+.module-heading {
+  color: #6033A7;
+  background-color: #efecf4;
+  border: none;
+  padding: 1.5rem;
+  font-size: 17px;
+  font-weight: 600;
+}
+.side-heading {
+  color: #6033A7;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+.keyword-list {
+  padding: 1rem 0 0 0;
+  list-style: none;
+}
+.keyword-list li {
+  padding: 0.4rem 0.8rem;
+  margin: 0.4rem;
+  background-color: #E6E6E6;
+  border-radius: 0;
+  border: none;
+  color: #414141;
+  font-size: 12px;
+}
+.keyword-list li a {
+  color: inherit;
+}
+.nav-simple > li {
+  border-bottom: none;
+}
+.tags > ul {
+  outline: none;
+  background-color: inherit;
+  border: none;
+  padding-left: 0;
+}
+.tags > ul .tag {
+  padding: 0.4rem 0.8rem;
+  margin: 0.4rem;
+  background-color: #E6E6E6;
+  border-radius: 0;
+  border: none;
+  color: #414141;
+  font-size: 12px;
+}
+.module-footer {
+  border-top: none;
 }
 .facet {
   font-weight: 600;
