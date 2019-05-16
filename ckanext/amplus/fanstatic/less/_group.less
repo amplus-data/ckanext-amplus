@@ -13,7 +13,7 @@
 .group-container {
   .empty {
     margin: auto;
-    font-size: 20px;
+    font-size: @font-size-large-plus;
   }
 }
 
@@ -31,7 +31,7 @@
   margin: @gutter-medium;
   padding: @gutter-large;
   background-color: @white;
-  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 30px 0 fade(@black, 10%);
   color: @gray-medium;
   transition: background-color @animation-duration;
 
@@ -57,15 +57,15 @@
   background: @brand-background;
 
   .group-title {
-    font-size: 22px;
-    font-weight: 600;
+    font-size: @font-size-larger-plus;
+    font-weight: @font-weight-large;
     line-height: 1.25;
     margin: auto @gutter-medium;
   }
 
   .group-desc {
     margin-top: @gutter-medium;
-    font-size: 16px;
+    font-size: @font-size-medium-large;
     padding: 0 @gutter-medium;
   }
 
@@ -93,7 +93,7 @@
   }
 
   .group-item-desc {
-    font-size: 18px;
+    font-size: @font-size-large;
   }
 
 }
