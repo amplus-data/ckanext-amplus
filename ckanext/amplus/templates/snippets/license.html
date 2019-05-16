@@ -1,0 +1,13 @@
+{% ckan_extends %}
+{{ super() }}
+
+{% block license_title %}
+<h3 class="side-heading">{{ _('License') }}</h3>
+{% endblock %}
+{% block license_content %}
+            <p>
+              {% block license_content_inner %}
+                {{ super() }}
+              {% endblock %}
+            </p>
+{% endblock %}
