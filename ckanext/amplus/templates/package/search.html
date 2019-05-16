@@ -1,0 +1,7 @@
+{% ckan_extends %}
+
+{% block primary_content %}
+  {% snippet 'home/snippets/featured_groups.html', items=4 %}
+  {{ super() }}
+{% endblock %}
+
