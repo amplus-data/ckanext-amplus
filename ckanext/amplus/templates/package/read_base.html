@@ -2,6 +2,12 @@
 {{ super() }}
 
 {% block secondary_content %}
+{% block package_organization %}
+  {% if pkg.organization %}
+    {% set org = h.get_organization(pkg.organization.name) %}
+    {% snippet "snippets/organization.html", organization=org, has_context_title=true %}
+  {% endif %}
+{% endblock %}
 <h2 class="module-heading flex flex-align-center">
     <i class="fa fa-folder-open "></i>
   Additional Information
