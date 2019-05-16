@@ -1,8 +1,6 @@
 {% if tags %}
   <section class="tags">
-      <h2 class="side-heading">
-          Keywords
-        </h2>
+      <h2 class="side-heading">{{ _('Tags') }}</h2>
     {% snippet 'snippets/tag_list.html', tags=tags, _class='tag-list well' %}
   </section>
 {% endif %}
