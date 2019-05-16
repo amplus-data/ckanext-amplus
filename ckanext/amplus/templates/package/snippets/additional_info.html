@@ -2,21 +2,20 @@
 
   {% if pkg_dict.maintainer_email %}
   <div>
-    <h2 scope="row" class="side-heading">{{ _('Maintainer') }}</h2>
+    <h3 class="side-heading">{{ _('Maintainer') }}</h3>
     <p class="dataset-details side-inner" property="dc:contributor">
       {{ h.mail_to(email_address=pkg_dict.maintainer_email, name=pkg_dict.maintainer) }}</p>
   </div>
   {% elif pkg_dict.maintainer %}
   <div>
-    <h2 scope="row" class="side-heading">{{ _('Maintainer') }}</h2>
+    <h3 class="side-heading">{{ _('Maintainer') }}</h3>
     <p class="dataset-details side-inner" property="dc:contributor">{{ pkg_dict.maintainer }}</p>
   </div>
   {% endif %}
 
   {% if pkg_dict.metadata_created %}
   <div>
-    <h2 scope="row" class="side-heading">{{ _("Publication Date") }}</h2>
-
+    <h3 class="side-heading">{{ _("Publication Date") }}</h3>
     <p class="dataset-details">
       {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=pkg_dict.metadata_created %}
     </p>
@@ -25,7 +24,7 @@
 
   {% if pkg_dict.metadata_modified %}
   <div>
-    <h2 scope="row" class="side-heading">{{ _("Update Date") }}</h2>
+    <h3 class="side-heading">{{ _("Update Date") }}</h3>
     <p class="dataset-details">
       {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=pkg_dict.metadata_modified %}
     </p>
@@ -34,13 +33,13 @@
 
   {% if h.check_access('package_update',{'id':pkg_dict.id}) %}
   <div>
-    <h2 scope="row" class="side-heading">{{ _("State") }}</h2>
+    <h3 class="side-heading">{{ _("State") }}</h3>
     <p class="dataset-details">{{ _(pkg_dict.state) }}</p>
   </div>
   {% endif %}
   {% if pkg_dict.url %}
   <div>
-    <g2 scope="row" class="side-heading">{{ _('Source') }}</g2>
+    <h3 class="side-heading">{{ _('Source') }}</h3>
     {% if h.is_url(pkg_dict.url) %}
     <p class="dataset-details" property="foaf:homepage">
       {{ h.link_to(pkg_dict.url, pkg_dict.url, rel='foaf:homepage', target='_blank') }}</p>
@@ -52,33 +51,21 @@
 
   {% if pkg_dict.author_email %}
   <div>
-    <h2 scope="row" class="side-heading">{{ _("Author") }}</h2>
+    <h3 class="side-heading">{{ _("Author") }}</h3>
     <p class="dataset-details" property="dc:creator">
       {{ h.mail_to(email_address=pkg_dict.author_email, name=pkg_dict.author) }}</p>
   </div>
   {% elif pkg_dict.author %}
   <div>
-    <h2 scope="row" class="side-heading">{{ _("Author") }}</h2>
+    <h3 class="side-heading">{{ _("Author") }}</h3>
     <p class="dataset-details" property="dc:creator">{{ pkg_dict.author }}</p>
   </div>
   {% endif %}
 
   {% if pkg_dict.version %}
   <div>
-    <h2 scope="row" class="side-heading">{{ _("Version") }}</h2>
+    <h3 class="side-heading">{{ _("Version") }}</h3>
     <p class="dataset-details">{{ pkg_dict.version }}</p>
   </div>
-  {% endif %}
-
-  <h2 class="module-heading flex flex-align-center">
-      <i class="fa fa-folder-open "></i>
-    Resent Activity
-  </h2>
-  {% if pkg_dict.resources %}
-  {% for item in pkg_dict.resources %}
-  <p>{{item.last_modified}}</p>
-  {% endfor%}
-  {% else %}
-  <p>Data has not beeen updated</p>
   {% endif %}
 </section>
