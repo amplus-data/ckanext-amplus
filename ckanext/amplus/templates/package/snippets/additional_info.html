@@ -1,5 +1,5 @@
 <section class="additional-info">
-  
+
   {% if pkg_dict.maintainer_email %}
   <div>
     <h2 scope="row" class="side-heading">{{ _('Maintainer') }}</h2>
@@ -32,7 +32,6 @@
   </div>
   {% endif %}
 
-
   {% if h.check_access('package_update',{'id':pkg_dict.id}) %}
   <div>
     <h2 scope="row" class="side-heading">{{ _("State") }}</h2>
@@ -64,8 +63,6 @@
   </div>
   {% endif %}
 
-
-
   {% if pkg_dict.version %}
   <div>
     <h2 scope="row" class="side-heading">{{ _("Version") }}</h2>
@@ -73,18 +70,15 @@
   </div>
   {% endif %}
 
-  <h2 class="module-heading flex flex-align-center" >
-      <div class="flex flex-align-center flex-justify-center">
-        <i class="fa fa-folder-open "></i>
-      </div>
-      Resent Activity
-    </h2>
-
-    {% if pkg_dict.resources %}
-    {% for item in pkg_dict.resources %}
-    <p>{{item.last_modified}}</p>
-    {% endfor%}
-    {% else %}
-    <p>Data has not beeen updated</p>
-    {% endif %}
+  <h2 class="module-heading flex flex-align-center">
+      <i class="fa fa-folder-open "></i>
+    Resent Activity
+  </h2>
+  {% if pkg_dict.resources %}
+  {% for item in pkg_dict.resources %}
+  <p>{{item.last_modified}}</p>
+  {% endfor%}
+  {% else %}
+  <p>Data has not beeen updated</p>
+  {% endif %}
 </section>
