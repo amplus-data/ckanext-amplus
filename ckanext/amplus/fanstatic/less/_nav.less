@@ -6,10 +6,13 @@
       li {
         border-left: none;
 
-        >a {
+        a{
+          color: @gray-light;
+          font-weight: inherit;
 
           &:hover,
           &:active {
+            color: @gray-light;
             background: @brand-quaternary;
           }
         }
@@ -76,8 +79,7 @@
         a {
           padding: 2.5rem 2rem;
           border-radius: 0;
-          font-size: 18px;
-          // font-weight: 500;
+          font-size: @font-size-18;
 
           &:hover,
           &:focus {
@@ -94,7 +96,7 @@
 
   .logo {
     max-width: 350px;
-    padding: 2rem 0 @gutter-small 2.5rem;
+    padding: @gutter-sm*2 0 @gutter-sm 2.5rem;
 
     >img {
       max-width: 100%;

@@ -1,54 +1,54 @@
 .homepage .blogs {
-    background: @white;
+  background: @white;
 
-    .container-fluid {
-        >.row {
-            >[class*='col-'] {
-                display: block;
-            }
-        }
+  .container-fluid {
+    >.row {
+      >[class*='col-'] {
+        display: block;
+      }
     }
+  }
 
-    .h2 {
-        font-size: 40px;
-        font-weight: 400;
+  .h2 {
+    font-size: @font-size-40;
+    font-weight: @font-weight-400;
+  }
+
+  .box {
+    box-shadow: 0 0 30px 0 fade(@black, 10%);
+    margin: 60px 0px;
+    border: none;
+    transition: .3s;
+
+    &:hover {
+      box-shadow: 0 0 30px 0 fade(@brand-primary, 30%);
+
+      a {
+        text-decoration: none;
+      }
     }
+  }
 
-    .box {
-        box-shadow: 0 0 30px 0 fade(@black, 10%);
-        margin: 60px 0px;
-        border: none;
-        transition: .3s;
+  .btn-view-all {
+    padding: 15px 70px;
+    font-size: @font-size-16;
+    font-weight: @font-weight-700;
+    box-shadow: 0 10px 10px 0 fade(@text-dark, 30%);
+  }
 
-        &:hover {
-            box-shadow: 0 0 30px 0 fade(@brand-primary, 30%);
+  .title {
+    color: @text-dark;
+    font-size: @font-size-20;
+    font-weight: @font-weight-600;
+    padding: 10px 20px;
+    margin: 0;
+  }
 
-            a {
-                text-decoration: none;
-            }
-        }
-    }
-
-    .btn-view-all {
-        padding: 15px 70px;
-        font-size: 16px;
-        font-weight: 700;
-        box-shadow: 0 10px 10px 0 fade(@text-dark, 30%);
-    }
-
-    .title {
-        color: @text-dark;
-        font-size: 20px;
-        font-weight: 600;
-        padding: 10px 20px;
-        margin: 0;
-    }
-
-    .description {
-        color: @silver;
-        font-size: 14px;
-        font-weight: 400;
-        padding: 0px 20px 20px 20px;
-        margin: 0;
-    }
+  .description {
+    color: @silver;
+    font-size: @font-size-14;
+    font-weight: @font-weight-400;
+    padding: 0px 20px 20px 20px;
+    margin: 0;
+  }
 }

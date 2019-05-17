@@ -1,23 +1,23 @@
 .resource-list {
-  display: flex;
-  flex-wrap: wrap;
+  .flex;
+  .flex-wrap;
   .content-margin-fix;
 
   .resource-item {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    .flex;
+    .flex-wrap;
+    .flex-justify-between;
+    .flex-align-center;
     .content-item-layout;
     background: @white;
 
     .heading {
-      display: flex;
-      align-items: center;
+      .flex;
+      .flex-align-center;
     }
 
     .display-name{
-      margin: auto @gutter-medium;
+      margin: auto @gutter-md;
     }
 
     .description{
@@ -44,7 +44,7 @@
     }
 
     .resource-item-list {
-      display: flex;
+      .flex;
     }
 
     .format-label {
@@ -55,13 +55,13 @@
 
   .validation-badge {
     position: absolute;
-    bottom: @gutter-small * 2;
-    left: @gutter-large;
+    bottom: @gutter-sm * 2;
+    left: @gutter-lg;
   }
 }
 
 .resource-content {
-  padding: 2rem @gutter-small * 2;
+  padding: 2rem @gutter-sm * 2;
 }
 
 .resource-title {

@@ -8,6 +8,7 @@
 .btn-primary-reset:hover,
 .btn-primary-reset:focus,
 .btn-primary-reset:active,
+.btn-primary-reset:active:focus,
 .btn-primary-reset.focus {
   border-color: transparent;
   background-color: #4f2b8a;
@@ -47,7 +48,6 @@
   font-size: 12px;
 }
 .hero {
-  padding: 120px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,6 +55,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   background: #FFFFFF;
+  padding: 12rem 0;
 }
 .hero .hero-img {
   min-width: auto;
@@ -84,7 +85,7 @@
 .primary .group-topics {
   padding: 1rem 1.5rem;
 }
-.group-container .empty {
+.data > .empty {
   margin: auto;
   font-size: 20px;
 }
@@ -306,11 +307,11 @@
   font-weight: 600;
   color: #9F1A86;
 }
+.dataset-list .dataset-resources {
+  margin-top: 1.5rem;
+}
 .dataset-list .dataset-resources li .label {
-  background: transparent;
-  color: #9E9E9E;
-  border: 1px solid #9E9E9E;
-  border-radius: 15px;
+  border-radius: 0;
 }
 body {
   font-family: 'Barlow', sans-serif;
@@ -391,7 +392,7 @@ a:active {
   font-size: 40px;
 }
 .control input {
-  background: #fff;
+  background: #FFFFFF;
 }
 .module .read-more {
   color: #6033A7;
@@ -405,8 +406,13 @@ a:active {
 .account-masthead .account ul li {
   border-left: none;
 }
-.account-masthead .account ul li > a:hover,
-.account-masthead .account ul li > a:active {
+.account-masthead .account ul li a {
+  color: #E6E6E6;
+  font-weight: inherit;
+}
+.account-masthead .account ul li a:hover,
+.account-masthead .account ul li a:active {
+  color: #E6E6E6;
   background: #7A64A6;
 }
 .account-masthead .account ul .notifications > a span.badge {
@@ -550,6 +556,7 @@ a:active {
 .module-content .nav-tabs > li.active a:hover,
 .module-content .nav-tabs > li.active a:focus,
 .module-content .nav-tabs > li.active a:active,
+.module-content .nav-tabs > li.active a:active:focus,
 .module-content .nav-tabs > li.active a.focus {
   border-color: transparent;
   background-color: #4f2b8a;
@@ -558,6 +565,7 @@ a:active {
   color: inherit;
   border: none;
   background-color: #FFFFFF;
+  border-radius: 0;
 }
 .module-content .nav-tabs > li a:hover {
   border-color: transparent;
@@ -778,6 +786,7 @@ a:active {
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
+.btn-primary:active:focus,
 .btn-primary.focus {
   border-color: transparent;
   background-color: #4f2b8a;
@@ -790,6 +799,7 @@ a:active {
 .open > .dropdown-toggle.btn-primary:hover,
 .open > .dropdown-toggle.btn-primary:focus,
 .open > .dropdown-toggle.btn-primary:active,
+.open > .dropdown-toggle.btn-primary:active:focus,
 .open > .dropdown-toggle.btn-primary.focus {
   border-color: transparent;
   background-color: #4f2b8a;

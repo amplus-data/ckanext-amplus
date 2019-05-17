@@ -1,41 +1,43 @@
 .primary,
 .tab-content {
   .dataset-list {
-    display: flex;
-    flex-wrap: wrap;
+    .flex;
+    .flex-wrap;
     min-width: 100%;
-    margin: auto -@gutter-medium;
+    margin: auto -@gutter-md;
   }
 }
 
 .dataset-list {
   >.dataset-item {
     flex: 1 0 33.3%;
-    padding: @gutter-large;
-    margin: @gutter-small @gutter-medium;
+    padding: @gutter-lg;
+    margin: @gutter-sm @gutter-md;
     background: @white;
-    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px 0 fade(@black, 10%);
   }
 
   .dataset-content {
     >div {
-      font-size: 14px;
-      font-weight: 400;
+      font-size: @font-size-14;
+      font-weight: @font-weight-400;
       line-height: 17px;
       color: @text-dark;
     }
 
     .dataset-heading a {
-      font-size: 21px;
-      font-weight: 600;
+      font-size: @font-size-21;
+      font-weight: @font-weight-600;
       color: @brand-secondary;
     }
   }
 
-  .dataset-resources li .label {
-    background: transparent;
-    color: @silver;
-    border: 1px solid @silver;
-    border-radius: 15px;
+  .dataset-resources {
+    margin-top: @gutter-md;
+    li {
+      .label {
+        border-radius: 0;
+      }
+    }
   }
 }
