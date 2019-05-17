@@ -8,6 +8,7 @@
 .btn-primary-reset:hover,
 .btn-primary-reset:focus,
 .btn-primary-reset:active,
+.btn-primary-reset:active:focus,
 .btn-primary-reset.focus {
   border-color: transparent;
   background-color: #4f2b8a;
@@ -54,6 +55,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   background: #FFFFFF;
+  padding: 10.5rem 0px;
 }
 .hero .hero-img {
   min-width: auto;
@@ -305,11 +307,11 @@
   font-weight: 600;
   color: #9F1A86;
 }
+.dataset-list .dataset-resources {
+  margin-top: 1.5rem;
+}
 .dataset-list .dataset-resources li .label {
-  background: transparent;
-  color: #9E9E9E;
-  border: 1px solid #9E9E9E;
-  border-radius: 15px;
+  border-radius: 0;
 }
 body {
   font-family: 'Barlow', sans-serif;
@@ -404,8 +406,13 @@ a:active {
 .account-masthead .account ul li {
   border-left: none;
 }
-.account-masthead .account ul li > a:hover,
-.account-masthead .account ul li > a:active {
+.account-masthead .account ul li a {
+  color: #E6E6E6;
+  font-weight: inherit;
+}
+.account-masthead .account ul li a:hover,
+.account-masthead .account ul li a:active {
+  color: #E6E6E6;
   background: #7A64A6;
 }
 .account-masthead .account ul .notifications > a span.badge {
@@ -549,6 +556,7 @@ a:active {
 .module-content .nav-tabs > li.active a:hover,
 .module-content .nav-tabs > li.active a:focus,
 .module-content .nav-tabs > li.active a:active,
+.module-content .nav-tabs > li.active a:active:focus,
 .module-content .nav-tabs > li.active a.focus {
   border-color: transparent;
   background-color: #4f2b8a;
@@ -557,6 +565,7 @@ a:active {
   color: inherit;
   border: none;
   background-color: #FFFFFF;
+  border-radius: 0;
 }
 .module-content .nav-tabs > li a:hover {
   border-color: transparent;
@@ -777,6 +786,7 @@ a:active {
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
+.btn-primary:active:focus,
 .btn-primary.focus {
   border-color: transparent;
   background-color: #4f2b8a;
@@ -789,6 +799,7 @@ a:active {
 .open > .dropdown-toggle.btn-primary:hover,
 .open > .dropdown-toggle.btn-primary:focus,
 .open > .dropdown-toggle.btn-primary:active,
+.open > .dropdown-toggle.btn-primary:active:focus,
 .open > .dropdown-toggle.btn-primary.focus {
   border-color: transparent;
   background-color: #4f2b8a;
