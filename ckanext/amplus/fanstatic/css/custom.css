@@ -85,7 +85,7 @@
 .primary .group-topics {
   padding: 1rem 1.5rem;
 }
-.group-container .empty {
+.data > .empty {
   margin: auto;
   font-size: 20px;
 }
