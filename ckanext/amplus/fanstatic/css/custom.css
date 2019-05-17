@@ -461,7 +461,7 @@ a:active {
 }
 .masthead .logo {
   max-width: 350px;
-  padding: 1.5rem 0 1rem 2.5rem;
+  padding: 2rem 0 1rem 2.5rem;
 }
 .masthead .logo > img {
   max-width: 100%;
@@ -1066,7 +1066,7 @@ a:active {
 }
 .homepage .blogs .description {
   color: #9E9E9E;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   padding: 0px 20px 20px 20px;
   margin: 0;
