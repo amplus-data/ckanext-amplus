@@ -1,0 +1,105 @@
+.account-masthead {
+  background: @brand-primary;
+
+  .account {
+    ul {
+      li {
+        border-left: none;
+
+        a{
+          color: @gray-light;
+          font-weight: inherit;
+
+          &:hover,
+          &:active {
+            color: @gray-light;
+            background: @brand-quaternary;
+          }
+        }
+      }
+
+      .notifications {
+        >a {
+          span.badge {
+            background-color: inherit;
+          }
+        }
+      }
+    }
+  }
+}
+
+.masthead,
+.primary {
+  .nav {
+    >li {
+      >a {
+        padding: 6px 12px;
+      }
+    }
+  }
+}
+
+.nav-item,
+.nav-aside li {
+  &.active {
+    >a {
+      color: inherit;
+      background-color: @brand-extra-light;
+
+      &:hover {
+        color: inherit;
+        background-color: darken(@brand-extra-light, 10%);
+
+        &:before {
+          border-left-color: darken(@brand-extra-light, 10%);
+        }
+      }
+
+      &:before {
+        border-left-color: @brand-extra-light;
+      }
+    }
+  }
+}
+
+.masthead {
+  background: @brand-primary;
+  padding: 0;
+
+  .navigation {
+    .nav-pills {
+      li {
+        &.active {
+          a {
+            background-color: @brand-quaternary;
+          }
+        }
+
+        a {
+          padding: 2.5rem 2rem;
+          border-radius: 0;
+          font-size: @font-size-18;
+
+          &:hover,
+          &:focus {
+            background-color: @brand-quaternary;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-collapse {
+    padding: 0;
+  }
+
+  .logo {
+    max-width: 350px;
+    padding: @gutter-sm*2 0 @gutter-sm 2.5rem;
+
+    >img {
+      max-width: 100%;
+    }
+  }
+}

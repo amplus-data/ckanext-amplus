@@ -1,0 +1,31 @@
+{% block featured_item %}
+  <a href="{{ h.url_for(controller='group', action='read', id=group.name) }}" class="group-item module module-narrow module-shallow">
+    {% block featured_item_header %}
+      {% set truncate=truncate or 0 %}
+      {% set truncate_title = truncate_title or 0 %}
+      {% set title = group.title or group.name %}
+      <div class="title-wrap">
+        {% block featured_item_header_image %}
+        <div class="group-icon">
+          <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="{{ group.name }}" />
+          <!-- <i class="fa fa-folder-open" aria-hidden="true"></i> -->
+        </div>
+        {% endblock %}
+        {% block featured_item_header_title %}
+        <h3 class="group-title">{{ group.title or group.name }}</h3>
+        {% endblock %}
+      </div>
+      {% block featured_item_header_description %}
+        {% if c.controller == 'home' and group.description %}
+          {% if truncate == 0 %}
+            <p class="group-desc">{{ h.markdown_extract(group.description)|urlize }}</p>
+          {% else %}
+            <p class="group-desc">{{ h.markdown_extract(group.description)|urlize }}</p>
+          {% endif %}
+        {% endif %}
+      {% endblock %}
+    {% endblock %}
+    {% block featured_item_content %}
+    {% endblock %}
+  </a>
+{% endblock %}

@@ -1,48 +1,44 @@
-@font-face {
-    font-family: 'Barlow';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../../fanstatic/public/fonts/barlow-latin-400.woff2') format('woff2'),
-         url('../../fanstatic/public/fonts/barlow-latin-400.woff') format('woff'),
-         url('/fanstatic/public/fonts/barlow-latin-500.woff2') format('woff2'),
-         url('/fanstatic/public/fonts/barlow-latin-500.woff') format('woff')
-  }
-
-
-body {
-    font-family: 'Barlow', sans-serif;
-}
-
 .site-footer {
-    background: @white;
-    padding: 100px 120px;
-    & .logo img{
-        max-height: 30px;
+  color: @silver;
+  background: @white;
+  padding: 100px 120px;
+
+  .logo {
+    img {
+      max-height: 30px;
     }
+  }
 }
 
 .text-description {
-    color: @silver;
-    font-size: 15px;
-    font-weight: 500;
-    margin-top: 25px;
+  font-size: @font-size-15;
+  font-weight: @font-weight-500;
+  margin-top: 25px;
 }
 
 .footer-nav-title {
-    color: @brand-secondary;
-    font-size: 16px;
-    font-weight: 600;
+  color: @brand-secondary;
+  font-size: @font-size-18;
+  font-weight: @font-weight-600;
 }
 
-.footer-nav li {  
+.footer-nav {
+  margin-top: @gutter-sm;
+  margin-bottom: @gutter-sm;
+  li {
     padding: 5px 0;
-    & a {
-        color: @silver;
-        font-size: 16px;
-        font-weight: 600;
+    a {
+      color: @silver;
+      font-size: @font-size-16;
+      font-weight: @font-weight-600;
     }
+  }
 }
 
-.col-md-2 {
-    float: right;
+.footer-links {
+  ul {
+    .footer-nav;
+    padding-left: 0;
+    list-style: none;
+  }
 }

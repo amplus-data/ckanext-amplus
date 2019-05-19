@@ -1,0 +1,45 @@
+.module-content {
+  .nav-tabs {
+    >li {
+      &.active {
+        a {
+          border: none;
+          .btn-primary-reset;
+        }
+      }
+
+      a {
+        .btn-default-reset;
+        background-color: @white;
+        border-radius: 0;
+      }
+    }
+  }
+
+  .nav-tabs {
+    &,
+    &.nav-tabs-plain {
+      border: none;
+
+      >li {
+        margin-right: @gutter-sm;
+      }
+    }
+  }
+}
+
+.module-content {
+
+  >.actions,
+  >.content_action {
+
+    >.btn-danger {
+      color: @white;
+      background-color: @brand-tertiary;
+
+      &:hover {
+        background-color: @brand-tertiary-light;
+      }
+    }
+  }
+}

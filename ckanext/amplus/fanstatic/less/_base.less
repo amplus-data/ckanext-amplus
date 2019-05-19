@@ -1,0 +1,80 @@
+body {
+  font-family: @font-primary;
+  background: @brand-primary;
+
+  .main,
+  & [role=main] {
+    background: @brand-background;
+
+    & .secondary {
+      padding-right: 0;
+    }
+  }
+
+  & [role=main] {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .primary {
+    background-color: transparent;
+  }
+}
+
+.masthead {
+  .debug {
+    top: 0;
+    background: transparent;
+  }
+}
+
+.secondary {
+
+  &,
+  .module-content {
+    background-color: @white;
+  }
+
+  .module-heading {
+    background: @brand-background;
+  }
+}
+
+.form-control {
+  border-radius: 0;
+  border: none;
+  outline: none;
+}
+
+.input-group-addon {
+  border: none;
+  border-radius: 0;
+  background-color: @white;
+}
+
+a {
+  color: @brand-primary;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: inherit;
+  }
+}
+
+.module-resource {
+  flex-basis: 100%;
+}
+
+.page-header {
+  background-color: inherit;
+  border-bottom: none;
+}
+
+.modal-content {
+  border-radius: 0;
+}
+
+.item-count{
+  margin: auto 5px;
+}
