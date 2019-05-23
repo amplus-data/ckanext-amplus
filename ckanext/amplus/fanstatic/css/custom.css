@@ -636,8 +636,6 @@ a:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -659,11 +657,27 @@ a:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 1.5rem;
+  word-wrap: break-word;
+}
+.resource-list .resource-item .heading-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin-right: 1.5rem;
 }
 .resource-list .resource-item .display-name {
-  margin: auto 1.5rem;
+  margin-bottom: 0;
 }
 .resource-list .resource-item .description {
+  margin-top: 0.5rem;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 30%;
           flex: 0 1 30%;
@@ -684,6 +698,7 @@ a:active {
   position: relative;
   top: auto;
   left: auto;
+  right: auto;
 }
 .resource-list .resource-item .resource-item-list {
   display: -webkit-box;
