@@ -6,9 +6,19 @@
     text-align: center;
     flex: 1 0 33.3%;
     padding: 20px;
-    margin: 20px;
+    margin: @gutter-md;
     background: @white;
     box-shadow: 0 0 30px 0 fade(@black, 10%);
+  }
+}
+
+.c3chart{
+  .flex;
+  .flex-column;
+  margin: auto !important;
+  svg{
+    max-width: 100%;
+    max-height: auto !important;
   }
 }
 
@@ -17,7 +27,7 @@
   .flex-column;
   .flex-justify-center;
   .flex-align-center;
-  overflow: auto;
+  min-height: @chart-height;
 }
 
 .tab-content>.active {
