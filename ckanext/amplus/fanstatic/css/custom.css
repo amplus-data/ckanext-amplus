@@ -203,10 +203,24 @@
       -ms-flex: 1 0 33.3%;
           flex: 1 0 33.3%;
   padding: 20px;
-  margin: 20px;
+  margin: 1.5rem;
   background: #FFFFFF;
   -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+.c3chart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto !important;
+}
+.c3chart svg {
+  max-width: 100%;
+  max-height: auto !important;
 }
 .visualize-card {
   display: -webkit-box;
@@ -222,7 +236,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: auto;
+  min-height: 360px;
 }
 .tab-content > .active {
   display: -webkit-box;
@@ -1118,11 +1132,11 @@ a:active {
     float: none;
     text-align: center;
   }
-  .homepage .group-container .data div {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 100%;
-            flex: 1 0 100%;
-    margin: 0 0 40px 0;
+  .data .visualize-card {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .homepage .group-container .toggle-section div {
     border: none;
