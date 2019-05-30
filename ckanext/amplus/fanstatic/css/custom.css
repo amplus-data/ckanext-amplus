@@ -395,6 +395,12 @@ a:active {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.wide .media-item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  min-width: calc(100%/4 - 3rem);
+}
 .header-secondary {
   font-size: 24px;
   padding-left: 0.5rem;
