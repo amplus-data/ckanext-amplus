@@ -75,6 +75,19 @@ a {
   border-radius: 0;
 }
 
-.item-count{
+.item-count {
   margin: auto 5px;
+}
+
+.no-nav {
+  .module{
+    flex-basis: 100%;
+  }
+}
+
+.wide {
+  .media-item {
+    flex-grow: 1;
+    min-width: calc(100%/4 - @gutter-lg);
+  }
 }
