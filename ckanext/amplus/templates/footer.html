@@ -1,20 +1,19 @@
 {% block footer_content %}
   <div class="row">
-    <div class="col-lg-4 col-md-12 col-sm-12 attribution">
+    <div class="col-md-12 col-lg-4 attribution">
       {% block footer_attribution %}
-        <ul class="list-unstyled">
           {% block footer_links %}
-          <a class="logo" href="{{ h.url_for('home.index') }}"><img class="img-fluid" src="{{ h.url_for_static('/base/images/Amplus-OpenDataPortal-logo.png') }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
+          <a class="logo" href="{{ h.url_for('home.index') }}"><img class="img-responsive" src="{{ h.url_for_static('/base/images/Amplus-OpenDataPortal-logo.png') }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
             {% if g.site_about %}
               <p class="text-description py-20">{{ h.render_markdown(g.site_about) }}</p>
             {% endif %}
           {% endblock %}
-        </ul>
       {% endblock %}
     </div>
-    <div class="col-lg-8 col-md-12 col-sm-12 text-left footer-links">
+    <div class="col-md-12 col-lg-6 col-lg-offset-1 footer-links">
+      <div class="row">
       {% block footer_nav %}
-      <div class="col-sm-4 col-xs-12 col-md-4 col-lg-2 mb-md-0 mb-3">
+      <div class="col-md-4">
         {% block header_site_navigation_tabs %}
           <h5 class="footer-nav-title">{{ _('Navigation')}}</h5>
           <ul class="list-unstyled footer-nav">
@@ -22,14 +21,14 @@
                 ('group_index', _('Groups')), ('home.about', _('About')) ) }}
           </ul>
       </div>
-        <div class="col-sm-4 col-xs-12 col-md-4 col-lg-2 mb-md-0 mb-3">
+        <div class="col-md-4">
           {% if g.footer_links %}
             {{ h.render_markdown(g.footer_links) }}
           {% else %}
             {{ _('Please add your additional links in the Sysadmin settings.') }}
           {% endif %}
         </div>
-        <div class="col-sm-4 col-xs-12 col-md-4 col-lg-2 mb-md-0 mb-3">
+        <div class="col-md-4">
           <h5 class="footer-nav-title">{{ _('Follow Us') }} </h5>
           {% if g.social_media_links %}
             {{ h.render_markdown(g.social_media_links) }}
@@ -39,6 +38,7 @@
         </div>
         {% endblock %}
       {% endblock %}
+    </div>
     </div>
   </div>
 </div>

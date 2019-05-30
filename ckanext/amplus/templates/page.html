@@ -36,7 +36,11 @@
 {% block footer %}
 <footer class="site-footer">
   <div class="container-fluid">
-    {{ super() }}
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+        {{ super() }}
+      </div>
+    </div>
   </div>
 </footer>
 {% endblock %}
