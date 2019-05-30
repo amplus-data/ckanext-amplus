@@ -389,6 +389,12 @@ a:active {
 .item-count {
   margin: auto 5px;
 }
+.no-nav {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 .header-secondary {
   font-size: 24px;
   padding-left: 0.5rem;
