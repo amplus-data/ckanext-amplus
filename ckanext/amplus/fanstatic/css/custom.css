@@ -389,11 +389,9 @@ a:active {
 .item-count {
   margin: auto 5px;
 }
-.no-nav {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.no-nav .module {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 .wide .media-item {
   -webkit-box-flex: 1;
