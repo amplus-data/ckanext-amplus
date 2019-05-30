@@ -75,10 +75,17 @@ a {
   border-radius: 0;
 }
 
-.item-count{
+.item-count {
   margin: auto 5px;
 }
 
-.no-nav{
+.no-nav {
   .flex-column;
+}
+
+.wide {
+  .media-item {
+    flex-grow: 1;
+    min-width: calc(100%/4 - @gutter-lg);
+  }
 }
