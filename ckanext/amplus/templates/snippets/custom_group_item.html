@@ -1,31 +1,85 @@
+{% if group.type == "dataset" %}
+{% set description = group.notes %}
+{% else %}
+{% set description = group.description %}
+{% endif %}
+
 {% block featured_item %}
-  <a href="{{ h.url_for(controller='group', action='read', id=group.name) }}" class="group-item module module-narrow module-shallow">
-    {% block featured_item_header %}
+
+  <div class=" group-item" style="position: relative">
+      <a class="group-link"href="{{ h.url_for(group.type ~ '_read', action='read', id=group.name or group.title) }}"
+      class="module module-narrow module-shallow"></a>
+      <div class="group-content-wrapper">
+    {% if group.type == "organization" or group.type == "group" %}
+    {% block featured_item_header_image %}
+    <div class="group-icon">
+      <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}"
+        alt="{{ group.name }}" />
+      <!-- <i class="fa fa-folder-open" aria-hidden="true"></i> -->
+    </div>
+    {% endblock %}
+    {% endif %}
+    <div>
+      {% block featured_item_header %}
       {% set truncate=truncate or 0 %}
       {% set truncate_title = truncate_title or 0 %}
       {% set title = group.title or group.name %}
-      <div class="title-wrap">
-        {% block featured_item_header_image %}
-        <div class="group-icon">
-          <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="{{ group.name }}" />
-          <!-- <i class="fa fa-folder-open" aria-hidden="true"></i> -->
-        </div>
-        {% endblock %}
-        {% block featured_item_header_title %}
-        <h3 class="group-title">{{ group.title or group.name }}</h3>
-        {% endblock %}
-      </div>
-      {% block featured_item_header_description %}
-        {% if c.controller == 'home' and group.description %}
-          {% if truncate == 0 %}
-            <p class="group-desc">{{ h.markdown_extract(group.description)|urlize }}</p>
-          {% else %}
-            <p class="group-desc">{{ h.markdown_extract(group.description)|urlize }}</p>
-          {% endif %}
-        {% endif %}
+
+
+      {% block featured_item_header_title %}
+      <h3 class="group-title">{{ group.title or group.name }}</h3>
       {% endblock %}
+
+      {% block featured_item_header_description %}
+      {% if c.controller != 'group' and group.type == 'group' %}
+      {% else %}
+      {% if description %}
+      <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
+      {% else %}
+      <p class="empty group-desc">{{ _("This " + group.type + " has no description") }}</p>
+      {% endif %}
+
+      {% block datasets %}
+      {% if group.type != "dataset" %}
+      {% if group.package_count %}
+      <strong
+        class="count group-desc">{{ ungettext('{num} Dataset', '{num} Datasets', group.package_count).format(num=group.package_count) }}</strong>
+      {% else %}
+      <span class="count group-desc">{{ _('0 Datasets') }}</span>
+      {% endif %}
+      {% endif %}
+      {% endblock %}
+
+      {% endif %}
+      {% endblock %}
+
+      
+
+      {% block resources %}
+      {% if group.resources and not hide_resources %}
+      {% block resources_outer %}
+      <ul class="dataset-resources list-unstyled">
+        {% block resources_inner %}
+        {% for resource in h.dict_list_reduce(group.resources, 'format') %}
+        <li class="label label-default" data-format="{{ resource.lower() }}">
+            <a href="{{ h.url_for(controller='package', action='read', id=group.name) }}" class="label label-default" data-format="{{ resource.lower() }}">{{ resource }}</a>
+
+        </li>
+        {% endfor %}
+        {% endblock %}
+
+      </ul>
+      {% endblock %}
+      {% endif %}
+      {% endblock %}
+    </div>
+    </div>
     {% endblock %}
     {% block featured_item_content %}
     {% endblock %}
-  </a>
+  </div>
+
+
+</a>
+
 {% endblock %}
