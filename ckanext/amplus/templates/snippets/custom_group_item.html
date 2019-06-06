@@ -3,9 +3,7 @@
 {% else %}
 {% set description = group.description %}
 {% endif %}
-
 {% block featured_item %}
-
   <div class=" group-item" style="position: relative">
       <a class="group-link"href="{{ h.url_for(group.type ~ '_read', action='read', id=group.name or group.title) }}"
       class="module module-narrow module-shallow"></a>
@@ -18,14 +16,13 @@
       <!-- <i class="fa fa-folder-open" aria-hidden="true"></i> -->
     </div>
     {% endblock %}
+
     {% endif %}
     <div>
       {% block featured_item_header %}
       {% set truncate=truncate or 0 %}
       {% set truncate_title = truncate_title or 0 %}
       {% set title = group.title or group.name %}
-
-
       {% block featured_item_header_title %}
       <h3 class="group-title">{{ group.title or group.name }}</h3>
       {% endblock %}
@@ -53,8 +50,6 @@
       {% endif %}
       {% endblock %}
 
-      
-
       {% block resources %}
       {% if group.resources and not hide_resources %}
       {% block resources_outer %}
@@ -70,16 +65,16 @@
 
       </ul>
       {% endblock %}
+
       {% endif %}
       {% endblock %}
+
     </div>
     </div>
     {% endblock %}
+
     {% block featured_item_content %}
     {% endblock %}
+ 
   </div>
-
-
-</a>
-
 {% endblock %}
