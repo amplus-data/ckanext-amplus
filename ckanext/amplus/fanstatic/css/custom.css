@@ -126,7 +126,6 @@
   -webkit-transition: background-color 200ms;
   -o-transition: background-color 200ms;
   transition: background-color 200ms;
-  position: relative;
 }
 .group-item:hover {
   color: #FFFFFF;
@@ -145,27 +144,16 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.group-content-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
+.dataset-resources {
+  padding-left: 1.5rem;
 }
-.group-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
+.dataset-resources li {
+  margin-right: 0.5rem;
 }
 .group-topics,
 .group-container {
-  margin-left: -3rem;
-  margin-right: -3rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
   background: #efecf4;
 }
 .group-topics .group-title,
@@ -174,6 +162,14 @@
   font-weight: 600;
   line-height: 1.25;
   margin: auto 1.5rem;
+}
+.group-topics .group-title span,
+.group-container .group-title span {
+  font-size: 12px;
+}
+.group-topics .group-title i,
+.group-container .group-title i {
+  font-size: 12px;
 }
 .group-topics .group-desc,
 .group-container .group-desc {
