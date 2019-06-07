@@ -3,41 +3,51 @@
 {% else %}
 {% set description = group.description %}
 {% endif %}
+
 {% block featured_item %}
-  <div class=" group-item" style="position: relative">
-      <a class="group-link"href="{{ h.url_for(group.type ~ '_read', action='read', id=group.name or group.title) }}"
-      class="module module-narrow module-shallow"></a>
-      <div class="group-content-wrapper">
-    {% if group.type == "organization" or group.type == "group" %}
+  <a href="{{ h.url_for(group.type ~ '_read', action='read', id=group.name or group.title)  }}" class="group-item module module-narrow module-shallow">
+    {% block featured_item_header %}
+      {% set truncate=truncate or 0 %}
+      {% set truncate_title = truncate_title or 0 %}
+      {% set title = group.title or group.name %}
+      <div class="title-wrap">
+        {% if group.type == "organization" or group.type == "group" %}
     {% block featured_item_header_image %}
     <div class="group-icon">
-      <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}"
+      <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-' + group.type + '.png') }}"
         alt="{{ group.name }}" />
       <!-- <i class="fa fa-folder-open" aria-hidden="true"></i> -->
     </div>
     {% endblock %}
 
     {% endif %}
-    <div>
-      {% block featured_item_header %}
-      {% set truncate=truncate or 0 %}
-      {% set truncate_title = truncate_title or 0 %}
-      {% set title = group.title or group.name %}
-      {% block featured_item_header_title %}
-      <h3 class="group-title">{{ group.title or group.name }}</h3>
-      {% endblock %}
+        {% block featured_item_header_title %}
+        <h3 class="group-title">
+            {% block heading_private %}
+              {% if group.private %}
+                <span class="dataset-private label label-inverse">
+                  <i class="fa fa-lock"></i>
+                  {{ _('Private') }}
+                </span>
+              {% endif %}
+            {% endblock %}
 
+          {{ group.title or group.name }}</h3>
+        {% endblock %}
+
+      </div>
       {% block featured_item_header_description %}
-      {% if c.controller != 'group' and group.type == 'group' %}
-      {% else %}
-      {% if description %}
-      <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
-      {% else %}
-      <p class="empty group-desc">{{ _("This " + group.type + " has no description") }}</p>
-      {% endif %}
-
-      {% block datasets %}
-      {% if group.type != "dataset" %}
+        {% if c.controller == 'package' and group.type == 'group' or c.controller == 'ckanext.showcase.controller:ShowcaseController' and group.type == 'group'%}
+          {% if truncate == 0 %}
+            <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
+          {% endif %}
+        {% else %}
+          {% if description %}
+            <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
+          {% else %}
+            <p class="empty group-desc">{{ _("This " + group.type + " has no description") }}</p>
+          {% endif %} 
+          {% if group.type != "dataset" and c.controller != 'home' %}
       {% if group.package_count %}
       <strong
         class="count group-desc">{{ ungettext('{num} Dataset', '{num} Datasets', group.package_count).format(num=group.package_count) }}</strong>
@@ -45,36 +55,28 @@
       <span class="count group-desc">{{ _('0 Datasets') }}</span>
       {% endif %}
       {% endif %}
+
+        {% endif %}
       {% endblock %}
 
-      {% endif %}
-      {% endblock %}
+    {% endblock %}
 
-      {% block resources %}
+    {% block resources %}
       {% if group.resources and not hide_resources %}
-      {% block resources_outer %}
-      <ul class="dataset-resources list-unstyled">
-        {% block resources_inner %}
-        {% for resource in h.dict_list_reduce(group.resources, 'format') %}
-        <li class="label label-default" data-format="{{ resource.lower() }}">
-            <a href="{{ h.url_for(controller='package', action='read', id=group.name) }}" class="label label-default" data-format="{{ resource.lower() }}">{{ resource }}</a>
-
-        </li>
-        {% endfor %}
+        {% block resources_outer %}
+          <ul class="dataset-resources list-unstyled">
+            {% block resources_inner %}
+              {% for resource in h.dict_list_reduce(group.resources, 'format') %}
+                <li class="label label-default" data-format="{{ resource.lower() }}">
+                  {{ resource }}
+                </li>
+              {% endfor %}
+            {% endblock %}
+          </ul>
         {% endblock %}
 
-      </ul>
-      {% endblock %}
-
-      {% endif %}
-      {% endblock %}
-
-    </div>
-    </div>
+    {% endif %}
     {% endblock %}
 
-    {% block featured_item_content %}
-    {% endblock %}
- 
-  </div>
+  </a>
 {% endblock %}
