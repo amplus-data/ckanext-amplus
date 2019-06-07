@@ -48,14 +48,13 @@
             <p class="empty group-desc">{{ _("This " + group.type + " has no description") }}</p>
           {% endif %} 
           {% if group.type != "dataset" and c.controller != 'home' %}
-      {% if group.package_count %}
-      <strong
-        class="count group-desc">{{ ungettext('{num} Dataset', '{num} Datasets', group.package_count).format(num=group.package_count) }}</strong>
-      {% else %}
-      <span class="count group-desc">{{ _('0 Datasets') }}</span>
-      {% endif %}
-      {% endif %}
-
+            {% if group.package_count %}
+              <strong
+              class="count group-desc">{{ ungettext('{num} Dataset', '{num} Datasets', group.package_count).format(num=group.package_count) }}</strong>
+            {% else %}
+              <span class="count group-desc">{{ _('0 Datasets') }}</span>
+            {% endif %}
+          {% endif %}
         {% endif %}
       {% endblock %}
 
