@@ -99,7 +99,8 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
-.module-content .group-item {
+.module-content .group-item,
+.tab-content .group-item {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 40%;
           flex: 1 0 40%;
