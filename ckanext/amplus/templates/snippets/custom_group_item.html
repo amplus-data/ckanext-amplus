@@ -1,17 +1,28 @@
 {% set pkg = c.pkg_dict %}
 
-{% if group.type == "dataset" or group.type == "showcase" or group.resource_type == "None" %}
+<!-- Set type of item -->
+{% if type is defined %}
+{% do group.update({'type': 'group'}) %}
+{% elif group.resource_type is defined %}
+{% do group.update({'type': 'resource'}) %}
+{% elif group.type is defined %}
+{% else %}
+{% do group.update({'type': 'datarequest'}) %}
+{% endif %}
+
+<!-- Set description -->
+{% if group.type == "dataset" or group.type == "showcase" %}
 {% set description = group.notes %}
 {% else %}
 {% set description = group.description %}
 {% endif %}
 
 <!-- Set url for item -->
-{% if group.resource_type is defined %}
+{% if group.type == 'resource' %}
 {% set url_action = 'resource_edit' if url_is_edit and can_edit else 'resource_read' %}
 {% set url = h.url_for(controller='package', action=url_action, id=pkg.name, resource_id=group.id) %}
 {% else %}
-{% if group.type %}
+{% if group.type != 'datarequest' %}
 {% set url = h.url_for(group.type ~ '_read', action='read', id=group.name or group.title) %}
 {% else %}
 {% set url =  h.url_for(controller='ckanext.datarequests.controllers.ui_controller:DataRequestsUI', action='comment', id=group.get('id','')) %}
@@ -20,7 +31,6 @@
 
 {% block featured_item %}
 <a href="{{ url }}" class="group-item module module-narrow module-shallow">
-
 
   {% block featured_item_header %}
   {% set truncate=truncate or 0 %}
@@ -38,12 +48,11 @@
 
     {% endif %}
     {% block featured_item_header_title %}
-    {% if group.resource_type is defined %}
+    {% if group.type == 'resource' %}
     {% block resource_item_title %}
     <object>
       <a class="heading" href="{{ url }}" title="{{ group.name or group.description }}">
-        <span class="format-label" property="dc:format"
-          data-format="{{ group.format.lower() or 'data' }}">{{ h.get_translated(group, 'format') }}</span>
+        <span class="format-label" property="dc:format" data-format="{{ group.format.lower() or 'data' }}">{{ h.get_translated(group, 'format') }}</span>
         {{ h.popular('views', group.tracking_summary.total, min=10) }}
       </a>
     </object>
@@ -51,8 +60,7 @@
     {% endif %}
     <h3 class="group-title">
 
-      {% if group.type is defined or group.resource_type is defined %}
-      {%else%}
+      {% if group.type == 'datarequest' %}
       {% if group.get('closed', False) %}
       <span class="uppercase label label-closed">
         <i class="icon-lock fa fa-lock"></i> {% trans %}Closed{% endtrans %}
@@ -77,7 +85,7 @@
 
   </div>
   {% block featured_item_header_description %}
-  {% if c.controller == 'package' and group.type == 'group' or c.controller == 'ckanext.showcase.controller:ShowcaseController' and group.type == 'group'  %}
+  {% if c.controller == 'package' and group.type == 'group' and not type or c.controller == 'ckanext.showcase.controller:ShowcaseController' and group.type == 'group'  %}
   {% if truncate == 0 %}
   <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
   {% endif %}
@@ -87,13 +95,9 @@
   {% else %}
   {% if group.type %}
   <p class="empty group-desc">{{ _("This " + group.type + " has no description") }}</p>
-  {% elif group.resource_type is defined %}
-  <p class="empty group-desc">{{ _("This resource has no description") }}</p>
-  {%else%}
-  <p class="empty group-desc">{{ _("This datarequest has no description") }}</p>
   {%endif%}
   {% endif %}
-  {% if group.type != "dataset" and c.controller != 'home' and group.type%}
+  {% if group.type == "organization" or group.type == 'group'%}
   {% if group.package_count %}
   <strong
     class="count group-desc">{{ ungettext('{num} Dataset', '{num} Datasets', group.package_count).format(num=group.package_count) }}</strong>
@@ -123,8 +127,7 @@
 
   {% endif %}
   {% endblock %}
-  {% if group.type or group.resource_type is defined %}
-  {% else %}
+  {% if group.type == 'datarequest' %}
   <div class="datarequest-properties">
     {% if h.show_comments_tab() %}
     <i class="icon-comment fa fa-comment"></i> {{ h.get_comments_number(group.get('id', '')) }}</span>
@@ -134,7 +137,7 @@
     </div>
   </div>
   {% endif %}
-  {% if group.resource_type is defined%}
+  {% if group.type == 'resource' %}
   {% block resource_item_explore %}
   {% if not url_is_edit %}
   <object>
