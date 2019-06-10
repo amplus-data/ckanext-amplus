@@ -3,8 +3,6 @@
 <!-- Set type of item -->
 {% if type is defined %}
 {% do group.update({'type': 'group'}) %}
-{% elif group.resource_type is defined %}
-{% do group.update({'type': 'resource'}) %}
 {% elif group.type is defined %}
 {% else %}
 {% do group.update({'type': 'datarequest'}) %}
@@ -18,16 +16,12 @@
 {% endif %}
 
 <!-- Set url for item -->
-{% if group.type == 'resource' %}
-{% set url_action = 'resource_edit' if url_is_edit and can_edit else 'resource_read' %}
-{% set url = h.url_for(controller='package', action=url_action, id=pkg.name, resource_id=group.id) %}
-{% else %}
 {% if group.type != 'datarequest' %}
 {% set url = h.url_for(group.type ~ '_read', action='read', id=group.name or group.title) %}
 {% else %}
 {% set url =  h.url_for(controller='ckanext.datarequests.controllers.ui_controller:DataRequestsUI', action='comment', id=group.get('id','')) %}
 {% endif %}
-{% endif %}
+
 
 {% block featured_item %}
 <a href="{{ url }}" class="group-item module module-narrow module-shallow">
