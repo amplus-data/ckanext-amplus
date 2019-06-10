@@ -16,11 +16,11 @@
       <div class="group-topics-list">
         {% if type is defined %}
           {% for group in groups %}
-            {% snippet 'snippets/custom_group_item.html', group=group, type=type, truncate=50, truncate_title=35 %}
+            {% snippet 'snippets/custom_item.html', group=group, type=type, truncate=50, truncate_title=35 %}
           {% endfor %}
         {% else %}
           {% for group in groups %}
-            {% snippet 'snippets/custom_group_item.html', group=group, truncate=50, truncate_title=35, show_remove=show_remove%}
+            {% snippet 'snippets/custom_item.html', group=group, truncate=50, truncate_title=35, show_remove=show_remove%}
           {% endfor %}
         {% endif %}
       </div>
