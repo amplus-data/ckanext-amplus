@@ -31,7 +31,6 @@
 
 {% block featured_item %}
 <a href="{{ url }}" class="media-item group-item module module-narrow module-shallow">
-
   {% block featured_item_header %}
   {% set truncate=truncate or 0 %}
   {% set truncate_title = truncate_title or 0 %}
@@ -48,152 +47,153 @@
 
     {% endif %}
     {% block featured_item_header_title %}
-    {% if group.type == 'resource' %}
-    {% block resource_item_title %}
-    <object>
-      <a class="heading" href="{{ url }}" title="{{ group.name or group.description }}">
-        <span class="format-label" property="dc:format" data-format="{{ group.format.lower() or 'data' }}">{{ h.get_translated(group, 'format') }}</span>
-        {{ h.popular('views', group.tracking_summary.total, min=10) }}
-      </a>
-    </object>
-    {% endblock %}
-    {% endif %}
-    <h3 class="group-title">
+      {% if group.type == 'resource' %}
+        {% block resource_item_title %}
+          <object>
+            <a class="heading" href="{{ url }}" title="{{ group.name or group.description }}">
+              <span class="format-label" property="dc:format" data-format="{{ group.format.lower() or 'data' }}">{{ h.get_translated(group, 'format') }}</span>
+              {{ h.popular('views', group.tracking_summary.total, min=10) }}
+            </a>
+          </object>
+        {% endblock %}
 
-      {% if group.type == 'datarequest' %}
-      {% if group.get('closed', False) %}
-      <span class="uppercase label label-closed">
-        <i class="icon-lock fa fa-lock"></i> {% trans %}Closed{% endtrans %}
-      </span>
-      {% else %}
-      <span class="uppercase label label-open">
-        <i class="icon-unlock fa fa-unlock"></i> {% trans %}Open{% endtrans %}
-      </span>
       {% endif %}
-      {% endif %}
-      {% block heading_private %}
-      {% if group.private %}
-      <span class="dataset-private label label-inverse">
-        <i class="fa fa-lock"></i>
-        {{ _('Private') }}
-      </span>
-      {% endif %}
-      {% endblock %}
+        <h3 class="group-title">
+          {% if group.type == 'datarequest' %}
+            {% if group.get('closed', False) %}
+              <span class="uppercase label label-closed">
+                <i class="icon-lock fa fa-lock"></i> {% trans %}Closed{% endtrans %}
+              </span>
+            {% else %}
+              <span class="uppercase label label-open">
+                <i class="icon-unlock fa fa-unlock"></i> {% trans %}Open{% endtrans %}
+              </span>
+            {% endif %}
+          {% endif %}
+            {% block heading_private %}
+              {% if group.private %}
+                <span class="dataset-private label label-inverse">
+                  <i class="fa fa-lock"></i>
+                  {{ _('Private') }}
+                </span>
+              {% endif %}
+            {% endblock %}
 
-      {{ group.title or group.name }}</h3>
+        {{ group.title or group.name }}</h3>
     {% endblock %}
 
   </div>
-  {% block featured_item_header_description %}
-  {% if c.controller == 'package' and group.type == 'group' and not type or c.controller == 'ckanext.showcase.controller:ShowcaseController' and group.type == 'group'  %}
-  {% if truncate == 0 %}
-  <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
-  {% endif %}
-  {% else %}
-  {% if description %}
-  <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
-  {% else %}
-  {% if group.type %}
-  <p class="empty group-desc">{{ _("This " + group.type + " has no description") }}</p>
-  {%endif%}
-  {% endif %}
-  {% if group.type == "organization" or group.type == 'group' and c.controller != 'home' and c.controller != 'package' %}
-  {% if group.package_count %}
-  <strong
-    class="count group-desc">{{ ungettext('{num} Dataset', '{num} Datasets', group.package_count).format(num=group.package_count) }}</strong>
-  {% else %}
-  <span class="count group-desc">{{ _('0 Datasets') }}</span>
-  {% endif %}
-  {% endif %}
-  {% endif %}
-  {% endblock %}
+    {% block featured_item_header_description %}
+      {% if c.controller == 'package' and group.type == 'group' and not type or c.controller == 'ckanext.showcase.controller:ShowcaseController' and group.type == 'group'  %}
+        {% if truncate == 0 %}
+          <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
+        {% endif %}
+      {% else %}
+        {% if description %}
+          <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
+        {% else %}
+          {% if group.type %}
+            <p class="empty group-desc">{{ _("This " + group.type + " has no description") }}</p>
+          {% endif %}
+        {% endif %}
+        {% if group.type == "organization" or group.type == 'group' and c.controller != 'home' and c.controller != 'package' %}
+          {% if group.package_count %}
+            <strong
+              class="count group-desc">{{ ungettext('{num} Dataset', '{num} Datasets', group.package_count).format(num=group.package_count) }}</strong>
+          {% else %}
+            <span class="count group-desc">{{ _('0 Datasets') }}</span>
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endblock %}
 
-  {% endblock %}
-
+{% endblock %}
 
   {% block resources %}
-  {% if group.resources and not hide_resources %}
-  {% block resources_outer %}
-  <ul class="dataset-resources list-unstyled">
-    {% block resources_inner %}
-    {% for resource in h.dict_list_reduce(group.resources, 'format') %}
-    <li class="label label-default" data-format="{{ resource.lower() }}">
-      {{ resource }}
-    </li>
-    {% endfor %}
-    {% endblock %}
-  </ul>
-  {% endblock %}
+    {% if group.resources and not hide_resources %}
+      {% block resources_outer %}
+        <ul class="dataset-resources list-unstyled">
+          {% block resources_inner %}
+            {% for resource in h.dict_list_reduce(group.resources, 'format') %}
+              <li class="label label-default" data-format="{{ resource.lower() }}">
+                {{ resource }}
+              </li>
+            {% endfor %}
+          {% endblock %}
 
-  {% endif %}
-  {% endblock %}
-  {% if group.type == 'datarequest' %}
-  <div class="datarequest-properties">
-    {% if h.show_comments_tab() %}
-    <i class="icon-comment fa fa-comment"></i> {{ h.get_comments_number(group.get('id', '')) }}</span>
+        </ul>
+      {% endblock %}
+
     {% endif %}
-    <div class="divider">
-      <span class="date-datarequests">{{ h.time_ago_from_timestamp(group.open_time) }}</span>
-    </div>
-  </div>
-  {% endif %}
-  {% if group.type == 'resource' %}
-  {% block resource_item_explore %}
-  {% if not url_is_edit %}
-  <object>
-    <div class="dropdown btn-group">
-      <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-        <i class="fa fa-share"></i>
-        {{ _('Explore') }}
-        <span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu">
-        {% block resource_item_explore_links %}
-        <li>
-          <a href="{{ url }}">
-            {% if group.has_views %}
-            <i class="fa fa-bar-chart-o"></i>
-            {{ _('Preview') }}
-            {% else %}
-            <i class="fa fa-info-circle"></i>
-            {{ _('More information') }}
-            {% endif %}
-          </a>
-        </li>
-        {% if group.url and h.is_url(group.url) %}
-        <li>
-          <a href="{{ group.url }}" class="resource-url-analytics" target="_blank">
-            {% if group.has_views or group.url_type == 'upload' %}
-            <i class="fa fa-arrow-circle-o-down"></i>
-            {{ _('Download') }}
-            {% else %}
-            <i class="fa fa-external-link"></i>
-            {{ _('Go to resource') }}
-            {% endif %}
-          </a>
-        </li>
-        {% endif %}
-        {% if can_edit %}
-        <li>
-          <a href="{{ h.url_for(controller='package', action='resource_edit', id=pkg.name, resource_id=group.id) }}">
-            <i class="fa fa-pencil-square-o"></i>
-            {{ _('Edit') }}
-          </a>
-        </li>
-        {% endif %}
-        {% endblock %}
-      </ul>
-    </div>
-  </object>
-  {% endif %}
   {% endblock %}
-  {% endif %}
+    {% if group.type == 'datarequest' %}
+      <div class="datarequest-properties">
+        {% if h.show_comments_tab() %}
+          <i class="icon-comment fa fa-comment"></i> {{ h.get_comments_number(group.get('id', '')) }}</span>
+        {% endif %}
+          <div class="divider">
+            <span class="date-datarequests">{{ h.time_ago_from_timestamp(group.open_time) }}</span>
+          </div>
+      </div>
+    {% endif %}
+      {% if group.type == 'resource' %}
+        {% block resource_item_explore %}
+          {% if not url_is_edit %}
+            <object>
+              <div class="dropdown btn-group">
+                <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-share"></i>
+                  {{ _('Explore') }}
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  {% block resource_item_explore_links %}
+                    <li>
+                      <a href="{{ url }}">
+                        {% if group.has_views %}
+                          <i class="fa fa-bar-chart-o"></i>
+                          {{ _('Preview') }}
+                        {% else %}
+                          <i class="fa fa-info-circle"></i>
+                          {{ _('More information') }}
+                        {% endif %}
+                      </a>
+                    </li>
+                  {% if group.url and h.is_url(group.url) %}
+                    <li>
+                      <a href="{{ group.url }}" class="resource-url-analytics" target="_blank">
+                        {% if group.has_views or group.url_type == 'upload' %}
+                          <i class="fa fa-arrow-circle-o-down"></i>
+                            {{ _('Download') }}
+                        {% else %}
+                          <i class="fa fa-external-link"></i>
+                          {{ _('Go to resource') }}
+                        {% endif %}
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if can_edit %}
+                     <li>
+                      <a href="{{ h.url_for(controller='package', action='resource_edit', id=pkg.name, resource_id=group.id) }}">
+                        <i class="fa fa-pencil-square-o"></i>
+                        {{ _('Edit') }}
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% endblock %}
 
-  {% if group.user_member %}
-    <input name="group_remove.{{ group.id }}" value="{{ _('Remove') }}" type="submit" class="btn btn-danger btn-sm media-edit" title="{{ _('Remove dataset from this group') }}"/>
-  {% endif %}
-  {% if show_remove %}
-  <form method="post"><input type="hidden" value="{{ group.id }}" name="remove_showcase_id" /><input value="{{ _('Remove') }}" type="submit" class="btn btn-danger btn-small media-edit" title="{{ _('Remove dataset from this showcase') }}"/></form>
-  {% endif %}
-</a>
+                </ul>
+              </div>
+            </object>
+          {% endif %}
+        {% endblock %}
+
+      {% endif %}
+        {% if group.user_member %}
+          <input name="group_remove.{{ group.id }}" value="{{ _('Remove') }}" type="submit" class="btn btn-danger btn-sm media-edit" title="{{ _('Remove dataset from this group') }}"/>
+        {% endif %}
+        {% if show_remove %}
+          <form method="post"><input type="hidden" value="{{ group.id }}" name="remove_showcase_id" /><input value="{{ _('Remove') }}" type="submit" class="btn btn-danger btn-small media-edit" title="{{ _('Remove dataset from this showcase') }}"/></form>
+      {% endif %}
+  </a>
 {% endblock %}
