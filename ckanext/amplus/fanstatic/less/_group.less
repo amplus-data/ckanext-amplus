@@ -57,9 +57,20 @@
     .flex;
     .flex-align-center;
   }
+  
+  .media-edit,
+  form{
+    margin-top: auto;
+    margin-left: auto;
+  }
+  .datarequest-properties,
+  .count.group-desc{
+    margin-top: auto;
+  }
 }
 
 .dataset-resources {
+  margin-top: auto;
   padding-left: 1.5rem;
 
   li {
@@ -67,10 +78,14 @@
   }
 }
 
+.group-desc{
+  &.empty{
+    margin-bottom: @gutter-md;
+  }
+}
 .group-topics,
 .group-container {
-  margin-left: -@gutter-md;
-  margin-right: -@gutter-md;
+ 
   background: @brand-background;
 
   .group-title {
