@@ -79,33 +79,13 @@
   font-size: 18px;
   margin-bottom: 0;
 }
-.group-topics .group-heading {
-  margin-top: 60px;
-}
-.primary .group-topics {
-  padding: 1rem 1.5rem;
-}
-.data > .empty {
-  margin: auto;
-  font-size: 20px;
-}
-.group-topics-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.module-content .group-item,
-.tab-content .group-item {
+.module-content .featured-item,
+.tab-content .featured-item {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 40%;
           flex: 1 0 40%;
 }
-.group-item {
+.featured-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -128,16 +108,20 @@
   -o-transition: background-color 200ms;
   transition: background-color 200ms;
 }
-.group-item:hover {
+.featured-item.dataset-item {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.featured-item:hover {
   color: #FFFFFF;
   background-color: #9F1A86;
 }
-.group-item,
-.group-item:hover,
-.group-item .title {
+.featured-item,
+.featured-item:hover,
+.featured-item .title {
   text-decoration: none;
 }
-.group-item .title-wrap {
+.featured-item .title-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,14 +129,35 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.group-item .media-edit,
-.group-item form {
+.featured-item .media-edit,
+.featured-item form {
   margin-top: auto;
   margin-left: auto;
 }
-.group-item .datarequest-properties,
-.group-item .count.group-desc {
+.featured-item .datarequest-properties,
+.featured-item .count.group-desc {
   margin-top: auto;
+}
+.module-content .group-topics-list {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+.group-topics .group-heading {
+  margin-top: 60px;
+}
+.data > .empty {
+  margin: auto;
+  font-size: 20px;
+}
+.group-topics-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .dataset-resources {
   margin-top: auto;
@@ -332,6 +337,10 @@
       flex-wrap: wrap;
   min-width: 100%;
   margin: auto -1.5rem;
+}
+.dataset-item:last-of-type {
+  margin-bottom: 1.5rem;
+  padding-bottom: 3rem;
 }
 .dataset-list > .dataset-item {
   -webkit-box-flex: 1;
@@ -1220,7 +1229,7 @@ a:active {
   .navbar-toggle {
     margin-right: 15px;
   }
-  .group-item {
+  .featured-item {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
