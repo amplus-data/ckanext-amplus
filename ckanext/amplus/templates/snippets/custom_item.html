@@ -1,0 +1,130 @@
+{% set pkg = c.pkg_dict %}
+
+<!-- Set type of item -->
+{% if type is defined %}
+  {% do group.update({'type': 'group'}) %}
+{% elif group.type is defined %}
+{% else %}
+  {% do group.update({'type': 'datarequest'}) %}
+{% endif %}
+
+<!-- Set description -->
+{% if group.type == "dataset" or group.type == "showcase" %}
+  {% set description = group.notes %}
+{% else %}
+  {% set description = group.description %}
+{% endif %}
+
+<!-- Set url for item -->
+{% if group.type != 'datarequest' %}
+  {% set url = h.url_for(group.type ~ '_read', action='read', id=group.name or group.title) %}
+{% else %}
+  {% set url =  h.url_for(controller='ckanext.datarequests.controllers.ui_controller:DataRequestsUI', action='comment', id=group.get('id','')) %}
+{% endif %}
+
+
+{% block featured_item %}
+<a href="{{ url }}" class="featured-item {{group.type}}-item">
+  {% block featured_item_header %}
+  {% set truncate=truncate or 0 %}
+  {% set truncate_title = truncate_title or 0 %}
+  {% set title = group.title or group.name %}
+  <div class="title-wrap">
+    {% if group.type == "organization" or group.type == "group" or group.type == "showcase" %}
+      {% block featured_item_header_image %}
+      <div class="group-icon">
+        <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-' + group.type + '.png') }}"
+          alt="{{ group.name }}" />
+          <!-- <i class="fa fa-folder-open" aria-hidden="true"></i> -->
+      </div>
+      {% endblock %}
+
+    {% endif %}
+      {% block featured_item_header_title %}
+      <h3 class="group-title">
+        {% if group.type == 'datarequest' %}
+          {% if group.get('closed', False) %}
+            <span class="uppercase label label-closed">
+              <i class="icon-lock fa fa-lock"></i> {% trans %}Closed{% endtrans %}
+            </span>
+          {% else %}
+            <span class="uppercase label label-open">
+              <i class="icon-unlock fa fa-unlock"></i> {% trans %}Open{% endtrans %}
+            </span>
+          {% endif %}
+        {% endif %}
+          {% block heading_private %}
+          {% if group.private %}
+            <span class="dataset-private label label-inverse">
+              <i class="fa fa-lock"></i>
+              {{ _('Private') }}
+              </span>
+            {% endif %}
+          {% endblock %}
+
+        {{ group.title or group.name }}
+      </h3>
+      {% endblock %}
+
+      </div>
+      {% block featured_item_header_description %}
+        {% if c.controller == 'package' and group.type == 'group' and not type or c.controller == 'ckanext.showcase.controller:ShowcaseController' and group.type == 'group'  %}
+          {% if truncate == 0 %}
+            <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
+          {% endif %}
+        {% else %}
+          {% if description %}
+            <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
+          {% else %}
+            {% if group.type %}
+              <p class="empty group-desc">{{ _("This " + group.type + " has no description") }}</p>
+            {% endif %}
+          {% endif %}
+          {% if group.type == "organization" or group.type == 'group' and c.controller != 'home' and c.controller != 'package' %}
+            {% if group.package_count %}
+              <strong class="count group-desc">{{ ungettext('{num} Dataset', '{num} Datasets', group.package_count).format(num=group.package_count) }}</strong>
+            {% else %}
+              <span class="count group-desc">{{ _('0 Datasets') }}</span>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endblock %}
+
+  {% endblock %}
+
+  {% block resources %}
+    {% if group.resources and not hide_resources %}
+      {% block resources_outer %}
+      <ul class="dataset-resources list-unstyled">
+        {% block resources_inner %}
+          {% for resource in h.dict_list_reduce(group.resources, 'format') %}
+            <li class="label label-default" data-format="{{ resource.lower() }}">
+              {{ resource }}
+            </li>
+          {% endfor %}
+        {% endblock %}
+
+      </ul>
+      {% endblock %}
+
+    {% endif %}
+  {% endblock %}
+
+  {% if group.type == 'datarequest' %}
+    <div class="datarequest-properties">
+      {% if h.show_comments_tab() %}
+        <i class="icon-comment fa fa-comment"></i> {{ h.get_comments_number(group.get('id', '')) }}</span>
+      {% endif %}
+      <div class="divider">
+        <span class="date-datarequests">{{ h.time_ago_from_timestamp(group.open_time) }}</span>
+      </div>
+    </div>
+  {% endif %}
+  {% if group.user_member %}
+    <input name="group_remove.{{ group.id }}" value="{{ _('Remove') }}" type="submit" class="btn btn-danger btn-sm media-edit" title="{{ _('Remove dataset from this group') }}"/>
+  {% endif %}
+  {% if show_remove %}
+    <form method="post"><input type="hidden" value="{{ group.id }}" name="remove_showcase_id" /><input value="{{ _('Remove') }}" type="submit" class="btn btn-danger btn-small media-edit" title="{{ _('Remove dataset from this showcase') }}"/></form>
+  {% endif %}
+</a>
+{% endblock %}

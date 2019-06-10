@@ -1,0 +1,9 @@
+{% ckan_extends %}
+
+{% block showcase_list %}
+  {% if c.showcase_list %}
+    {{ h.snippet('home/snippets/featured_groups.html', groups=c.showcase_list, pkg_id=c.pkg_dict.name, show_remove=h.check_access('ckanext_showcase_update')) }}
+  {% else %}
+    <p class="empty">{{ _('There are no showcases that feature this dataset') }}</p>
+  {% endif %}
+{% endblock %}

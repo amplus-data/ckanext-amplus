@@ -1,18 +1,28 @@
-{% set groups = h.get_featured_groups(items or 10) %}
+{% if groups  %}
+{% set groups = groups %}
+{% elif getGroups is defined %}
+{% set groups = h.get_featured_groups(items or 10)%}
+{% endif %}
 
 {% block featured_groups %}
   <div class="group-topics">
     {% block featured_groups_title %}
-      {% if c.controller == 'home' %}
+      {% if c.controller == 'home' and getGroups %}
       <h2 class="group-heading">{{_("Explore Topics")}}</h2>
       {% endif %}
     {% endblock %}
 
     {% if groups %}
       <div class="group-topics-list">
-        {% for group in groups %}
-        {% snippet 'snippets/custom_group_item.html', group=group, truncate=50, truncate_title=35 %}
-        {% endfor %}
+        {% if type is defined %}
+          {% for group in groups %}
+            {% snippet 'snippets/custom_item.html', group=group, type=type, truncate=50, truncate_title=35 %}
+          {% endfor %}
+        {% else %}
+          {% for group in groups %}
+            {% snippet 'snippets/custom_item.html', group=group, truncate=50, truncate_title=35, show_remove=show_remove%}
+          {% endfor %}
+        {% endif %}
       </div>
     {% endif %}
   </div>
