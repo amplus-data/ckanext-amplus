@@ -1,11 +1,13 @@
+.stats-container {
+    background: #efecf4;
+    padding: 10px 140px;
+}
 
 .stats {
     display: flex;
     justify-content: center;
     align-content: center;
     margin: 50px 0px;
-    background-color: #ffffff;
-    padding: 0px 120px;
     height: 100px;
     width: 100%;
     h3 {
@@ -38,15 +40,16 @@
         flex-direction: column;
         text-align: left;
         padding-left: 20px;
+        line-height: 1.2;
     }
     .stat-number {
-        width: 100%;
-        font-size: 20px;
-        color: black;
+        font-size: 25px;
+        font-weight: 600;
+        color: @text-dark;
     }
     .stat-title {
         font-size: 18px;
-        color: black;
+        color: @text-dark;
         text-transform: capitalize;
     }
 }
@@ -60,7 +63,7 @@
 
 .stats-wrapper:before {
     content: "";
-    width: 25%;
+    flex: 1 0 25%;
     height: 1px;
     float: left;
     background-color: grey;

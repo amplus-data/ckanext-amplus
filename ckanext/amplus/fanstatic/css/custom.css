@@ -1,5 +1,9 @@
 /* Please check https://docs.ckan.org/en/2.8/theming/ for the already existing stylesheets in CKAN core. */
 /* Add your custom LESS code here */
+.stats-container {
+  background: #efecf4;
+  padding: 10px 140px;
+}
 .stats {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10,8 +14,6 @@
   -ms-flex-line-pack: center;
       align-content: center;
   margin: 50px 0px;
-  background-color: #ffffff;
-  padding: 0px 120px;
   height: 100px;
   width: 100%;
 }
@@ -63,15 +65,16 @@
           flex-direction: column;
   text-align: left;
   padding-left: 20px;
+  line-height: 1.2;
 }
 .stat-content .stat-number {
-  width: 100%;
-  font-size: 20px;
-  color: black;
+  font-size: 25px;
+  font-weight: 600;
+  color: #414141;
 }
 .stat-content .stat-title {
   font-size: 18px;
-  color: black;
+  color: #414141;
   text-transform: capitalize;
 }
 .stats-wrapper {
@@ -87,7 +90,9 @@
 }
 .stats-wrapper:before {
   content: "";
-  width: 25%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 25%;
+          flex: 1 0 25%;
   height: 1px;
   float: left;
   background-color: grey;
