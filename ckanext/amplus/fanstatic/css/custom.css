@@ -312,10 +312,24 @@
       -ms-flex: 1 0 33.3%;
           flex: 1 0 33.3%;
   padding: 20px;
-  margin: 20px;
+  margin: 1.5rem;
   background: #FFFFFF;
   -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+.c3chart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto !important;
+}
+.c3chart svg {
+  max-width: 100%;
+  max-height: auto !important;
 }
 .visualize-card {
   display: -webkit-box;
@@ -331,7 +345,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: auto;
+  min-height: 360px;
 }
 .tab-content > .active {
   display: -webkit-box;
@@ -483,6 +497,16 @@ a:active {
 }
 .item-count {
   margin: auto 5px;
+}
+.no-nav .module {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+.wide .media-item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  min-width: calc(100%/4 - 3rem);
 }
 .header-secondary {
   font-size: 24px;
@@ -745,8 +769,6 @@ a:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -768,11 +790,27 @@ a:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 1.5rem;
+  word-wrap: break-word;
+}
+.resource-list .resource-item .heading-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin-right: 1.5rem;
 }
 .resource-list .resource-item .display-name {
-  margin: auto 1.5rem;
+  margin-bottom: 0;
 }
 .resource-list .resource-item .description {
+  margin-top: 0.5rem;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 30%;
           flex: 0 1 30%;
@@ -793,6 +831,7 @@ a:active {
   position: relative;
   top: auto;
   left: auto;
+  right: auto;
 }
 .resource-list .resource-item .resource-item-list {
   display: -webkit-box;
@@ -1092,7 +1131,7 @@ a:active {
 .site-footer {
   color: #9E9E9E;
   background: #FFFFFF;
-  padding: 100px 120px;
+  padding: 6rem 0;
 }
 .site-footer .logo img {
   max-height: 30px;
@@ -1136,17 +1175,15 @@ a:active {
 .homepage .blogs {
   background: #FFFFFF;
 }
-.homepage .blogs .container-fluid > .row > [class*='col-'] {
-  display: block;
-}
 .homepage .blogs .h2 {
   font-size: 40px;
   font-weight: 400;
+  margin-bottom: 4.5rem;
 }
 .homepage .blogs .box {
   -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
-  margin: 60px 0px;
+  margin: 1.5rem 0px;
   border: none;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -1160,6 +1197,7 @@ a:active {
   text-decoration: none;
 }
 .homepage .blogs .btn-view-all {
+  margin: 4.5rem auto auto;
   padding: 15px 70px;
   font-size: 16px;
   font-weight: 700;
@@ -1181,24 +1219,6 @@ a:active {
   margin: 0;
 }
 @media (min-width: 1200px) {
-  .footer-links {
-    text-align: left;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
-  .footer-links div {
-    margin-right: 40px;
-  }
-  .footer-links div:nth-child(2) {
-    margin-right: 150px;
-    margin-top: 32px;
-  }
-}
-@media (min-width: 1200px) {
   body [role=main] .secondary {
     padding: 3rem;
   }
@@ -1206,17 +1226,16 @@ a:active {
 @media (max-width: 1200px) {
   .attribution {
     text-align: center;
-    padding: 0px 0px 30px 0px;
+    padding: 3rem;
   }
   .footer-links {
-    float: none;
     text-align: center;
   }
-  .homepage .group-container .data div {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 100%;
-            flex: 1 0 100%;
-    margin: 0 0 40px 0;
+  .data .visualize-card {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .homepage .group-container .toggle-section div {
     border: none;

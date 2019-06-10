@@ -5,7 +5,6 @@
 
   .resource-item {
     .flex;
-    .flex-wrap;
     .flex-justify-between;
     .flex-align-center;
     .content-item-layout;
@@ -14,13 +13,23 @@
     .heading {
       .flex;
       .flex-align-center;
+      margin-right: @gutter-md;
+      word-wrap: break-word;
+    }
+
+    .heading-wrap{
+      .flex;
+      .flex-column;
+      flex: 1 1 auto;
+      margin-right: @gutter-md;
     }
 
     .display-name{
-      margin: auto @gutter-md;
+      margin-bottom: 0;
     }
 
     .description{
+      margin-top: @gutter-sm/2;
       flex: 0 1 30%;
     }
 
@@ -41,6 +50,7 @@
       position: relative;
       top: auto;
       left: auto;
+      right: auto;
     }
 
     .resource-item-list {
