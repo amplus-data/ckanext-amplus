@@ -24,7 +24,7 @@
 
 
 {% block featured_item %}
-<a href="{{ url }}" class="group-item module module-narrow module-shallow">
+<a href="{{ url }}" class="featured-item {{group.type}}-item">
   {% block featured_item_header %}
   {% set truncate=truncate or 0 %}
   {% set truncate_title = truncate_title or 0 %}
@@ -119,7 +119,7 @@
           </div>
       </div>
     {% endif %}
-   
+
         {% if group.user_member %}
           <input name="group_remove.{{ group.id }}" value="{{ _('Remove') }}" type="submit" class="btn btn-danger btn-sm media-edit" title="{{ _('Remove dataset from this group') }}"/>
         {% endif %}
