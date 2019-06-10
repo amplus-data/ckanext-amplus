@@ -30,7 +30,7 @@
 {% endif %}
 
 {% block featured_item %}
-<a href="{{ url }}" class="group-item module module-narrow module-shallow">
+<a href="{{ url }}" class="media-item group-item module module-narrow module-shallow">
 
   {% block featured_item_header %}
   {% set truncate=truncate or 0 %}
@@ -97,7 +97,7 @@
   <p class="empty group-desc">{{ _("This " + group.type + " has no description") }}</p>
   {%endif%}
   {% endif %}
-  {% if group.type == "organization" or group.type == 'group'%}
+  {% if group.type == "organization" or group.type == 'group' and c.controller != 'home' and c.controller != 'package' %}
   {% if group.package_count %}
   <strong
     class="count group-desc">{{ ungettext('{num} Dataset', '{num} Datasets', group.package_count).format(num=group.package_count) }}</strong>
@@ -187,6 +187,13 @@
   </object>
   {% endif %}
   {% endblock %}
+  {% endif %}
+
+  {% if group.user_member %}
+    <input name="group_remove.{{ group.id }}" value="{{ _('Remove') }}" type="submit" class="btn btn-danger btn-sm media-edit" title="{{ _('Remove dataset from this group') }}"/>
+  {% endif %}
+  {% if show_remove %}
+  <form method="post"><input type="hidden" value="{{ group.id }}" name="remove_showcase_id" /><input value="{{ _('Remove') }}" type="submit" class="btn btn-danger btn-small media-edit" title="{{ _('Remove dataset from this showcase') }}"/></form>
   {% endif %}
 </a>
 {% endblock %}
