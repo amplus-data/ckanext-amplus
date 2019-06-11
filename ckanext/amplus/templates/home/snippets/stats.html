@@ -1,0 +1,42 @@
+{% set stats = h.get_site_statistics() %}
+
+<div class="stats text-center">
+    <h3>{{ _('{0} statistics').format(g.site_title) }}</h3>
+      {% block stats_group %}
+        <div class="stats-wrapper">
+            <div class="stat-content">
+                <a href="{{ h.url_for(controller='package', action='search') }}">
+                    <div class="oval">
+                        <i class="fa fa-database fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div class="content">
+                        <strong class="stat-number">{{ h.SI_number_span(stats.dataset_count) }}</strong>
+                        <p class="stat-title">{{ _('dataset') if stats.dataset_count == 1 else _('datasets') }}</p>
+                    </div>  
+                </a>
+            </div>
+            <div class="stat-content middle">
+                <a href="{{ h.url_for(controller='organization', action='index') }}">
+                    <div class="oval">
+                        <i class="fa fa-building fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div class="content">
+                        <strong class="stat-number">{{ h.SI_number_span(stats.organization_count) }}</strong>
+                        <p class="stat-title">{{ _('organization') if stats.organization_count == 1 else _('organizations') }}</p>
+                    </div>  
+                </a>
+            </div>
+            <div class="stat-content">
+                <a href="{{ h.url_for(controller='group', action='index') }}">
+                    <div class="oval">
+                        <i class="fa fa-th fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div class="content">
+                        <span class="stat-number">{{ h.SI_number_span(stats.group_count) }}</span>
+                        <p class="stat-title">{{ _('group') if stats.group_count == 1 else _('groups') }}</p>
+                    </div>  
+                </a>
+            </div>
+        </div>
+        {% endblock %}
+      </div>

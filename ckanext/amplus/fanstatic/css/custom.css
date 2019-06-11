@@ -1,5 +1,129 @@
 /* Please check https://docs.ckan.org/en/2.8/theming/ for the already existing stylesheets in CKAN core. */
 /* Add your custom LESS code here */
+.stats-container {
+  background: #efecf4;
+  padding: 0;
+  padding-top: 6rem;
+}
+.stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 1.5rem 0;
+  height: 100px;
+  width: 100%;
+}
+.stats h3 {
+  display: none;
+}
+.stat-content {
+  padding: 1rem 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.stat-content a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 5rem;
+}
+.stat-content .oval {
+  border-radius: 50%;
+  background-color: rgba(156, 36, 132, 0.1);
+  width: 5rem;
+  height: 50px;
+  color: #9F1A86;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.stat-content .content {
+  height: 50px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+  padding-left: 2rem;
+  line-height: 1.2;
+}
+.stat-content .stat-number {
+  font-size: 25px;
+  font-weight: 600;
+  color: #414141;
+}
+.stat-content .stat-title {
+  font-size: 18px;
+  color: #414141;
+  text-transform: capitalize;
+}
+.stats-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 100%;
+}
+.stats-wrapper:before {
+  content: "";
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 25%;
+          flex: 1 0 25%;
+  height: 1px;
+  float: left;
+  background-color: #9E9E9E;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+.stats-wrapper:after {
+  content: "";
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 25%;
+          flex: 1 0 25%;
+  height: 1px;
+  float: right;
+  background-color: #9E9E9E;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+.middle:before,
+.middle:after {
+  content: "";
+  width: 1px;
+  height: 50px;
+  background-color: #9E9E9E;
+}
 .btn-primary-reset {
   color: #FFFFFF;
   background-color: #6033A7;
@@ -1061,6 +1185,9 @@ a:active {
   min-width: auto;
   width: auto;
 }
+.footer-container {
+  padding: 5rem 0;
+}
 .site-footer {
   color: #9E9E9E;
   background: #FFFFFF;
@@ -1157,6 +1284,12 @@ a:active {
   }
 }
 @media (max-width: 1200px) {
+  .stats-wrapper:before,
+  .stats-wrapper:after,
+  .middle:before,
+  .middle:after {
+    display: none;
+  }
   .attribution {
     text-align: center;
     padding: 3rem;
@@ -1244,5 +1377,24 @@ a:active {
   }
   .homepage .group-topics {
     padding: 100px 10px;
+  }
+  .stats {
+    height: auto;
+  }
+  .stats .stats-wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    height: auto;
+  }
+  .stats .stats-wrapper .stat-content {
+    width: 300px;
+    padding: 3rem 0;
+  }
+  .stats .stats-wrapper .stat-content a {
+    width: 100%;
   }
 }
