@@ -18,13 +18,16 @@
 
 .stat-content {
     padding: @gutter-sm 0;
-    width: @gutter-lg * 6;
+    // width: @gutter-lg * 6;
+    // margin: 0 @gutter-sm * 5;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     a {
         display: flex;
+        padding: 0 @gutter-sm * 5;
     }
+
     .oval {
         border-radius: 50%;
         background-color: rgba(156, 36, 132, 0.1);
@@ -67,7 +70,7 @@
     flex: 1 0 25%;
     height: 1px;
     float: left;
-    background-color: @gray-medium;
+    background-color: @silver;
     display: flex;
     align-self: center;
 }
@@ -77,8 +80,15 @@
     flex: 1 0 25%;
     height: 1px;
     float: right;
-    background-color: @gray-medium;
+    background-color: @silver;
     display: flex;
     align-self: center;
+}
+
+.middle:before, .middle:after {
+    content: "";
+    width: 1px;
+    height: 50px;
+    background-color: @silver;
 }
 

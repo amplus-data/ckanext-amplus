@@ -23,7 +23,6 @@
 }
 .stat-content {
   padding: 1rem 0;
-  width: 18rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -38,6 +37,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 0 5rem;
 }
 .stat-content .oval {
   border-radius: 50%;
@@ -96,7 +96,7 @@
           flex: 1 0 25%;
   height: 1px;
   float: left;
-  background-color: #414141;
+  background-color: #9E9E9E;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,12 +110,19 @@
           flex: 1 0 25%;
   height: 1px;
   float: right;
-  background-color: #414141;
+  background-color: #9E9E9E;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-item-align: center;
       align-self: center;
+}
+.middle:before,
+.middle:after {
+  content: "";
+  width: 1px;
+  height: 50px;
+  background-color: #9E9E9E;
 }
 .btn-primary-reset {
   color: #FFFFFF;
