@@ -1285,7 +1285,9 @@ a:active {
 }
 @media (max-width: 1200px) {
   .stats-wrapper:before,
-  .stats-wrapper:after {
+  .stats-wrapper:after,
+  .middle:before,
+  .middle:after {
     display: none;
   }
   .attribution {
@@ -1375,5 +1377,24 @@ a:active {
   }
   .homepage .group-topics {
     padding: 100px 10px;
+  }
+  .stats {
+    height: auto;
+  }
+  .stats .stats-wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    height: auto;
+  }
+  .stats .stats-wrapper .stat-content {
+    width: 300px;
+    padding: 3rem 0;
+  }
+  .stats .stats-wrapper .stat-content a {
+    width: 100%;
   }
 }
