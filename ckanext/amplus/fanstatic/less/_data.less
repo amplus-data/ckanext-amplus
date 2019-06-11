@@ -8,6 +8,13 @@
   }
 }
 
+.dataset-item {
+  &:last-of-type {
+    margin-bottom: @gutter-md;
+    padding-bottom: @gutter-lg;
+  }
+}
+
 .dataset-list {
   >.dataset-item {
     flex: 1 0 33.3%;
@@ -34,6 +41,7 @@
 
   .dataset-resources {
     margin-top: @gutter-md;
+
     li {
       .label {
         border-radius: 0;
