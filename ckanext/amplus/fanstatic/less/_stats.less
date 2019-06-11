@@ -1,13 +1,14 @@
 .stats-container {
-    background: #efecf4;
-    padding: 10px 140px;
+    background: @brand-background;
+    padding: 0;
+    padding-top: @gutter-lg * 2;
 }
 
 .stats {
     display: flex;
     justify-content: center;
     align-content: center;
-    margin: 50px 0px;
+    margin: @gutter-md 0;
     height: 100px;
     width: 100%;
     h3 {
@@ -16,8 +17,8 @@
 }
 
 .stat-content {
-    padding: 15px 0px;
-    width: 250px;
+    padding: @gutter-sm 0;
+    width: @gutter-lg * 6;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +28,7 @@
     .oval {
         border-radius: 50%;
         background-color: rgba(156, 36, 132, 0.1);
-        width: 50px;
+        width: @gutter-sm * 5;
         height: 50px;
         color: @brand-secondary;
         display: inline-flex;
@@ -39,16 +40,16 @@
         display: inline-flex;
         flex-direction: column;
         text-align: left;
-        padding-left: 20px;
+        padding-left: @gutter-sm * 2;
         line-height: 1.2;
     }
     .stat-number {
-        font-size: 25px;
-        font-weight: 600;
+        font-size: @font-size-25;
+        font-weight: @font-weight-600;
         color: @text-dark;
     }
     .stat-title {
-        font-size: 18px;
+        font-size: @font-size-18;
         color: @text-dark;
         text-transform: capitalize;
     }
@@ -66,17 +67,18 @@
     flex: 1 0 25%;
     height: 1px;
     float: left;
-    background-color: grey;
+    background-color: @gray-medium;
     display: flex;
     align-self: center;
 }
 
 .stats-wrapper:after {
     content: "";
-    width: 25%;
+    flex: 1 0 25%;
     height: 1px;
     float: right;
-    background-color: grey;
+    background-color: @gray-medium;
     display: flex;
     align-self: center;
 }
+

@@ -2,7 +2,8 @@
 /* Add your custom LESS code here */
 .stats-container {
   background: #efecf4;
-  padding: 10px 140px;
+  padding: 0;
+  padding-top: 6rem;
 }
 .stats {
   display: -webkit-box;
@@ -13,7 +14,7 @@
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  margin: 50px 0px;
+  margin: 1.5rem 0;
   height: 100px;
   width: 100%;
 }
@@ -21,8 +22,8 @@
   display: none;
 }
 .stat-content {
-  padding: 15px 0px;
-  width: 250px;
+  padding: 1rem 0;
+  width: 18rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -41,7 +42,7 @@
 .stat-content .oval {
   border-radius: 50%;
   background-color: rgba(156, 36, 132, 0.1);
-  width: 50px;
+  width: 5rem;
   height: 50px;
   color: #9F1A86;
   display: -webkit-inline-box;
@@ -64,7 +65,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: left;
-  padding-left: 20px;
+  padding-left: 2rem;
   line-height: 1.2;
 }
 .stat-content .stat-number {
@@ -95,7 +96,7 @@
           flex: 1 0 25%;
   height: 1px;
   float: left;
-  background-color: grey;
+  background-color: #414141;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,10 +105,12 @@
 }
 .stats-wrapper:after {
   content: "";
-  width: 25%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 25%;
+          flex: 1 0 25%;
   height: 1px;
   float: right;
-  background-color: grey;
+  background-color: #414141;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1133,6 +1136,9 @@ a:active {
   min-width: auto;
   width: auto;
 }
+.footer-container {
+  padding: 5rem 0;
+}
 .site-footer {
   color: #9E9E9E;
   background: #FFFFFF;
@@ -1229,6 +1235,10 @@ a:active {
   }
 }
 @media (max-width: 1200px) {
+  .stats-wrapper:before,
+  .stats-wrapper:after {
+    display: none;
+  }
   .attribution {
     text-align: center;
     padding: 3rem;
