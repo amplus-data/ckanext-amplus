@@ -13,34 +13,57 @@
 
   .resource-item {
     .flex;
-    .flex-justify-between;
     .flex-align-center;
     .content-item-layout;
     background: @white;
 
 
     .heading {
-      .flex;
-      .flex-align-center;
+      order: 1;
       margin-right: @gutter-md;
       word-wrap: break-word;
     }
 
     .heading-wrap{
       .flex;
-      .flex-column;
-      flex: 1 1 auto;
+      flex: 0 1 auto;
+      flex-direction: column-reverse;
+      order: 1;
       margin-right: @gutter-md;
+      margin-left: 10px;
     }
 
     .display-name{
-      margin-bottom: 0;
+      margin-bottom: 0px;
     }
 
     .description{
       margin-top: @gutter-sm/2;
       flex: 0 1 30%;
     }
+
+    .validation-badge {
+      order: 2;
+      margin-left: 10px;
+      background: #555;
+      color: #fff;
+      border-radius: 3px;
+      display: inline-block;
+      font-size: 14px;
+      vertical-align: middle;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .dropdown.btn-group {
+      order: 3;
+      position: relative;
+      margin-left: auto;
+      top: auto;
+      left: auto;
+      right: auto;
+    }
+  }
 
     &:hover {
     
@@ -54,12 +77,7 @@
       text-decoration: none;
     }
 
-    .btn-group {
-      position: relative;
-      top: auto;
-      left: auto;
-      right: auto;
-    }
+    
 
     .resource-item-list {
       .flex;
@@ -67,16 +85,10 @@
 
     .format-label {
       position: inherit;
-      order: -1;
     }
   }
 
-  .validation-badge {
-    position: absolute;
-    bottom: @gutter-sm * 2;
-    left: @gutter-lg;
-  }
-}
+  
 
 .resource-content {
   padding: 2rem @gutter-sm * 2;
@@ -104,4 +116,25 @@
   margin-right: auto;
   text-align: center;
   width: 75%;
+}
+
+@media (max-width: 991px) {
+  .resource-item {
+    .btn-group {
+      display: initial;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .validation-badge {
+    display: table;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 366px) {
+  .validation-badge {
+    display: inline-flex;
+  }
 }
