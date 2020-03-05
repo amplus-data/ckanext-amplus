@@ -1211,6 +1211,29 @@ a:active {
   min-width: auto;
   width: auto;
 }
+.tertiary .search-form {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.tertiary .search-form .search-input-group {
+  width: 75%;
+}
+.tertiary .search-form h2 {
+  width: 75%;
+  padding: 0;
+}
+.tertiary .search-form .form-control {
+  width: 100%;
+}
+.tertiary .search-form .form-select {
+  width: 45%;
+}
 .footer-container {
   padding: 5rem 0;
 }
