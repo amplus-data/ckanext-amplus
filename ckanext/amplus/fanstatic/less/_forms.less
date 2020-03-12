@@ -101,26 +101,18 @@
   }
 }
 
-.tertiary .search-form {
-  flex-direction: column;
-  width: 100%;
-  align-items: flex-start;
+.tertiary {
+  float: left;
+}
 
-  .search-input-group {
-    width: 75%;
+.primary .tertiary .search-form {
+  .flex-column;
+  .flex-align-start;
+  margin-top: @gutter-md*2.9;
+
+  &>* {
+    width: unset;
   }
 
-  h2 {
-    width: 75%;
-    padding: 0;
-  }
-
-  .form-control {
-    width: 100%;
-  }
-
-  .form-select {
-    width: 45%;
-  }
 
 }
