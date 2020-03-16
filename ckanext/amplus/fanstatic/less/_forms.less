@@ -101,18 +101,23 @@
   }
 }
 
-.tertiary {
-  float: left;
-}
+.primary {
+  .tertiary {
+    display: inline-flex;
+    flex-direction: column;
 
-.primary .tertiary .search-form {
-  .flex-column;
-  .flex-align-start;
-  margin-top: @gutter-md*2.9;
+    .search-form {
 
-  &>* {
-    width: unset;
+      .control-order-by {
+        flex-direction: column;
+      }
+
+      h2,
+      .control-order-by,
+      .search-input-group {
+        width: auto;
+        min-width: 100%;
+      }
+    }
   }
-
-
 }
