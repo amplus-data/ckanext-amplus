@@ -1211,6 +1211,27 @@ a:active {
   min-width: auto;
   width: auto;
 }
+.primary .tertiary {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.primary .tertiary .search-form .control-order-by {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.primary .tertiary .search-form h2,
+.primary .tertiary .search-form .control-order-by,
+.primary .tertiary .search-form .search-input-group {
+  width: auto;
+  min-width: 100%;
+}
 .footer-container {
   padding: 5rem 0;
 }
@@ -1304,6 +1325,36 @@ a:active {
   padding: 0px 20px 20px 20px;
   margin: 0;
 }
+@media only screen and (max-width: 768px) {
+  .footer-links div {
+    padding: 20px 0px;
+  }
+  .masthead .navigation .nav-pills.nav > li a {
+    padding: 2.2rem 2.5rem;
+  }
+  .homepage .group-topics {
+    padding: 100px 10px;
+  }
+  .stats {
+    height: auto;
+  }
+  .stats .stats-wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    height: auto;
+  }
+  .stats .stats-wrapper .stat-content {
+    width: 300px;
+    padding: 3rem 0;
+  }
+  .stats .stats-wrapper .stat-content a {
+    width: 100%;
+  }
+}
 @media (min-width: 1200px) {
   body [role=main] .secondary {
     padding: 3rem;
@@ -1392,35 +1443,5 @@ a:active {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .footer-links div {
-    padding: 20px 0px;
-  }
-  .masthead .navigation .nav-pills.nav > li a {
-    padding: 2.2rem 2.5rem;
-  }
-  .homepage .group-topics {
-    padding: 100px 10px;
-  }
-  .stats {
-    height: auto;
-  }
-  .stats .stats-wrapper {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-    height: auto;
-  }
-  .stats .stats-wrapper .stat-content {
-    width: 300px;
-    padding: 3rem 0;
-  }
-  .stats .stats-wrapper .stat-content a {
-    width: 100%;
   }
 }
