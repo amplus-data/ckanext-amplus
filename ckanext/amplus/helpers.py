@@ -11,8 +11,10 @@ from logging import getLogger
 
 log = getLogger(__name__)
 
+
 def _get_action(action, context_dict, data_dict):
     return toolkit.get_action(action)(context_dict, data_dict)
+
 
 def get_recently_updated_datasets(limit=5):
     '''
@@ -28,7 +30,7 @@ def get_recently_updated_datasets(limit=5):
             'rows': limit,
         })['results']
 
-    except toolkit.ValidationError, search.SearchError:
+    except (toolkit.ValidationError, search.SearchError):
         return []
     else:
         pkgs = []
@@ -37,6 +39,6 @@ def get_recently_updated_datasets(limit=5):
                 data_dict={'id': pkg['id']})
             modified = datetime.strptime(
                 package['metadata_modified'].split('T')[0], '%Y-%m-%d')
-            package['days_ago_modified'] = ((datetime.now() - modified).days)
+            package['days_ago_modified'] = (datetime.now() - modified).days
             pkgs.append(package)
         return pkgs
