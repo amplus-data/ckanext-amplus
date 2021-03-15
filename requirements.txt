@@ -1,0 +1,1 @@
+-e git+https://github.com/keitaroinc/ckanext-c3charts.git@2.8.2#egg=ckanext-c3charts
