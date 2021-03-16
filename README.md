@@ -49,7 +49,7 @@ Install the required Node.js modules in fanstatic/, by executing:
 
      npm install
 
-Rebuild front-end assets in fanstatic/, by executing:
+Rebuild front-end in [assets](https://github.com/amplus-data/ckanext-amplus/tree/main/ckanext/amplus/assets), by executing:
      
      npx gulp
 
