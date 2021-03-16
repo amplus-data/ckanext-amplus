@@ -41,6 +41,18 @@ To install ckanext-amplus:
    ```sudo service apache2 reload```
 
 
+## Front-end Setup
+
+The front-end is set up with gulp.js.
+
+Install the required Node.js modules in fanstatic/, by executing:
+
+     npm install
+
+Rebuild front-end assets in fanstatic/, by executing:
+     
+     npx gulp
+
 ## Config settings
 
 None at present
