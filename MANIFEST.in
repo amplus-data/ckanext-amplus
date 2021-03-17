@@ -1,4 +1,4 @@
 include README.md
 include LICENSE
 include requirements.txt
-recursive-include ckanext/amplus *.html *.json *.js *.less *.css *.mo *.yml
+recursive-include ckanext/amplus *.html *.json *.js *.less *.css *.mo *.yml *.png *.ico *.svg *.woff *.woff2
