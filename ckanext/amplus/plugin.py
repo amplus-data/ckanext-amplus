@@ -24,6 +24,7 @@ class AmplusPlugin(plugins.SingletonPlugin):
         validators = [ignore_missing, str]
 
         schema.update({
+            'homepage_blogs': validators,
             'footer_links': validators,
             'social_media_links': validators,
         })

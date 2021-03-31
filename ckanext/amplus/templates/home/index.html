@@ -1,48 +1,44 @@
 {% ckan_extends %}
 
-{% block featured_charts_wrapper %}
+{% block primary_content %}
+{{ super() }}
 
-{% endblock %}
+{% set blogs = h.get_recent_blog_posts(4) %}
 
-    {% block blogs_wrapper %}
-    {% set blogs = h.get_recent_blog_posts(4) %}
-
-    {# g.homepage_blogs is returned as String not Boolean! #}
-    {% if g.homepage_blogs == 'True' and blogs %}
-    <div class="blogs">
-        <div class="container-fluid">
+{% if g.homepage_blogs == 'yes' and blogs %}
+<div class="blogs">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <p class="group-heading">{{_("Insights")}}</p>
           <div class="row">
-            <div class="col-lg-10 col-lg-offset-1">
-                {% block blogs_heading %}
-                {{ super() }}
-              {% endblock %}
-              <div class="row">
-                  {% for item in blogs %}
-                      <div class="col-md-3 col-sm-4 col-xs-12">
-                          <div class="box">
-                              {% if item.image %}
+              {% for item in blogs %}
+                  <div class="col-md-3 col-sm-4 col-xs-12">
+                      <div class="box">
+                          {% if item.image %}
+                          <a href="{{ h.url_for('pages.blog_show', page='/' + item.name) }}">
+                            <img src="{{ item.image }}" alt="{{ item.title }}" class="media-image item-image">
+                          </a>
+                          {% endif %}
+                          <div class="item-body">
                               <a href="{{ h.url_for('pages.blog_show', page='/' + item.name) }}">
-                                <img src="{{ item.image }}" alt="{{ item.title }}" class="media-image item-image">
+                                <h3 class="title media-heading">{{ item.title }}</h3>
                               </a>
-                              {% endif %}
-                              <div class="item-body">
-                                  <a href="{{ h.url_for('pages.blog_show', page='/' + item.name) }}">
-                                    <h3 class="title media-heading">{{ item.title }}</h3>
-                                  </a>
-                                  <p class="description">{{ item.content|striptags|truncate(300) }}</p>
-                              </div>
+                              <p class="description">{{ item.content|striptags|truncate(300) }}</p>
                           </div>
                       </div>
-                  {% endfor %}
-              </div>
-              {% block blog_archive_button %}
-                {{ super() }}
-              {% endblock %}
-            </div>
+                  </div>
+              {% endfor %}
+          </div>
+          <div class="text-center">
+          <a class="btn btn-large btn-primary btn-view-all" href="{{ h.url_for('pages.blog_index') }}">
+            {{_("View All")}}
+          </a>
           </div>
         </div>
+      </div>
     </div>
-    {% endif %}
-    {% endblock %}
+</div>
+{% endif %}
 
-
+{% endblock %}
