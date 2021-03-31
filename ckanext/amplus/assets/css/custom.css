@@ -1215,7 +1215,7 @@ a:active {
 .primary .search-form > span {
   display: none;
 }
-.primary .search-form > h2 {
+.primary .search-form > h1 {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
