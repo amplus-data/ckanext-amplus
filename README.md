@@ -12,7 +12,7 @@ Compatibility with core CKAN versions:
 | --------------- | ------------- |
 | 2.9             | yes   |
 
-This extension requires [ckanext-c3charts](https://github.com/keitaroinc/ckanext-c3charts) to be installed and enabled.
+This extension requires [ckanext-c3charts](https://github.com/keitaroinc/ckanext-c3charts) and [ckanext-pages](https://github.com/ckan/ckanext-pages) to be installed and enabled.
 
 ## Installation
 
