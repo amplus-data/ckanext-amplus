@@ -45,7 +45,7 @@ To install ckanext-amplus:
 
 The front-end is set up with gulp.js.
 
-Install the required Node.js modules in fanstatic/, by executing:
+Install the required Node.js modules in [assets](https://github.com/amplus-data/ckanext-amplus/tree/main/ckanext/amplus/assets), by executing:
 
      npm install
 
