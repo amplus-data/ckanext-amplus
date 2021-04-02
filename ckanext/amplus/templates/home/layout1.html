@@ -61,7 +61,6 @@
           {% endif %}
         </div>
         <div class="data tab-pane fade in active" id="visualize">
-          {% block featured_charts %}
             {% set featured_charts = h.c3charts_featured_charts(4) %}
             {% if featured_charts %}
               {% for featured_chart in featured_charts %}
@@ -70,7 +69,6 @@
             {% else %}
               <p class="empty">{{ _('No chart views have been created yet') }}</p>
             {% endif %}
-          {% endblock %}
         </div>
         
         <div class="data tab-pane fade flex-column flex-align-center" id="locate">
