@@ -19,7 +19,7 @@
 {% if group.type != 'datarequest' %}
   {% set url = h.url_for(group.type ~ '_read', action='read', id=group.name or group.title) %}
 {% else %}
-  {% set url =  h.url_for(controller='ckanext.datarequests.controllers.ui_controller:DataRequestsUI', action='comment', id=group.get('id','')) %}
+  {% set url =  h.url_for('datarequests.comment', id=group.get('id','')) %}
 {% endif %}
 
 
