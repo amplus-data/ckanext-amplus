@@ -20,7 +20,7 @@ gulp.task('less', function () {
 
 gulp.task('fonts', function() {
   return gulp.src('node_modules/typeface-barlow/files/*')
-    .pipe(gulp.dest('fonts'))
+    .pipe(gulp.dest('../public/base/fonts'))
 })
 
 // Watch for LESS file changes
