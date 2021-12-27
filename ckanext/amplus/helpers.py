@@ -3,6 +3,7 @@
 import os
 import json
 
+from ckan import authz
 from ckan.plugins import toolkit
 from ckan.lib import search, i18n
 from datetime import datetime
@@ -42,3 +43,30 @@ def get_recently_updated_datasets(limit=5):
             package['days_ago_modified'] = (datetime.now() - modified).days
             pkgs.append(package)
         return pkgs
+
+
+def get_site_statistics(user):
+    """
+    Count how many datasets, organizations and groups exist for particular user
+
+    :param user: The username of the user
+    :type user: str
+    :returns: the dictionary containing number of datasets,
+              organizations and groups
+
+    :rtype: dict
+    """
+
+    stats = {}
+    data_dict = {
+        "rows": 1,
+        'include_private': authz.is_sysadmin(user)
+    }
+
+    stats['dataset_count'] =\
+        toolkit.get_action('package_search')({}, data_dict)['count']
+    stats['group_count'] = len(toolkit.get_action('group_list')({}, {}))
+    stats['organization_count'] =\
+        len(toolkit.get_action('organization_list')({}, {}))
+
+    return stats
