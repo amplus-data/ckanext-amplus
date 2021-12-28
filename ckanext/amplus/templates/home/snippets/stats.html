@@ -1,4 +1,4 @@
-{% set stats = h.get_site_statistics() %}
+{% set stats = h.amplus_get_site_statistics(c.user) %}
 
 <div class="stats text-center">
     <h3>{{ _('{0} statistics').format(g.site_title) }}</h3>
