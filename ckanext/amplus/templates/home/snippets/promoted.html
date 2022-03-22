@@ -3,10 +3,10 @@
 <div class="module-content">
 
   {% block home_image %}
-    <section class="featured media-overlay hidden-xs">
+    <section class="featured media-overlay">
       {% block home_image_content %}
         <a class="media-image" href="#">
-          <img class="img-responsive hero-img" src="{{ h.url_for_static('/base/images/hero-illustration.png') }}" alt="Placeholder" />
+          <img class="img-fluid hero-img" src="{{ h.url_for_static('/base/images/hero-illustration.png') }}" alt="Placeholder" />
         </a>
       {% endblock %}
     </section>
