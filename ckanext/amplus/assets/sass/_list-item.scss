@@ -1,6 +1,6 @@
 .module-content {
   .media-grid {
-    .content-margin-fix;
+    @include content-margin-fix;
     background: transparent;
     border: none;
   }
@@ -8,22 +8,22 @@
 
 .media-view {
   &:hover {
-    .hover-box;
+    @include hover-box;
   }
 }
 
 .media-item {
-  .content-item-layout;
+  @include content-item-layout;
 
   &:hover {
     .media-heading {
-      color: @brand-secondary;
+      color: $brand-secondary;
     }
   }
 
   .media-heading {
-    font-size: @font-size-21;
-    font-weight: @font-weight-600;
+    font-size: $font-size-21;
+    font-weight: $font-weight-600;
   }
 
   .media-image {
@@ -32,6 +32,6 @@
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
-    margin-right: @gutter-list-item-sm;
+    margin-right: $gutter-list-item-sm;
   }
 }

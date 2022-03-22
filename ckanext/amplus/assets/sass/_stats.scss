@@ -1,14 +1,14 @@
 .stats-container {
-    background: @brand-background;
+    background: $brand-background;
     padding: 0;
-    padding-top: @gutter-lg * 2;
+    padding-top: $gutter-lg * 2;
 }
 
 .stats {
     display: flex;
     justify-content: center;
     align-content: center;
-    margin: @gutter-md 0;
+    margin: $gutter-md 0;
     height: 100px;
     width: 100%;
     h3 {
@@ -17,23 +17,23 @@
 }
 
 .stat-content {
-    padding: @gutter-sm 0;
-    // width: @gutter-lg * 6;
-    // margin: 0 @gutter-sm * 5;
+    padding: $gutter-sm 0;
+    // width: $gutter-lg * 6;
+    // margin: 0 $gutter-sm * 5;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     a {
         display: flex;
-        padding: 0 @gutter-sm * 5;
+        padding: 0 $gutter-sm * 5;
     }
 
     .oval {
         border-radius: 50%;
         background-color: rgba(156, 36, 132, 0.1);
-        width: @gutter-sm * 5;
+        width: $gutter-sm * 5;
         height: 50px;
-        color: @brand-secondary;
+        color: $brand-secondary;
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -43,17 +43,17 @@
         display: inline-flex;
         flex-direction: column;
         text-align: left;
-        padding-left: @gutter-sm * 2;
+        padding-left: $gutter-sm * 2;
         line-height: 1.2;
     }
     .stat-number {
-        font-size: @font-size-25;
-        font-weight: @font-weight-600;
-        color: @text-dark;
+        font-size: $font-size-25;
+        font-weight: $font-weight-600;
+        color: $text-dark;
     }
     .stat-title {
-        font-size: @font-size-18;
-        color: @text-dark;
+        font-size: $font-size-18;
+        color: $text-dark;
         text-transform: capitalize;
     }
 }
@@ -70,7 +70,7 @@
     flex: 1 0 25%;
     height: 1px;
     float: left;
-    background-color: @silver;
+    background-color: $silver;
     display: flex;
     align-self: center;
 }
@@ -80,7 +80,7 @@
     flex: 1 0 25%;
     height: 1px;
     float: right;
-    background-color: @silver;
+    background-color: $silver;
     display: flex;
     align-self: center;
 }
@@ -89,6 +89,6 @@
     content: "";
     width: 1px;
     height: 50px;
-    background-color: @silver;
+    background-color: $silver;
 }
 

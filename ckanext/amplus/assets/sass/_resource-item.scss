@@ -7,29 +7,29 @@
   }
 }
 .resource-list {
-  .flex;
-  .flex-wrap;
-  .content-margin-fix;
+  @include flex;
+  @include flex-wrap;
+  @include content-margin-fix;
 
   .resource-item {
-    .flex;
-    .flex-align-center;
-    .content-item-layout;
-    background: @white;
+    @include flex;
+    @include flex-align-center;
+    @include content-item-layout;
+    background: $white;
 
 
     .heading {
       order: 1;
-      margin-right: @gutter-md;
+      margin-right: $gutter-md;
       word-wrap: break-word;
     }
 
     .heading-wrap{
-      .flex;
+      @include flex;
       flex: 0 1 auto;
       flex-direction: column-reverse;
       order: 1;
-      margin-right: @gutter-md;
+      margin-right: $gutter-md;
       margin-left: 10px;
     }
 
@@ -38,7 +38,7 @@
     }
 
     .description{
-      margin-top: @gutter-sm/2;
+      margin-top: calc($gutter-sm/2);
       flex: 0 1 30%;
     }
 
@@ -68,19 +68,19 @@
     &:hover {
     
       .resource-title {
-        color: @brand-secondary;
+        color: $brand-secondary;
       }
     }
 
     >a {
-      color: @gray-medium;
+      color: $gray-medium;
       text-decoration: none;
     }
 
     
 
     .resource-item-list {
-      .flex;
+      @include flex;
     }
 
     .format-label {
@@ -91,7 +91,7 @@
   
 
 .resource-content {
-  padding: 2rem @gutter-sm * 2;
+  padding: 2rem $gutter-sm * 2;
 }
 
 .resource-title {
@@ -109,7 +109,7 @@
 
 .custom-label {
   position: absolute;
-  color: @white;
+  color: $white;
   left: 0;
   bottom: 5px;
   margin-left: auto;
