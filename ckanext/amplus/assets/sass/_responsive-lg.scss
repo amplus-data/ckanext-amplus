@@ -1,14 +1,14 @@
-@media (min-width: @breakpoint-lg) {
+@media (min-width: $breakpoint-lg) {
   body {
     & [role=main] {
       .secondary {
-        padding: @gutter-lg;
+        padding: $gutter-lg;
       }
     }
   }
 }
 
-@media (max-width: @breakpoint-lg) {
+@media (max-width: $breakpoint-lg) {
 
     .stats-wrapper:before, .stats-wrapper:after, .middle:before, .middle:after {
       display: none;
@@ -16,7 +16,7 @@
 
     .attribution {
         text-align: center;
-        padding: @gutter-lg;
+        padding: $gutter-lg;
     }
     .footer-links {
         // float: none;
@@ -42,7 +42,7 @@
       >li {
         a {
           padding: 2.2rem .8rem;
-          font-size: @font-size-15;
+          font-size: $font-size-15;
 
           img {
             max-width: 18px;
@@ -87,6 +87,6 @@
   }
   .media-grid .media-item,
   .resource-list .resource-item{
-    width: calc(100% - @gutter-sm*2);
+    width: calc(100% - $gutter-sm*2);
   }
 }

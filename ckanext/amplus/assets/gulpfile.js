@@ -1,13 +1,13 @@
 var gulp = require('gulp');
-var less = require('gulp-less');
+var sass = require('gulp-sass')(require('sass'));
 var autoprefixer = require('gulp-autoprefixer');
 // var sourcemaps = require('gulp-sourcemaps'); - Uncomment when developing
 
-// Rebuild CSS from LESS
-gulp.task('less', function () {
-  return gulp.src('less/custom.less')
+// Rebuild CSS from sass
+gulp.task('sass', function () {
+  return gulp.src('sass/custom.scss')
     // .pipe(sourcemaps.init()) - Uncomment when developing
-    .pipe(less())
+    .pipe(sass())
     .pipe(autoprefixer({
       browsers: [
         "last 5 versions",
@@ -23,11 +23,11 @@ gulp.task('fonts', function() {
     .pipe(gulp.dest('../public/base/fonts'))
 })
 
-// Watch for LESS file changes
+// Watch for sass file changes
 gulp.task("watch", function () {
-  gulp.watch(["less/**/*.less"],
-    gulp.parallel("less"));
+  gulp.watch(["sass/**/*.sass"],
+    gulp.parallel("sass"));
 });
 
 // The default Gulp.js task
-gulp.task('default', gulp.series('less', 'fonts', 'watch'));
+gulp.task('default', gulp.series('sass', 'fonts', 'watch'));

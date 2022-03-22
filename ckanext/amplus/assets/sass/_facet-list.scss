@@ -1,22 +1,22 @@
 .module-heading {
-  color: @brand-primary;
-  background-color: @brand-background;
+  color: $brand-primary;
+  background-color: $brand-background;
   border: none;
   padding: 1.5rem;
-  font-size: @font-size-17;
-  font-weight: @font-weight-600;
+  font-size: $font-size-17;
+  font-weight: $font-weight-600;
   
 }
 .side-heading{
-  color: @brand-primary;
-  font-weight: @font-weight-600;
+  color: $brand-primary;
+  font-weight: $font-weight-600;
   margin: 1rem 0;
 }
 .keyword-list {
   padding: 1rem 0 0 0;
   list-style: none;
   li {
-    .tag-list-item;
+    @include tag-list-item;
 
     a {
       color: inherit;
@@ -38,7 +38,7 @@
     padding-left: 0;
 
     .tag {
-      .tag-list-item;
+      @include tag-list-item;
     }
   }
 }

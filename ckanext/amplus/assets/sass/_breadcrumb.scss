@@ -4,33 +4,33 @@
   margin-bottom: 0;
 
   .breadcrumb {
-    margin: @gutter-sm;
+    margin: $gutter-sm;
     font-size: inherit;
 
     a {
-      color: @gray-medium;
+      color: $gray-medium;
     }
 
     >*:not(:first-child) {
       &:before {
         content: ">";
-        color: @gray-medium;
+        color: $gray-medium;
       }
     }
 
     li {
-      color: @gray-medium;
+      color: $gray-medium;
 
       &.active {
         >a {
-          color: @brand-primary;
-          font-weight: @font-weight-400;
+          color: $brand-primary;
+          font-weight: $font-weight-400;
         }
       }
 
       .active {
-        color: @brand-primary;
-        font-weight: @font-weight-400;
+        color: $brand-primary;
+        font-weight: $font-weight-400;
       }
     }
   }
