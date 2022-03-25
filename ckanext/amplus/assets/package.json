@@ -17,7 +17,7 @@
     "typeface-barlow": "0.0.71"
   },
   "devDependencies": {
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^5.0.0",
     "sass": "^1.49.9"
   }
 }

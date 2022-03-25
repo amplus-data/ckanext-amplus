@@ -49,10 +49,10 @@
 
       &:hover {
         color: inherit;
-        background-color: darken($brand-extra-light, 10%);
+        background-color: shade-color($brand-extra-light, 10%);
 
         &:before {
-          border-left-color: darken($brand-extra-light, 10%);
+          border-left-color: shade-color($brand-extra-light, 10%);
         }
       }
 

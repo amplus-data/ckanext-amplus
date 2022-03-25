@@ -504,11 +504,11 @@ a:hover, a:focus, a:active {
 .nav-item.active > a:hover,
 .nav-aside li.active > a:hover {
   color: inherit;
-  background-color: #dbb0d2;
+  background-color: shade-color(#EBD3E6, 10%);
 }
 .nav-item.active > a:hover:before,
 .nav-aside li.active > a:hover:before {
-  border-left-color: #dbb0d2;
+  border-left-color: shade-color(#EBD3E6, 10%);
 }
 .nav-item.active > a:before,
 .nav-aside li.active > a:before {
@@ -586,7 +586,7 @@ a:hover, a:focus, a:active {
 }
 .module-content .nav-tabs > li a:hover {
   border-color: transparent;
-  background-color: #f7f7f7;
+  background-color: shade-color(#FFFFFF, 3%);
 }
 .module-content .nav-tabs, .module-content .nav-tabs.nav-tabs-plain {
   border: none;
@@ -855,7 +855,7 @@ a:hover, a:focus, a:active {
 }
 .btn-secondary:hover {
   border-color: transparent;
-  background-color: #f7f7f7;
+  background-color: shade-color(#FFFFFF, 3%);
 }
 
 .module-heading {
