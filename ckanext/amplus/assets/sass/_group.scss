@@ -22,9 +22,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  // @extend flex;
-  // @extend flex-wrap;
-  // @extend flex-justify-center;
 }
 
 .dataset-resources {
@@ -45,7 +42,7 @@
 .group-topics,
 .group-container {
 
-  background: $brand-background;
+  background: $bg-primary;
 
   .group-title {
     font-size: $font-size-22;
@@ -78,7 +75,7 @@
     align-items: center;
     height: $group-icon-size;
     width: $group-icon-size;
-    background-color: $oval-bg;
+    background-color: $bg-secondary;
     border-radius: 50%;
     overflow: hidden;
     flex-shrink: 0;

@@ -14,7 +14,7 @@
     transition: .3s;
 
     &:hover {
-      box-shadow: 0 0 30px 0 fade($brand-primary, 30%);
+      box-shadow: 0 0 30px 0 fade($primary, 30%);
 
       a {
         text-decoration: none;

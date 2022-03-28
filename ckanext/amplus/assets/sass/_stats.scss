@@ -1,5 +1,5 @@
 .stats-container {
-    background: $brand-background;
+    background: $bg-primary;
     padding: 0;
     padding-top: $gutter-lg * 2;
 }
@@ -33,7 +33,7 @@
         background-color: rgba(156, 36, 132, 0.1);
         width: $gutter-sm * 5;
         height: 50px;
-        color: $brand-secondary;
+        color: $secondary;
         display: inline-flex;
         justify-content: center;
         align-items: center;
