@@ -1,10 +1,13 @@
 body {
   font-family: $font-primary;
-  background: $brand-primary;
+  background: $primary;
 
+  a {
+    text-decoration: none;
+  }
   .main,
   & [role=main] {
-    background: $brand-background;
+    background: $bg-primary;
 
     & .secondary {
       padding-right: 0;
@@ -36,7 +39,7 @@ body {
   }
 
   .module-heading {
-    background: $brand-background;
+    background: $bg-primary;
   }
 }
 
@@ -53,7 +56,7 @@ body {
 }
 
 a {
-  color: $brand-primary;
+  color: $primary;
 
   &:hover,
   &:focus,

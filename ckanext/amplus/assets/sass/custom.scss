@@ -1,45 +1,38 @@
 /* Please check https://docs.ckan.org/en/2.8/theming/ for the already existing stylesheets in CKAN core. */
 
-/* Add your custom LESS code here */
-// @import "_variables.scss";
-
-// @import "_stats.scss";
-// @import "_mixins.scss";
-// @import "_promoted.scss";
-
-// @import "_featured-item.scss";
-// @import "_group.scss";
-
-// @import "_visualize.scss";
-// @import "_data.scss";
-// @import "_base.scss";
-// @import "_mixins.scss";
-// @import "_typography.scss";
-
-// @import "_nav.scss";
-// @import "_flex.scss";
-// @import "_breadcrumb.scss";
-// @import "_navigation-tabs.scss";
-// @import "_list-item.scss";
-// @import "_resource-item.scss";
-// @import "_fonts.scss";
-// @import "_buttons.scss";
-// @import "_facet-list.scss";
-// @import "_pages.scss";
-
-// @import "_forms.scss";
-// @import "_footer.scss";
-// @import "_insights.scss";
-
-// @import "_responsive-xl.scss";
-// @import "_responsive-lg.scss";
-// @import "_responsive-sm.scss";
-// @import "_responsive-xs.scss";
-
-// @import "customizing-theme.scss";
+/* Add your custom SASS code here */
 
 @import "../node_modules/bootstrap/scss/functions";
 @import "old_variables";
 @import "variables";
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "_stats.scss";
+@import "_mixins.scss";
+@import "_flex.scss";
+@import "_breadcrumb.scss";
+@import "_navigation-tabs.scss";
+@import "_list-item.scss";
+@import "_resource-item.scss";
+@import "_fonts.scss";
+@import "_buttons.scss";
+@import "_facet-list.scss";
+@import "_pages.scss";
+@import "_featured-item.scss";
+@import "_visualize.scss";
+@import "_data.scss";
+@import "_base.scss";
+@import "_typography.scss";
+@import "_nav.scss";
+@import "_promoted.scss";
+@import "_group.scss";
+@import "_footer.scss";
+
+@import "_responsive-xs.scss";
+@import "_responsive-xl.scss";
+@import "_responsive-lg.scss";
+@import "_responsive-sm.scss";
+
+@import "_forms.scss";
+@import "_insights.scss";
