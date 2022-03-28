@@ -1,0 +1,25 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$custom-theme-colors: (
+    "primary": $brand-primary,
+    "secondary": $brand-secondary,
+    "light": $brand-light,
+    "dark": $brand-dark,
+    "tertiary": $brand-tertiary,
+    "extra-light": $brand-extra-light,
+    "bg-primary": $brand-background,
+    "text-dark": $text-dark,
+    "bg-secondary": $oval-bg,
+    "tertiary-light": $brand-tertiary-light,
+    "gray": $gray-medium,
+    "gray-light": $gray-light,
+    "gray-extra-light": $gray-extra-light,
+    "white": $white,
+    "silver": $silver,
+    "black": $black,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
