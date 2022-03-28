@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass -w scss/ -o css/ --recursive"
+    "sass": "sass -w scss/ -o css/ --recursive"
   },
   "author": "Goce Mitevski",
   "license": "ISC",
@@ -12,12 +12,12 @@
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-clean-css": "^3.9.4",
-    "gulp-sass": "^5.1.0",
+    "sass": "^5.1.0",
     "npm": "^6.14.11",
     "typeface-barlow": "0.0.71"
   },
   "devDependencies": {
-    "bootstrap": "^5.0.0",
+    "bootstrap": "^5.1.0",
     "sass": "^1.49.9"
   }
 }
