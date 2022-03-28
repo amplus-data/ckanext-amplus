@@ -26,37 +26,6 @@ $white: #FFFFFF;
 $silver:#9E9E9E;
 $black: #000000;
 
-// import functions and variables
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-
-// bootstrap import
-// @import "../node_modules/bootstrap/scss/bootstrap.scss";
-
-$custom-theme-colors: (
-    "primary": $brand-primary,
-    "secondary": $brand-secondary,
-    "light": $brand-light,
-    "dark": $brand-dark,
-    "tertiary": $brand-tertiary,
-    "extra-light": $brand-extra-light,
-    "bg-primary": $brand-background,
-    "text-dark": $text-dark,
-    "bg-secondary": $oval-bg,
-    "tertiary-light": $brand-tertiary-light,
-    "gray": $gray-medium,
-    "gray-light": $gray-light,
-    "gray-extra-light": $gray-extra-light,
-    "white": $white,
-    "silver": $silver,
-    "black": $black,
-);
-
-// modify theme colors
-$theme-colors: map-merge($theme-colors, $custom-theme-colors);
-
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
-
 $shadow-light: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 $shadow-brand: 0 0 10px 0 rgba(159, 26, 135, 0.2);
 
