@@ -70,11 +70,11 @@
       {% block featured_item_header_description %}
         {% if c.controller == 'package' and group.type == 'group' and not type or c.controller == 'ckanext.showcase.controller:ShowcaseController' and group.type == 'group'  %}
           {% if truncate == 0 %}
-            <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
+            <p class="group-desc">{{ h.markdown_extract(description) }}</p>
           {% endif %}
         {% else %}
           {% if description %}
-            <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
+            <p class="group-desc">{{ h.markdown_extract(description) }}</p>
           {% else %}
             {% if group.type %}
               <p class="empty group-desc">{{ _("This " + group.type + " has no description") }}</p>
