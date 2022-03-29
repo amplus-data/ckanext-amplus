@@ -12373,6 +12373,7 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #6033A7;
   border-radius: 0;
+  font-size: 14px;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:active:focus, .btn-primary.focus {
   border-color: transparent;
@@ -12700,6 +12701,7 @@ textarea.form-control-lg {
 body {
   font-family: "Barlow", sans-serif;
   background: #6033A7;
+  font-size: 14px;
 }
 body a {
   text-decoration: none;
@@ -12783,6 +12785,7 @@ a:hover, a:focus, a:active {
 
 .form-control,
 .controls .form-control {
+  font-size: 14px;
   background-color: #fff;
   border: none;
   border-radius: 0;
