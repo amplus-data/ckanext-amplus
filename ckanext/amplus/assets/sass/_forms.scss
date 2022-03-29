@@ -14,6 +14,21 @@
   }
 }
 
+.input-group-btn {
+  width: 10%;
+  display: contents;
+
+  .btn {
+    font-size: 18px;
+    position: relative;
+    background-color: $white;
+
+    &:hover{
+      background-color: $gray-light;
+    }
+  }
+}
+
 .primary {
   .search-form {
     @include flex;

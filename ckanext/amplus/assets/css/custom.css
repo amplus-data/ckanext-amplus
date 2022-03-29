@@ -13163,6 +13163,19 @@ a:hover, a:focus, a:active {
   color: #414141;
 }
 
+.input-group-btn {
+  width: 10%;
+  display: contents;
+}
+.input-group-btn .btn {
+  font-size: 18px;
+  position: relative;
+  background-color: #fff;
+}
+.input-group-btn .btn:hover {
+  background-color: #E6E6E6;
+}
+
 .primary .search-form {
   display: flex;
   align-items: center;
