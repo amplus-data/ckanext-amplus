@@ -13239,6 +13239,7 @@ a:hover, a:focus, a:active {
   height: 46px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   padding-right: 4rem;
+  background: #fff;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
