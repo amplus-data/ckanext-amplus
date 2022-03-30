@@ -12423,6 +12423,10 @@ textarea.form-control-lg {
   display: none;
 }
 
+.label-open {
+  background-color: green;
+}
+
 .module-heading {
   color: #6033A7;
   background-color: #EFECF4;
