@@ -97,17 +97,6 @@
       &>label {
         display: none;
       }
-
-      select {
-        height: 46px;
-        box-shadow: $shadow-light;
-        padding-right: 4rem;
-        padding-left: 1rem;
-        background: $white;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-      }
     }
   }
 
@@ -116,6 +105,14 @@
     min-width: auto;
     width: auto;
   }
+}
+.select {
+  height: 46px;
+  width: fit-content;
+  box-shadow: $shadow-light;
+  font-size: $font-size-14;
+  padding-right: 4rem;
+  padding-left: 1rem;
 }
 
 .primary {
@@ -137,4 +134,9 @@
       }
     }
   }
+}
+
+.form-group {
+  display: flex;
+  justify-content: flex-end;
 }
