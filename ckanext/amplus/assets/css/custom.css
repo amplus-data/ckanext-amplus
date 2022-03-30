@@ -12419,6 +12419,10 @@ textarea.form-control-lg {
   background-color: #fff;
 }
 
+.caret {
+  display: none;
+}
+
 .module-heading {
   color: #6033A7;
   background-color: #EFECF4;
