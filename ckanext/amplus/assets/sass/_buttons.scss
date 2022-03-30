@@ -49,3 +49,10 @@
 .label-open {
   background-color: green;
 }
+
+.form-actions {
+  .btn-danger {
+    color: $white;
+    background-color: #d43f3a;
+  }
+}

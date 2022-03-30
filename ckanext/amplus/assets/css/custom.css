@@ -12427,6 +12427,11 @@ textarea.form-control-lg {
   background-color: green;
 }
 
+.form-actions .btn-danger {
+  color: #fff;
+  background-color: #d43f3a;
+}
+
 .module-heading {
   color: #6033A7;
   background-color: #EFECF4;
