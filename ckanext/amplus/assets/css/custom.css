@@ -13048,7 +13048,7 @@ a:hover, a:focus, a:active {
   font-weight: 600;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 767.98px) {
   .footer-links div {
     padding: 20px 0px;
   }
