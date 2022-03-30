@@ -12748,6 +12748,8 @@ body .primary {
   border: none;
   border-radius: 0;
   background-color: #fff;
+  width: fit-content;
+  height: 34px;
 }
 
 a {
