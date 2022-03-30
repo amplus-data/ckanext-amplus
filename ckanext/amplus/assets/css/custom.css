@@ -13031,6 +13031,12 @@ a:hover, a:focus, a:active {
   margin-top: 25px;
 }
 
+.footer-nav-title {
+  color: #9F1A86;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .footer-links ul {
   margin-top: 1rem;
   margin-bottom: 1rem;
