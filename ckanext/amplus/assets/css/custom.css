@@ -13260,20 +13260,19 @@ a:hover, a:focus, a:active {
 .primary .search-form .control-order-by > label {
   display: none;
 }
-.primary .search-form .control-order-by select {
-  height: 46px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  padding-right: 4rem;
-  padding-left: 1rem;
-  background: #fff;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
 .primary .search-form .show-filters,
 .primary .search-form .filter-list {
   min-width: auto;
   width: auto;
+}
+
+.select {
+  height: 46px;
+  width: fit-content;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  padding-right: 4rem;
+  padding-left: 1rem;
 }
 
 .primary .tertiary {
@@ -13288,6 +13287,11 @@ a:hover, a:focus, a:active {
 .primary .tertiary .search-form .search-input-group {
   width: auto;
   min-width: 100%;
+}
+
+.form-group {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .homepage .blogs {
