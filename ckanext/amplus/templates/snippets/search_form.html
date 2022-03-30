@@ -2,7 +2,7 @@
 
 {% block search_sortby %}
   {% if sorting %}
-    <div class="form-group">
+    <div class="form-group form-group-display-end">
       <select id="field-order-by" name="sort" class="form-select select">
         {% for label, value in sorting %}
           {% if label and value %}

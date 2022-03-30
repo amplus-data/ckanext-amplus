@@ -13289,7 +13289,7 @@ a:hover, a:focus, a:active {
   min-width: 100%;
 }
 
-.form-group {
+.form-group-display-end {
   display: flex;
   justify-content: flex-end;
 }
