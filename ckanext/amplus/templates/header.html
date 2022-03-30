@@ -29,7 +29,7 @@
         </div>
         <div class="collapse navbar-collapse" id="main-navigation-toggle">
             {% block header_site_navigation %}
-            <nav class="section navigation">
+            <ul class="section navigation">
               <ul class="nav nav-pills navbar-nav me-auto mb-2 mb-lg-0">
                 {% block header_site_navigation_tabs %}
                   {{ super() }}
@@ -50,7 +50,7 @@
                 {% endblock %}
 
               </ul>
-            </nav>
+            </ul>
             {% endblock %} {% block header_site_search %}
           {% endblock %}
         </div>
