@@ -3,6 +3,7 @@
   border: none;
   outline: none;
   font-weight: inherit;
+  font-size: $font-size-14;
 }
 
 .btn-primary {
@@ -35,4 +36,8 @@
 
 .btn-secondary {
   @include btn-default-reset;
+}
+
+.btn-default {
+  background-color: $white;
 }

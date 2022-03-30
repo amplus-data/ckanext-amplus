@@ -12367,6 +12367,7 @@ textarea.form-control-lg {
   border: none;
   outline: none;
   font-weight: inherit;
+  font-size: 14px;
 }
 
 .btn-primary {
@@ -12412,6 +12413,10 @@ textarea.form-control-lg {
 .btn-secondary:hover {
   border-color: transparent;
   background-color: #f7f7f7;
+}
+
+.btn-default {
+  background-color: #fff;
 }
 
 .module-heading {
