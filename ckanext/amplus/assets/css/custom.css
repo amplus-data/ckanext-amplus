@@ -13082,7 +13082,7 @@ a:hover, a:focus, a:active {
     padding: 3rem;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1199.98px) {
   .stats-wrapper:before, .stats-wrapper:after, .middle:before, .middle:after {
     display: none;
   }
