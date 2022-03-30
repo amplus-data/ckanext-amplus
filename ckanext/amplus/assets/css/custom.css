@@ -13153,7 +13153,7 @@ a:hover, a:focus, a:active {
     width: calc(100% - 2rem);
   }
 }
-@media only screen and (max-width: 990px) {
+@media (max-width: 991.98px) {
   .footer-links div {
     padding: 20px 0px;
   }
