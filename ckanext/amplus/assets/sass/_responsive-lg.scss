@@ -1,4 +1,4 @@
-@media only screen and (max-width: $breakpoint-sm) {
+@include media-breakpoint-down(lg)  {
     .footer-links div{
         padding: 20px 0px;
     }
