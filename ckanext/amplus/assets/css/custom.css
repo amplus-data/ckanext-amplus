@@ -12899,6 +12899,10 @@ a:hover, a:focus, a:active {
   max-width: 100%;
 }
 
+.navbar-collapse.in {
+  display: block !important;
+}
+
 .hero {
   display: flex;
   justify-content: center;
@@ -13055,10 +13059,6 @@ a:hover, a:focus, a:active {
 
   .masthead .navigation .nav-pills.nav > li a {
     padding: 2.2rem 2.5rem;
-  }
-
-  .homepage .group-topics {
-    padding: 100px 10px;
   }
 
   .stats {
