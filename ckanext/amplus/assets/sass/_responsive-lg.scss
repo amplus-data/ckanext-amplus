@@ -1,5 +1,5 @@
-@include media-breakpoint-down(lg)  {
-    .footer-links div{
+@include media-breakpoint-down(lg) {
+    .footer-links div {
         padding: 20px 0px;
     }
     .homepage {
@@ -10,11 +10,17 @@
             padding: 100px 50px;
         }
     }
-    .navbar-toggler{
+    .navbar-toggler {
         margin-right: 15px;
     }
 
-    .featured-item{
-      flex: 1 1 100%;
+    .featured-item {
+        flex: 1 1 100%;
+    }
+
+    .page-header {
+        .nav-tabs {
+            display: block;
+        }
     }
 }
