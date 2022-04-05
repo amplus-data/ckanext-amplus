@@ -13081,9 +13081,16 @@ a:hover, a:focus, a:active {
   body [role=main] .secondary {
     padding: 3rem;
   }
+
+  .primary .search-form > h1, .primary .search-form > .h1 {
+    padding-left: 2rem;
+  }
 }
 @media (max-width: 1199.98px) {
-  .stats-wrapper:before, .stats-wrapper:after, .middle:before, .middle:after {
+  .stats-wrapper:before,
+.stats-wrapper:after,
+.middle:before,
+.middle:after {
     display: none;
   }
 
@@ -13209,13 +13216,11 @@ a:hover, a:focus, a:active {
   border-bottom: none;
 }
 .primary .search-form > * {
-  min-width: 25%;
   width: 25%;
 }
 .primary .search-form > *:first-child {
   order: -2;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  min-width: 50%;
   width: 50%;
 }
 .primary .search-form > span {
@@ -13225,7 +13230,6 @@ a:hover, a:focus, a:active {
   order: -1;
   color: #9F1A86;
   font-weight: 600;
-  padding-left: 2rem;
   margin-bottom: 30px;
   margin-top: 0;
 }

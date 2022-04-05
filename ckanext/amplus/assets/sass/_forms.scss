@@ -38,14 +38,12 @@
     border-bottom: none;
 
     >* {
-      min-width: 25%;
       width: 25%;
     }
 
     >*:first-child {
       order: -2;
       box-shadow: $shadow-light;
-      min-width: 50%;
       width: 50%;
     }
 
@@ -57,7 +55,7 @@
       order: -1;
       color: $secondary;
       font-weight: $font-weight-600;
-      padding-left: 2rem;
+      // padding-left: 2rem;
       margin-bottom: 30px;
       margin-top: 0;
     }
