@@ -13171,6 +13171,9 @@ a:hover, a:focus, a:active {
   .homepage .insights {
     padding: 100px 50px;
   }
+  .homepage .row {
+    justify-content: center;
+  }
 
   .navbar-toggler {
     margin-right: 15px;
