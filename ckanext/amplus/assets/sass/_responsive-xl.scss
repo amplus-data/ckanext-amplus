@@ -98,4 +98,12 @@
   .resource-list .resource-item {
     width: calc(100% - $gutter-sm * 2);
   }
+
+  .site-footer {
+    .container-fluid {
+      .row {
+        justify-content: space-around;
+      }
+    }
+  }
 }
