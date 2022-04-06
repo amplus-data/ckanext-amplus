@@ -12903,6 +12903,10 @@ a:hover, a:focus, a:active {
   display: block !important;
 }
 
+.fade.in {
+  opacity: 1;
+}
+
 .hero {
   display: flex;
   justify-content: center;
