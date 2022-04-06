@@ -13159,6 +13159,10 @@ a:hover, a:focus, a:active {
 .resource-list .resource-item {
     width: calc(100% - 2rem);
   }
+
+  .site-footer .container-fluid .row, .site-footer .container-sm .row, .site-footer .container-md .row, .site-footer .container-lg .row, .site-footer .container-xl .row, .site-footer .container-xxl .row {
+    justify-content: space-around;
+  }
 }
 @media (max-width: 991.98px) {
   .footer-links div {
