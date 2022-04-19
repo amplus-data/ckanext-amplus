@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var sass = require('sass')(require('sass'));
+var sass = require('sass');
 var autoprefixer = require('gulp-autoprefixer');
 // var sourcemaps = require('gulp-sourcemaps'); - Uncomment when developing
 
@@ -15,7 +15,7 @@ gulp.task('sass', function () {
       ]
     }))
     // .pipe(sourcemaps.write()) - Uncomment when developing
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest('sass'));
 });
 
 gulp.task('fonts', function() {
