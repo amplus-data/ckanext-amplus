@@ -15,7 +15,7 @@ gulp.task('sass', function () {
       ]
     }))
     // .pipe(sourcemaps.write()) - Uncomment when developing
-    .pipe(gulp.dest('sass'));
+    .pipe(gulp.dest('css'));
 });
 
 gulp.task('fonts', function() {
