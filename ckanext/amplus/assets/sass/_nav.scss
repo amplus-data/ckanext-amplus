@@ -1,5 +1,5 @@
 .account-masthead {
-  background: @brand-primary;
+  background: $primary;
 
   .account {
     ul {
@@ -7,13 +7,13 @@
         border-left: none;
 
         a{
-          color: @gray-light;
+          color: $gray-light;
           font-weight: inherit;
 
           &:hover,
           &:active {
-            color: @gray-light;
-            background: @brand-quaternary;
+            color: $gray-light;
+            background: $quaternary;
           }
         }
       }
@@ -27,6 +27,10 @@
       }
     }
   }
+}
+
+.display-menu {
+  width: 100%
 }
 
 .masthead,
@@ -45,26 +49,26 @@
   &.active {
     >a {
       color: inherit;
-      background-color: @brand-extra-light;
+      background-color: $extra-light;
 
       &:hover {
         color: inherit;
-        background-color: darken(@brand-extra-light, 10%);
+        background-color: shade-color($extra-light, 10%);
 
         &:before {
-          border-left-color: darken(@brand-extra-light, 10%);
+          border-left-color: shade-color($extra-light, 10%);
         }
       }
 
       &:before {
-        border-left-color: @brand-extra-light;
+        border-left-color: $extra-light;
       }
     }
   }
 }
 
 .masthead {
-  background: @brand-primary;
+  background: $primary;
   padding: 0;
 
   .navigation {
@@ -72,18 +76,19 @@
       li {
         &.active {
           a {
-            background-color: @brand-quaternary;
+            background-color: $quaternary;
           }
         }
 
         a {
           padding: 2.5rem 2rem;
           border-radius: 0;
-          font-size: @font-size-18;
+          font-size: $font-size-18;
+          text-decoration: none;
 
           &:hover,
           &:focus {
-            background-color: @brand-quaternary;
+            background-color: $quaternary;
           }
         }
       }
@@ -95,11 +100,20 @@
   }
 
   .logo {
+    display:flex;
+    justify-content: space-evenly;
     max-width: 350px;
-    padding: @gutter-sm*2 0 @gutter-sm 2.5rem;
 
     >img {
       max-width: 100%;
     }
   }
+}
+
+.navbar-collapse.in {
+  display: block !important;
+}
+
+.fade.in {
+  opacity: 1;
 }

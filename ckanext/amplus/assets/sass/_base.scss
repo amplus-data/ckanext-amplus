@@ -1,10 +1,14 @@
 body {
-  font-family: @font-primary;
-  background: @brand-primary;
+  font-family: $font-primary;
+  background: $primary;
+  font-size: $font-size-14;
 
+  a {
+    text-decoration: none;
+  }
   .main,
   & [role=main] {
-    background: @brand-background;
+    background: $bg-primary;
 
     & .secondary {
       padding-right: 0;
@@ -32,11 +36,11 @@ body {
 
   &,
   .module-content {
-    background-color: @white;
+    background-color: $white;
   }
 
   .module-heading {
-    background: @brand-background;
+    background: $bg-primary;
   }
 }
 
@@ -49,11 +53,13 @@ body {
 .input-group-addon {
   border: none;
   border-radius: 0;
-  background-color: @white;
+  background-color: $white;
+  width:fit-content;
+  height: 34px;
 }
 
 a {
-  color: @brand-primary;
+  color: $primary;
 
   &:hover,
   &:focus,
@@ -88,6 +94,6 @@ a {
 .wide {
   .media-item {
     flex-grow: 1;
-    min-width: calc(100%/4 - @gutter-lg);
+    min-width: calc(100%/4 - $gutter-lg);
   }
 }

@@ -1,36 +1,49 @@
 .facet {
-  font-weight: @font-weight-600;
+  font-weight: $font-weight-600;
 }
 
 .filtered.pill {
   border-radius: 0;
   padding: .4rem .8rem;
-  background-color: @brand-extra-light;
-  color: @gray-medium;
+  background-color: $extra-light;
+  color: $gray-medium;
   margin: .5rem .2rem;
 
   a {
-    color: @gray-medium;
+    color: $gray-medium;
+  }
+}
+
+.input-group-btn {
+  width: 10%;
+  display: contents;
+
+  .btn {
+    font-size: 18px;
+    position: relative;
+    background-color: $white;
+
+    &:hover{
+      background-color: $gray-light;
+    }
   }
 }
 
 .primary {
   .search-form {
-    .flex;
-    .flex-align-center;
-    .flex-justify-between;
-    .flex-wrap;
+    @include flex;
+    @include flex-align-center;
+    @include flex-justify-between;
+    @include flex-wrap;
     border-bottom: none;
 
     >* {
-      min-width: 25%;
       width: 25%;
     }
 
     >*:first-child {
       order: -2;
-      box-shadow: @shadow-light;
-      min-width: 50%;
+      box-shadow: $shadow-light;
       width: 50%;
     }
 
@@ -40,16 +53,16 @@
 
     >h1 {
       order: -1;
-      color: @brand-secondary;
-      font-weight: @font-weight-600;
-      padding-left: 2rem;
+      color: $secondary;
+      font-weight: $font-weight-600;
+      // padding-left: 2rem;
       margin-bottom: 30px;
       margin-top: 0;
     }
 
     .control-order-by {
-      .flex;
-      .flex-justify-end;
+      @include flex;
+      @include flex-justify-end;
       margin-left: 0;
       position: relative;
 
@@ -61,8 +74,8 @@
         position: absolute;
         right: 16px;
         border-style: solid;
-        background: @white;
-        border-color: transparent @gray-medium;
+        background: $white;
+        border-color: transparent $gray-medium;
         pointer-events: none;
         transform: rotate(90deg)
       }
@@ -82,15 +95,6 @@
       &>label {
         display: none;
       }
-
-      select {
-        height: 46px;
-        box-shadow: @shadow-light;
-        padding-right: 4rem;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-      }
     }
   }
 
@@ -99,6 +103,14 @@
     min-width: auto;
     width: auto;
   }
+}
+.select {
+  height: 46px;
+  width: fit-content;
+  box-shadow: $shadow-light;
+  font-size: $font-size-14;
+  padding-right: 4rem;
+  padding-left: 1rem;
 }
 
 .primary {
@@ -120,4 +132,9 @@
       }
     }
   }
+}
+
+.form-group-display-end {
+  display: flex;
+  justify-content: flex-end;
 }

@@ -4,13 +4,13 @@
       &.active {
         a {
           border: none;
-          .btn-primary-reset;
+          @include btn-primary-reset;
         }
       }
 
       a {
-        .btn-default-reset;
-        background-color: @white;
+        @include btn-default-reset;
+        background-color: $white;
         border-radius: 0;
       }
     }
@@ -22,7 +22,7 @@
       border: none;
 
       >li {
-        margin-right: @gutter-sm;
+        margin-right: $gutter-sm;
       }
     }
   }
@@ -34,11 +34,11 @@
   >.content_action {
 
     >.btn-danger {
-      color: @white;
-      background-color: @brand-tertiary;
+      color: $white;
+      background-color: $tertiary;
 
       &:hover {
-        background-color: @brand-tertiary-light;
+        background-color: $tertiary-light;
       }
     }
   }

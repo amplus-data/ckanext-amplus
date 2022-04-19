@@ -1,5 +1,5 @@
 /* ======================================================
-   Edits should be made to .less files
+   Edits should be made to .scss files
    ====================================================== */
 
 .page-list-item .image {
@@ -20,7 +20,7 @@
 	background: #fff;
 	padding: 60px 0px;
 
-	.row {
+	.form-row {
 		display: flex;
 		flex-wrap: wrap;
 		> [class*='col-'] {
