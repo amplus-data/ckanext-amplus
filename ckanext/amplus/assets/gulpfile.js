@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass')(require('sass'));
+var sass = require('gulp-dart-sass');
 var autoprefixer = require('gulp-autoprefixer');
 // var sourcemaps = require('gulp-sourcemaps'); - Uncomment when developing
 
@@ -7,7 +7,7 @@ var autoprefixer = require('gulp-autoprefixer');
 gulp.task('sass', function () {
   return gulp.src('sass/custom.scss')
     // .pipe(sourcemaps.init()) - Uncomment when developing
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: [
         "last 5 versions",
@@ -25,7 +25,7 @@ gulp.task('fonts', function() {
 
 // Watch for sass file changes
 gulp.task("watch", function () {
-  gulp.watch(["sass/**/*.sass"],
+  gulp.watch(["sass/**/*.scss"],
     gulp.parallel("sass"));
 });
 
