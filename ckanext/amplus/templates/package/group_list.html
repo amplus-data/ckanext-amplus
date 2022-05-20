@@ -16,7 +16,7 @@
   {% endif %}
   {% if c.pkg_dict.groups %}
     <form method="post">
-        {{ h.snippet('home/snippets/featured_groups.html', groups=c.pkg_dict.groups, type='group') }}
+        {{ h.snippet('home/snippets/amplus_featured_groups.html', groups=c.pkg_dict.groups, type='group') }}
     </form>
   {% else %}
     <p class="empty">{{ _('There are no groups associated with this dataset') }}</p>

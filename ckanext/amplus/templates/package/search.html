@@ -3,11 +3,11 @@
 {% ckan_extends %}
 
 {% block primary_content %}
-  {% snippet 'home/snippets/featured_groups.html', items=4, getGroups=true %}
+  {% snippet 'home/snippets/amplus_featured_groups.html', items=4, getGroups=true %}
   {{ super() }}
 {% endblock %}
 
 {% block package_search_results_list %}
-        {{ h.snippet('home/snippets/featured_groups.html', groups = c.page.items) }}
+        {{ h.snippet('home/snippets/amplus_featured_groups.html', groups = c.page.items) }}
 {% endblock %}
 

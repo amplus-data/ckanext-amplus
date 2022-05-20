@@ -7,5 +7,5 @@
     </div>
   {% endif %}
   {% snippet 'snippets/custom_search_form.html', query=c.q, fields=(('state', c.state),), sorting=c.filters, sorting_selected=c.sort, placeholder=_('Search Data Requests...'), no_bottom_border=true, count=c.datarequest_count, no_title=True %}
-  {{ h.snippet('home/snippets/featured_groups.html', datarequest_count=c.datarequest_count, groups=c.datarequests, page=c.page, q=c.q)}}
+  {{ h.snippet('home/snippets/amplus_featured_groups.html', datarequest_count=c.datarequest_count, groups=c.datarequests, page=c.page, q=c.q)}}
 {% endblock %}
