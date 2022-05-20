@@ -44,18 +44,18 @@
       <h3 class="group-title">
         {% if group.type == 'datarequest' %}
           {% if group.get('closed', False) %}
-            <span class="uppercase label label-closed">
+            <span class="uppercase badge label-closed">
               <i class="icon-lock fa fa-lock"></i> {% trans %}Closed{% endtrans %}
             </span>
           {% else %}
-            <span class="uppercase label label-open">
+            <span class="uppercase badge label-open">
               <i class="icon-unlock fa fa-unlock"></i> {% trans %}Open{% endtrans %}
             </span>
           {% endif %}
         {% endif %}
           {% block heading_private %}
           {% if group.private %}
-            <span class="dataset-private label label-inverse">
+            <span class="dataset-private badge label-inverse">
               <i class="fa fa-lock"></i>
               {{ _('Private') }}
               </span>
@@ -70,11 +70,11 @@
       {% block featured_item_header_description %}
         {% if c.controller == 'package' and group.type == 'group' and not type or c.controller == 'ckanext.showcase.controller:ShowcaseController' and group.type == 'group'  %}
           {% if truncate == 0 %}
-            <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
+            <p class="group-desc">{{ h.markdown_extract(description) }}</p>
           {% endif %}
         {% else %}
           {% if description %}
-            <p class="group-desc">{{ h.markdown_extract(description)|urlize }}</p>
+            <p class="group-desc">{{ h.markdown_extract(description) }}</p>
           {% else %}
             {% if group.type %}
               <p class="empty group-desc">{{ _("This " + group.type + " has no description") }}</p>
@@ -98,7 +98,7 @@
       <ul class="dataset-resources list-unstyled">
         {% block resources_inner %}
           {% for resource in h.dict_list_reduce(group.resources, 'format') %}
-            <li class="label label-default" data-format="{{ resource.lower() }}">
+            <li class="badge label-default" data-format="{{ resource.lower() }}">
               {{ resource }}
             </li>
           {% endfor %}
@@ -115,8 +115,8 @@
       {% if h.show_comments_tab() %}
         <i class="icon-comment fa fa-comment"></i> {{ h.get_comments_number(group.get('id', '')) }}</span>
       {% endif %}
-      <div class="divider">
-        <span class="date-datarequests">{{ h.time_ago_from_timestamp(group.open_time) }}</span>
+      <div class="dropdown-divider">
+        <span class="date-datarequests dropdown-item">{{ h.time_ago_from_timestamp(group.open_time) }}</span>
       </div>
     </div>
   {% endif %}

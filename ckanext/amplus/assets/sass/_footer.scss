@@ -1,0 +1,48 @@
+.footer-container {
+  padding: $gutter-sm * 5 0;
+}
+
+.site-footer {
+  color: $silver;
+  background: $white;
+  padding: $gutter-lg*2 0;
+
+  .logo {
+    img {
+      max-height: 30px;
+    }
+  }
+}
+
+.text-description {
+  font-size: $font-size-15;
+  font-weight: $font-weight-500;
+  margin-top: 25px;
+}
+
+.footer-nav-title {
+  color: $secondary;
+  font-size: $font-size-18;
+  font-weight: $font-weight-600;
+}
+
+@mixin  footer-nav {
+  margin-top: $gutter-sm;
+  margin-bottom: $gutter-sm;
+  li {
+    padding: 5px 0;
+    a {
+      color: $silver;
+      font-size: $font-size-16;
+      font-weight: $font-weight-600;
+    }
+  }
+}
+
+.footer-links {
+  ul {
+    @include footer-nav;
+    padding-left: 0;
+    list-style: none;
+  }
+}

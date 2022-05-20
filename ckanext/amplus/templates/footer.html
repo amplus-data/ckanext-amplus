@@ -8,7 +8,7 @@
         <div class="col-md-12 col-lg-4 attribution">
           {% block footer_attribution %}
               {% block footer_links %}
-              <a class="logo" href="{{ h.url_for('home.index') }}"><img class="img-responsive" src="{{ h.url_for_static('/base/images/Amplus-OpenDataPortal-logo.png') }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
+              <a class="logo" href="{{ h.url_for('home.index') }}"><img class="img-fluid" src="{{ h.url_for_static('/base/images/Amplus-OpenDataPortal-logo.png') }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
                 {% if g.site_about %}
                   <p class="text-description py-20">{{ h.render_markdown(g.site_about) }}</p>
                 {% endif %}

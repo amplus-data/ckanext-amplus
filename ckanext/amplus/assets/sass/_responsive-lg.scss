@@ -1,0 +1,29 @@
+@include media-breakpoint-down(lg) {
+    .footer-links div {
+        padding: 20px 0px;
+    }
+    .homepage {
+        .group-container {
+            padding: 100px 10px;
+        }
+        .insights {
+            padding: 100px 50px;
+        }
+        .row {
+            justify-content: center;
+        }
+    }
+    .navbar-toggler {
+        margin-right: 15px;
+    }
+
+    .featured-item {
+        flex: 1 1 100%;
+    }
+
+    .page-header {
+        .nav-tabs {
+            display: block;
+        }
+    }
+}

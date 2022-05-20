@@ -1,0 +1,29 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  background: $white;
+  padding: $gutter-lg*4 0;
+
+
+  .hero-img {
+    min-width: auto;
+    width: 196px;
+    height: 145px;
+  }
+
+  .media-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .page-heading {
+    padding-top: 30px;
+    font-size: $font-size-50;
+    color: $primary;
+  }
+
+  .promoted-desc {
+    font-size: $font-size-18;
+    margin-bottom: 0;
+  }
+}
