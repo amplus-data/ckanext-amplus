@@ -4,6 +4,8 @@
 
 {% block admin_form %}
   {{ super() }}
+  {{ form.select('homepage_hero', 'field_homepage_hero', _('Show Hero section on Home page'), options=[{'value':'yes', 'text': 'Yes'},{'value':'no', 'text': 'No'}], selected=data.homepage_hero) }}
+
 
   {{ form.select('homepage_blogs', 'field_homepage_blogs', _('Show recent blog posts on Home page'), options=[{'value':'yes', 'text': 'Yes'},{'value':'no', 'text': 'No'}], selected=data.homepage_blogs) }}
 

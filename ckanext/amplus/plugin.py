@@ -1,11 +1,12 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 import ckanext.amplus.helpers as helpers
-
+from ckanext.amplus.blueprint import amplus
 
 class AmplusPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.IBlueprint)
     # IConfigurer
 
     def update_config(self, config_):
@@ -29,6 +30,10 @@ class AmplusPlugin(plugins.SingletonPlugin):
             'homepage_blogs': validators,
             'footer_links': validators,
             'social_media_links': validators,
+            'homepage_hero':  validators,
         })
 
         return schema
+
+    def get_blueprint(self):
+        return [amplus]

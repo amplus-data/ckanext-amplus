@@ -1,16 +1,20 @@
+{% if g.homepage_hero == 'yes' %}
+
 <div class="hero text-center">
   <div class="container">
-    {% block promoted %}
-      {% snippet 'home/snippets/promoted.html' %}
+    {% block amplus_promoted %}
+      {% snippet 'home/snippets/amplus_promoted.html' %}
     {% endblock %}
   </div>
 </div>
+
+{% endif %}
 
 <div class="group-topics">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        {% snippet 'home/snippets/featured_groups.html', getGroups=true %}
+        {% snippet 'home/snippets/amplus_featured_groups.html', getGroups=true %}
       </div>
     </div>
   </div>
@@ -21,7 +25,7 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <p class="group-heading">{{_("Quick stats")}}</p>
-        {% snippet 'home/snippets/stats.html' %} 
+        {% snippet 'home/snippets/amplus_stats.html' %} 
       </div>
     </div>
   </div>
@@ -55,7 +59,7 @@
           <!-- Latest Datasets Section -->
           {% set recent_datasets = h.amplus_get_recently_updated_datasets() %}
           {% if recent_datasets %}
-            {{ h.snippet('home/snippets/featured_groups.html', groups=recent_datasets) }}
+            {{ h.snippet('home/snippets/amplus_featured_groups.html', groups=recent_datasets) }}
           {% else %}
             <p class="empty">{{ _('No datasets have been added yet') }}</p>
           {% endif %}
@@ -64,7 +68,7 @@
             {% set featured_charts = h.c3charts_featured_charts(4) %}
             {% if featured_charts %}
               {% for featured_chart in featured_charts %}
-                {% snippet 'home/snippets/featured_chart_view.html', featured_chart=featured_chart %}
+                {% snippet 'home/snippets/amplus_featured_chart_view.html', featured_chart=featured_chart %}
               {% endfor %}
             {% else %}
               <p class="empty">{{ _('No chart views have been created yet') }}</p>

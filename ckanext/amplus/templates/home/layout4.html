@@ -1,0 +1,36 @@
+{% if g.homepage_hero == 'yes' %}
+
+<div class="hero text-center">
+  <div class="container">
+    {% block amplus_promoted %}
+      {% snippet 'home/snippets/amplus_promoted.html' %}
+    {% endblock %}
+  </div>
+</div>
+
+{% endif %}
+
+<div role="main" class="hero">
+    <div class="container">
+      {% block search %}
+        {% snippet 'home/snippets/search.html' %}
+      {% endblock %}
+    </div>
+  </div>
+  <div role="main">
+    <div class="container">
+      <div class="row row2">
+        <div class="col-md-6 col2">
+          {% block promoted %}
+            {% snippet 'home/snippets/promoted.html' %}
+          {% endblock %}
+        </div>
+        <div class="col-md-6 col1">
+          {% block stats %}
+            {% snippet 'home/snippets/stats.html' %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+  
