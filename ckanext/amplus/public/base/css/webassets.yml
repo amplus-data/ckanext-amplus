@@ -1,0 +1,4 @@
+test:
+  filters: cssrewrite
+  output: base/%(version)s_test.css
+  contents: test.css

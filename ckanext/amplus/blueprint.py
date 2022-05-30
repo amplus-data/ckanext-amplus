@@ -48,23 +48,44 @@ def _get_config_options_amplus():
 
     return dict(styles=styles, homepages=homepages)
 
+def create_custom_css(config):
+    header = config.get('header_color')
+    footer = config.get('footer_color')
+
+    site_custom_css = '.masthead { background: ' +  header + ';} ' 
+    site_custom_css += '.site-footer { background: ' +  footer + ';}'
+
+    return site_custom_css 
+
 
 class ConfigViewAmplus(MethodView):
     def get(self):
         items = _get_config_options_amplus()
         schema = logic.schema.update_configuration_schema()
         data = {}
+        
         for key in schema:
-            data[key] = config.get(key)
+            if key == 'ckan.site_custom_css':
+                custom_css = create_custom_css(config)
+                data[key] = custom_css
+            else:
+                data[key] = config.get(key)
 
         vars = dict(data=data, errors={}, **items)
 
         return base.render(u'admin/config.html', extra_vars=vars)
 
     def post(self):
+        print ("POSTT")
         try:
             req = request.form.copy()
             req.update(request.files.to_dict())
+            print (req['ckan.site_custom_css'])
+            # update ckan.site_custom_css
+            custom_css = create_custom_css(req)
+            req['ckan.site_custom_css'] = custom_css
+
+            
             data_dict = logic.clean_dict(
                 dict_fns.unflatten(
                     logic.tuplize_dict(

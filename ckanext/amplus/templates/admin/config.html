@@ -4,6 +4,11 @@
 
 {% block admin_form %}
   {{ super() }}
+
+  {{ form.input('header_color', type="color", id='field-ckan-header-color', label=_('Choose header color'), value=data.header_color, error=error) }}
+  {{ form.input('footer_color', type="color", id='field-ckan-footer-color', label=_('Choose footer color'), value=data.footer_color, error=error) }}
+
+
   {{ form.select('homepage_hero', 'field_homepage_hero', _('Show Hero section on Home page'), options=[{'value':'yes', 'text': 'Yes'},{'value':'no', 'text': 'No'}], selected=data.homepage_hero) }}
 
 
