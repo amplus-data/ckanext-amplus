@@ -51,9 +51,51 @@ def _get_config_options_amplus():
 def create_custom_css(config):
     header = config.get('header_color')
     footer = config.get('footer_color')
+    admin_header_color = config.get('admin_header_color')
+    oval = config.get('oval')
+    footer_nav_title = config.get('footer_nav_title')
+    footer_nav_links = config.get('footer_nav_links')
+
+    # buttons
+    btn_primary_color = config.get('btn_primary_color')
+    btn_danger_color = config.get('btn_danger_color')
+    btn_default_color = config.get('btn_default_color')
+
+    # headiing
+    module_heading = config.get('module_heading')
+    h1_color = config.get('h1_color')
+
+    # links
+    link_color = config.get('link_color')
+    link_hover_color = config.get('link_hover_color')
+    link_active_color = config.get('link_active_color')
 
     site_custom_css = '.masthead { background: ' +  header + ';} ' 
     site_custom_css += '.site-footer { background: ' +  footer + ';}'
+    site_custom_css += '.account-masthead { background: ' +  admin_header_color + ';}'
+    site_custom_css += '.stat-content .oval { color: ' +  oval + ';}'
+    site_custom_css += '.footer-nav-title  { color: ' +   footer_nav_title + ';}'
+    site_custom_css += '.footer-links ul li a  { color: ' +   footer_nav_links + ';}'
+    
+
+    # buttons
+    site_custom_css += '.btn-primary { background: ' +  btn_primary_color + ';}'
+    site_custom_css += '.btn-default { background: ' +  btn_default_color + ';}'
+    site_custom_css += '.form-actions .btn-danger { background: ' +  btn_danger_color + ';}'
+
+    # heading
+    site_custom_css += '.module-heading { color: ' +  module_heading + ';}'
+    # h1 
+    # think how we can devide the different h1
+    site_custom_css += '.primary .search-form > h1, .primary .search-form > .h1 { color: ' +  h1_color + ';}'
+
+    # link color
+    site_custom_css += 'a { color: ' +  link_color + ';}'
+    site_custom_css += '.masthead .navigation .nav-pills li a:hover { background: ' +  link_hover_color + ';}'
+    site_custom_css += '.masthead .navigation .nav-pills li.active a { background: ' +  link_active_color + ';}'
+
+    
+
 
     return site_custom_css 
 
@@ -85,7 +127,6 @@ class ConfigViewAmplus(MethodView):
             custom_css = create_custom_css(req)
             req['ckan.site_custom_css'] = custom_css
 
-            
             data_dict = logic.clean_dict(
                 dict_fns.unflatten(
                     logic.tuplize_dict(

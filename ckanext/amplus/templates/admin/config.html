@@ -7,8 +7,34 @@
 
   {{ form.input('header_color', type="color", id='field-ckan-header-color', label=_('Choose header color'), value=data.header_color, error=error) }}
   {{ form.input('footer_color', type="color", id='field-ckan-footer-color', label=_('Choose footer color'), value=data.footer_color, error=error) }}
+  {{ form.input('admin_header_color', type="color", id='field-ckan-admin-header-color', label=_('Choose admin header color'), value=data.admin_header_color, error=error) }}
+  {{ form.input('footer_nav_title', type="color", id='field-ckan-footer-nav-title', label=_('Choose footer navigation color'), value=data.footer_nav_title, error=error) }}
+  {{ form.input('footer_nav_links', type="color", id='field-ckan-footer-nav-links', label=_('Choose footer links color'), value=data.footer_nav_links, error=error) }}
+
+  # statistics icons color
+  {{ form.input('oval', type="color", id='field-ckan-oval', label=_('Choose statistics icons color'), value=data.oval, error=error) }}
+
+  
+
+  # buttons
+  {{ form.input('btn_primary_color', type="color", id='field-ckan-btn-primary-color', label=_('Choose buttons primary color'), value=data.btn_primary_color, error=error) }}
+  {{ form.input('btn_danger_color', type="color", id='field-ckan-btn-danger-color', label=_('Choose danger buttons color'), value=data.btn_danger_color, error=error) }}
+  {{ form.input('btn_default_color', type="color", id='field-ckan-btn-default-color', label=_('Choose default buttons color'), value=data.btn_default_color, error=error) }}
+
+  
+
+  # text
+  {{ form.input('module_heading', type="color", id='field-ckan-module-heading', label=_('Choose admin header color'), value=data.module_heading, error=error) }}
+  {{ form.input('h1_color', type="color", id='field-ckan-h1-color', label=_('Choose h1 color'), value=data.h1_color, error=error) }}
 
 
+  # links
+  {{ form.input('link_color', type="color", id='field-ckan-link-color', label=_('Choose link color'), value=data.link_color, error=error) }}
+  {{ form.input('link_hover_color', type="color", id='field-ckan-link-hover-color', label=_('Choose link hover color'), value=data.link_hover_color, error=error) }}
+  {{ form.input('link_active_color', type="color", id='field-ckan-link-active-color', label=_('Choose link active color'), value=data.link_active_color, error=error) }}
+
+
+  
   {{ form.select('homepage_hero', 'field_homepage_hero', _('Show Hero section on Home page'), options=[{'value':'yes', 'text': 'Yes'},{'value':'no', 'text': 'No'}], selected=data.homepage_hero) }}
 
 

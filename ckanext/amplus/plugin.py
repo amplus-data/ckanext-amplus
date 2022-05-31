@@ -33,6 +33,18 @@ class AmplusPlugin(plugins.SingletonPlugin):
             'homepage_hero':  validators,
             'header_color': validators,
             'footer_color': validators,
+            'admin_header_color': validators,
+            'btn_primary_color':  validators,
+            'btn_danger_color': validators,
+            'module_heading': validators,
+            'link_color': validators,
+            'h1_color': validators,
+            'btn_default_color': validators,
+            'oval': validators,
+            'footer_nav_title': validators,
+            'footer_nav_links': validators,
+            'link_hover_color': validators,
+            'link_active_color': validators,
         })
 
         return schema
