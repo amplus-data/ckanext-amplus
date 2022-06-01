@@ -1,10 +1,10 @@
 {% set stats = h.amplus_get_site_statistics(c.user) %}
 
-<div class="stats text-center">
-    <h3>{{ _('{0} statistics').format(g.site_title) }}</h3>
+<div class="stats-amplus text-center">
+    <h3 class="h3-amplus">{{ _('{0} statistics').format(g.site_title) }}</h3>
       {% block stats_group %}
-        <div class="stats-wrapper">
-            <div class="stat-content">
+        <div class="stats-wrapper-amplus">
+            <div class="stat-content-amplus">
                 <a href="{{ h.url_for('dataset.search') }}">
                     <div class="oval">
                         <i class="fa fa-database fa-lg" aria-hidden="true"></i>
@@ -15,7 +15,7 @@
                     </div>  
                 </a>
             </div>
-            <div class="stat-content middle">
+            <div class="stat-content-amplus middle-amplus">
                 <a href="{{ h.url_for('organization.index') }}">
                     <div class="oval">
                         <i class="fa fa-building fa-lg" aria-hidden="true"></i>
@@ -26,7 +26,7 @@
                     </div>  
                 </a>
             </div>
-            <div class="stat-content">
+            <div class="stat-content-amplus">
                 <a href="{{ h.url_for('group.index') }}">
                     <div class="oval">
                         <i class="fa fa-th fa-lg" aria-hidden="true"></i>

@@ -12005,13 +12005,13 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.stats-container {
+.stats-container-amplus {
   background: #EFECF4;
   padding: 0;
   padding-top: 6rem;
 }
 
-.stats {
+.stats-amplus {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -12019,21 +12019,26 @@ textarea.form-control-lg {
   height: 100px;
   width: 100%;
 }
-.stats h3, .stats .h3 {
+
+/* this removes the h3 on CKAN stats box. Using h3-amplus class in amplus-statistics */
+.stats-amplus h3, .stats-amplus .h3 {
+  display: none;
+}
+.h3-amplus {
   display: none;
 }
 
-.stat-content {
+.stat-content-amplus {
   padding: 1rem 0;
   display: inline-flex;
   justify-content: center;
   align-items: center;
 }
-.stat-content a {
+.stat-content-amplus a {
   display: flex;
   padding: 0 5rem;
 }
-.stat-content .oval {
+.stat-content-amplus .oval {
   border-radius: 50%;
   background-color: rgba(156, 36, 132, 0.1);
   width: 5rem;
@@ -12043,7 +12048,7 @@ textarea.form-control-lg {
   justify-content: center;
   align-items: center;
 }
-.stat-content .content {
+.stat-content-amplus .content {
   height: 50px;
   display: inline-flex;
   flex-direction: column;
@@ -12051,25 +12056,25 @@ textarea.form-control-lg {
   padding-left: 2rem;
   line-height: 1.2;
 }
-.stat-content .stat-number {
+.stat-content-amplus .stat-number {
   font-size: 25px;
   font-weight: 600;
   color: #414141;
 }
-.stat-content .stat-title {
+.stat-content-amplus .stat-title {
   font-size: 18px;
   color: #414141;
   text-transform: capitalize;
 }
 
-.stats-wrapper {
+.stats-wrapper-amplus {
   display: flex;
   justify-content: center;
   align-content: center;
   width: 100%;
 }
 
-.stats-wrapper:before {
+.stats-wrapper-amplus:before {
   content: "";
   flex: 1 0 25%;
   height: 1px;
@@ -12079,7 +12084,7 @@ textarea.form-control-lg {
   align-self: center;
 }
 
-.stats-wrapper:after {
+.stats-wrapper-amplus:after {
   content: "";
   flex: 1 0 25%;
   height: 1px;
@@ -12089,7 +12094,7 @@ textarea.form-control-lg {
   align-self: center;
 }
 
-.middle:before, .middle:after {
+.middle-amplus:before, .middle-amplus:after {
   content: "";
   width: 1px;
   height: 50px;

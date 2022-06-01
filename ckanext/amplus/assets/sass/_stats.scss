@@ -1,10 +1,10 @@
-.stats-container {
+.stats-container-amplus {
     background: $bg-primary;
     padding: 0;
     padding-top: $gutter-lg * 2;
 }
 
-.stats {
+.stats-amplus {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -16,7 +16,7 @@
     }
 }
 
-.stat-content {
+.stat-content-amplus {
     padding: $gutter-sm 0;
     // width: $gutter-lg * 6;
     // margin: 0 $gutter-sm * 5;
@@ -58,14 +58,14 @@
     }
 }
 
-.stats-wrapper {
+.stats-wrapper-amplus {
     display: flex;
     justify-content: center;
     align-content: center;
     width: 100%;
 }
 
-.stats-wrapper:before {
+.stats-wrapper-amplus:before {
     content: "";
     flex: 1 0 25%;
     height: 1px;
@@ -75,7 +75,7 @@
     align-self: center;
 }
 
-.stats-wrapper:after {
+.stats-wrapper-amplus:after {
     content: "";
     flex: 1 0 25%;
     height: 1px;
@@ -85,7 +85,7 @@
     align-self: center;
 }
 
-.middle:before, .middle:after {
+.middle-amplus:before, .middle-amplus:after {
     content: "";
     width: 1px;
     height: 50px;
