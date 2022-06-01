@@ -31,6 +31,11 @@ class AmplusPlugin(plugins.SingletonPlugin):
             'footer_links': validators,
             'social_media_links': validators,
             'homepage_hero':  validators,
+            'primary_color': validators,
+            'secondary_color': validators,
+            'tertiary_color': validators,
+            'quaternary_color': validators,
+            'extra_light_color': validators,
         })
 
         return schema

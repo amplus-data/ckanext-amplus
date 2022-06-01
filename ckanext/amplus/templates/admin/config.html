@@ -7,6 +7,12 @@
 
   {{ form.select('homepage_hero', 'field_homepage_hero', _('Show Hero section on Home page'), options=[{'value':'yes', 'text': 'Yes'},{'value':'no', 'text': 'No'}], selected=data.homepage_hero) }}
 
+  {{ form.input('primary_color', type="color", id='field-ckan-primary-color', label=_('Choose primary color'), value=data.primary_color, error=error) }}
+  {{ form.input('secondary_color', type="color", id='field-ckan-secondary-color', label=_('Choose secondary color'), value=data.secondary_color, error=error) }}
+  {{ form.input('tertiary_color', type="color", id='field-ckan-tertiary-color', label=_('Choose tertiary color'), value=data.tertiary_color, error=error) }}
+  {{ form.input('quaternary_color', type="color", id='field-ckan-quaternary-color', label=_('Choose quaternary color'), value=data.quaternary_color, error=error) }}
+  {{ form.input('extra_light_color', type="color", id='field-ckan-extra-light-color', label=_('Choose extra-light color'), value=data.extra_light_color, error=error) }}
+
   {{ form.select('homepage_blogs', 'field_homepage_blogs', _('Show recent blog posts on Home page'), options=[{'value':'yes', 'text': 'Yes'},{'value':'no', 'text': 'No'}], selected=data.homepage_blogs) }}
 
   {{ form.markdown('footer_links', 'field_footer_links', label=_('Footer Links'), value=data.footer_links, error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full']) }}

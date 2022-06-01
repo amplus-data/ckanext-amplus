@@ -49,13 +49,87 @@ def _get_config_options_amplus():
     return dict(styles=styles, homepages=homepages)
 
 
+def create_custom_css(config):
+    # Generate custom css according to selected colors
+    site_custom_css = ''
+    primary = config.get('primary_color')
+    secondary = config.get('secondary_color')
+    tertiary = config.get('tertiary_color')
+    quaternary = config.get('quaternary_color')
+    extra_light = config.get('extra_light_color')
+
+
+    site_custom_css += '.bg-primary { background-color: ' +  primary + ' !important;} '
+    site_custom_css += '.bg-secondary { background-color: ' +  secondary + ' !important;} '
+    site_custom_css += '.bg-tertiary { background-color: ' +  tertiary + ' !important;} '
+    site_custom_css += '.bg-quaternary { background-color: ' +  quaternary + ' !important;} '
+    site_custom_css += '.bg-extra-light { background-color: ' +  extra_light + ' !important;} '
+
+    #header
+    site_custom_css += '.masthead { background: ' +  primary + ' !important;} '
+    site_custom_css += '.account-masthead { background: ' +  primary + ' !important;} '
+    site_custom_css += '.account-masthead .account ul li a:hover, .account-masthead .account ul li a:active { background: ' +  quaternary + ' !important;} '
+    site_custom_css += '.masthead .navigation .nav-pills li.active a { background: ' +  quaternary + ' !important;} '
+    site_custom_css += '.masthead .navigation .nav-pills li a:hover, .masthead .navigation .nav-pills li a:focus { background: ' +  quaternary + ' !important;} '
+
+    # stats
+    site_custom_css += '.homepage .stats ul li a { color: ' +  secondary + ' !important;} '
+
+    # featured
+    site_custom_css += '.featured-item:hover { background-color: ' +  secondary + ' !important;} '
+
+    # breadcrump
+    site_custom_css += '.toolbar .breadcrumb li.active > a { color: ' +  primary + ' !important;} '
+    
+    # Stats amplus
+    site_custom_css += '.oval { color: ' +  secondary + ' !important;} '
+
+    # Footer nav
+    site_custom_css += '.footer-nav-title { color: ' +  secondary + ' !important;} '
+
+    # h
+    site_custom_css += '.module-heading { color: ' +  primary + ' !important;} '
+    site_custom_css += 'h1 { color: ' +  primary + ' !important;} '
+
+    # buttons
+    site_custom_css += '.btn-primary { background-color: ' +  primary + ' !important;} '
+
+    return site_custom_css
+
+
+def set_default_colors():
+    # Set the initial colors
+    colors = {}
+
+    colors['primary_color'] = '#6033A7'
+    colors['secondary_color'] = '#9F1A86'
+    colors['tertiary_color'] = '#DE0064'
+    colors['quaternary_color'] = '#7A64A6'
+    colors['extra_light_color'] = '#EBD3E6'
+
+    return colors
+
+
 class ConfigViewAmplus(MethodView):
     def get(self):
         items = _get_config_options_amplus()
         schema = logic.schema.update_configuration_schema()
         data = {}
+
+        # set colors defaults
+        colors = set_default_colors()
+
+        for item in colors:
+            show_value = logic.get_action(u'config_option_show')({}, {'key': item})
+            if show_value == '':
+                config[item] = colors[item]
+
         for key in schema:
-            data[key] = config.get(key)
+            if key == 'ckan.site_custom_css':
+                custom_css = create_custom_css(config)
+                data[key] = custom_css
+            else:
+                data[key] = config.get(key)
 
         vars = dict(data=data, errors={}, **items)
 
@@ -65,6 +139,9 @@ class ConfigViewAmplus(MethodView):
         try:
             req = request.form.copy()
             req.update(request.files.to_dict())
+            # update ckan.site_custom_css
+            custom_css = create_custom_css(req)
+            req['ckan.site_custom_css'] = custom_css
             data_dict = logic.clean_dict(
                 dict_fns.unflatten(
                     logic.tuplize_dict(
