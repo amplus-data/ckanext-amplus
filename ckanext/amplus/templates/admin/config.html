@@ -3,14 +3,31 @@
 {% import 'macros/form.html' as form %}
 
 {% block admin_form %}
-  {{ super() }}
+  {{ form.input('ckan.site_title', id='field-ckan-site-title', label=_('Site Title'), value=data['ckan.site_title'], error=error, classes=['control-medium']) }}
+
+  {{ form.input('ckan.site_description', id='field-ckan-site-description', label=_('Site Tag Line'), value=data['ckan.site_description'], error=error, classes=['control-medium']) }}
+
+  {% set field_url = 'ckan.site_logo' %}
+  {% set is_upload = data[field_url] and not data[field_url].startswith('http') %}
+  {% set is_url = data[field_url] and data[field_url].startswith('http') %}
+  {{ form.image_upload(data, errors, is_upload_enabled=h.uploads_enabled(), is_url=is_url, is_upload=is_upload, upload_label = _('Site logo'), url_label=_('Site logo'),  field_url=field_url, field_upload='logo_upload', field_clear='clear_logo_upload' )}}
+
+  {{ form.markdown('ckan.site_about', id='field-ckan-site-about', label=_('About'), value=data['ckan.site_about'], error=error, placeholder=_('About page text')) }}
+
+  {{ form.markdown('ckan.site_intro_text', id='field-ckan-site-intro-text', label=_('Intro Text'), value=data['ckan.site_intro_text'], error=error, placeholder=_('Text on home page')) }}
+
+  {{ form.select('ckan.homepage_style', id='field-homepage-style', label=_('Homepage'), options=homepages, selected=data['ckan.homepage_style'], error=error) }}
 
   {{ form.select('homepage_hero', 'field_homepage_hero', _('Show Hero section on Home page'), options=[{'value':'yes', 'text': 'Yes'},{'value':'no', 'text': 'No'}], selected=data.homepage_hero) }}
 
   {{ form.input('primary_color', type="color", id='field-ckan-primary-color', label=_('Choose primary color'), value=data.primary_color, error=error) }}
+
   {{ form.input('secondary_color', type="color", id='field-ckan-secondary-color', label=_('Choose secondary color'), value=data.secondary_color, error=error) }}
+
   {{ form.input('tertiary_color', type="color", id='field-ckan-tertiary-color', label=_('Choose tertiary color'), value=data.tertiary_color, error=error) }}
+
   {{ form.input('quaternary_color', type="color", id='field-ckan-quaternary-color', label=_('Choose quaternary color'), value=data.quaternary_color, error=error) }}
+
   {{ form.input('extra_light_color', type="color", id='field-ckan-extra-light-color', label=_('Choose extra-light color'), value=data.extra_light_color, error=error) }}
 
   {{ form.select('homepage_blogs', 'field_homepage_blogs', _('Show recent blog posts on Home page'), options=[{'value':'yes', 'text': 'Yes'},{'value':'no', 'text': 'No'}], selected=data.homepage_blogs) }}
