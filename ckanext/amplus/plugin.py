@@ -36,6 +36,7 @@ class AmplusPlugin(plugins.SingletonPlugin):
             'tertiary_color': validators,
             'quaternary_color': validators,
             'extra_light_color': validators,
+            'org_dataset': validators,
         })
 
         return schema

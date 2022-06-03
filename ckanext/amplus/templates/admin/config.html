@@ -20,6 +20,8 @@
 
   {{ form.select('homepage_hero', 'field_homepage_hero', _('Show Hero section on Home page'), options=[{'value':'yes', 'text': 'Yes'},{'value':'no', 'text': 'No'}], selected=data.homepage_hero) }}
 
+  {{ form.select('org_dataset', 'field_org_dataset', _('Do you want to show Organizations on the Dataset page?'), options=[{'value':'yes', 'text': 'Yes'},{'value':'no', 'text': 'No'}], selected=data.org_dataset) }}
+
   {{ form.input('primary_color', type="color", id='field-ckan-primary-color', label=_('Choose primary color'), value=data.primary_color, error=error) }}
 
   {{ form.input('secondary_color', type="color", id='field-ckan-secondary-color', label=_('Choose secondary color'), value=data.secondary_color, error=error) }}
