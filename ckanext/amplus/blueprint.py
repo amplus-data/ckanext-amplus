@@ -72,6 +72,16 @@ def create_custom_css(config):
     site_custom_css += '.masthead .navigation .nav-pills li.active a { background: ' +  quaternary + ' !important;} '
     site_custom_css += '.masthead .navigation .nav-pills li a:hover, .masthead .navigation .nav-pills li a:focus { background: ' +  quaternary + ' !important;} '
 
+    # a
+    site_custom_css += 'a { color: ' +  primary + ';}'
+
+    # hero hedding
+    site_custom_css += '.hero .page-heading { color: ' +  primary + ';}'
+
+    # discover data active
+    site_custom_css += '.group-container .toggle-section .active { border-bottom: 4px solid' +  secondary + ';}'
+    site_custom_css += '.group-container .toggle-section .active .toggle-view { color: ' +  secondary + ';}'
+
     # stats
     site_custom_css += '.homepage .stats ul li a { color: ' +  secondary + ' !important;} '
 
