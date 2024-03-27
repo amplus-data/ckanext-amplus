@@ -1204,8 +1204,8 @@ progress {
   }
 
   .col-md-10 {
-    flex: 0 0 auto;
-    width: 83.33333333%;
+    flex: 0 0 0 0;
+    width: 100%;
   }
 
   .col-md-11 {
@@ -1417,8 +1417,8 @@ progress {
   }
 
   .col-lg-10 {
-    flex: 0 0 auto;
-    width: 83.33333333%;
+    flex: 0 0 0 0;
+    width: 100%;
   }
 
   .col-lg-11 {
@@ -12888,12 +12888,14 @@ a:hover, a:focus, a:active {
   border-radius: 0;
   font-size: 18px;
   text-decoration: none;
+  color: white;
 }
 .masthead .navigation .nav-pills li a:hover, .masthead .navigation .nav-pills li a:focus {
   background-color: #7A64A6;
 }
 .masthead .navbar-collapse {
   padding: 0;
+  justify-content: flex-end;
 }
 .masthead .logo {
   display: flex;
@@ -13405,4 +13407,8 @@ a:hover, a:focus, a:active {
 .badge[data-format=ntriples],
 .badge[data-format=turtle] {
   background-color: #0b4498;
+}
+
+body > div.homepage.layout-1 > div.blogs > div > div > div > div.row{
+  padding: 0 40px 0 40px;
 }
