@@ -24,7 +24,7 @@ class AmplusPlugin(plugins.SingletonPlugin):
 
     def update_config_schema(self, schema):
         ignore_missing = toolkit.get_validator('ignore_missing')
-        validators = [ignore_missing, str]
+        validators = [ignore_missing, ignore_missing]
 
         schema.update({
             'homepage_blogs': validators,

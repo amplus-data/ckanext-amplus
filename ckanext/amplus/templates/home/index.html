@@ -19,12 +19,12 @@
                   <div class="col-md-3 col-sm-4 col-xs-12">
                       <div class="box">
                           {% if item.image %}
-                          <a href="{{ h.url_for('pages.blog_show', page='/' + item.name) }}">
+                          <a href="{{ h.url_for('pages.blog_show', page='' + item.name) }}">
                             <img src="{{ item.image }}" alt="{{ item.title }}" class="media-image item-image">
                           </a>
                           {% endif %}
                           <div class="item-body">
-                              <a href="{{ h.url_for('pages.blog_show', page='/' + item.name) }}">
+                              <a href="{{ h.url_for('pages.blog_show', page='' + item.name) }}">
                                 <h3 class="title media-heading">{{ item.title }}</h3>
                               </a>
                               <p class="description">{{ item.content|striptags|truncate(300) }}</p>

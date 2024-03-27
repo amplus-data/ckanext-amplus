@@ -12675,6 +12675,25 @@ textarea.form-control-lg {
   text-transform: uppercase;
 }
 
+.group-container .toggle-section .nav-justified {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center items horizontally */
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+}
+
+.group-container .toggle-section .nav-justified li {
+  width: 300px;
+  justify-content: center; 
+  margin-right: 100px; /* Add some spacing between items if needed */
+  margin-left: 100px; /* Add some spacing between items if needed */
+
+}
+
+/* .group-container .toggle-section .nav-justified li:last-child {
+  margin-right: 0; /* Remove margin from the last item */
+} */
+
 .js .tab-content {
   display: block;
 }
