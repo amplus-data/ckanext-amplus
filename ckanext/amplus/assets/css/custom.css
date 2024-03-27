@@ -12692,7 +12692,7 @@ textarea.form-control-lg {
 
 /* .group-container .toggle-section .nav-justified li:last-child {
   margin-right: 0; /* Remove margin from the last item */
-} */
+
 
 .js .tab-content {
   display: block;
@@ -13430,4 +13430,9 @@ a:hover, a:focus, a:active {
 
 body > div.homepage.layout-1 > div.blogs > div > div > div > div.row{
   padding: 0 40px 0 40px;
+}
+
+.search-bar-custom{
+  background-color: #EFECF4;
+  margin: 0;
 }

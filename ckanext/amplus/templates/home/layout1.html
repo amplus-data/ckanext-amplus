@@ -10,6 +10,14 @@
 
 {% endif %}
 
+  <div class="row w-100 pt-4 pb-3 search-bar-custom">
+    <div class="col-md-6 mx-auto">
+      {% block search %}
+        {% snippet 'home/snippets/search.html' %}
+      {% endblock %}
+    </div>
+  </div>
+
 <div class="group-topics">
   <div class="container-fluid">
     <div class="row">
@@ -36,7 +44,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="toggle-section text-center">
-        <ul class="nav-justified">
+        <ul class="nav-justified custom-ui-li">
           <li>
             <a class="toggle-view" href="#data" data-toggle="tab">
               <p>{{_("Data")}}</p>

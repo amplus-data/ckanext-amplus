@@ -24,35 +24,36 @@
         <span class="fa fa-bars"></span>
       </button>
       <div class="display-menu">
-        <div class="d-inline-flex p-2 {{ g.header_class }} navbar-brand">
+        <div class="d-inline-flex p-2 w-100 justify-content-md-between {{ g.header_class }} navbar-brand">
             {% block header_logo %} {{ super() }} {% endblock %}
-        </div>
-        <div class="collapse navbar-collapse" id="main-navigation-toggle">
-            {% block header_site_navigation %}
-            <ul class="section navigation">
-              <ul class="nav nav-pills navbar-nav me-auto mb-2 mb-lg-0">
-                {% block header_site_navigation_tabs %}
-                  {{ super() }}
-                {% if c.userobj %}
-                {% else %}
-                {% block header_account_notlogged %}
-                <li><a href="{{ h.url_for('/user/login')  }}">
-                    <div><img src="/base/images/login-icon.svg" /></div>
-                  </a></li>
-                {% if h.check_access('user_create') %}
-                <li><a href="{{ h.url_for('/user/register')  }}">
-                    <div><img src="/base/images/register-icon.svg" /></div>
-                  </a></li>
-                {% endif %}
-                {% endblock %}
-
-                {% endif %}
-                {% endblock %}
-
+            <div class="collapse navbar-collapse justify-content-end" id="main-navigation-toggle">
+              {% block header_site_navigation %}
+              <ul class="section navigation">
+                <ul class="nav nav-pills navbar-nav me-auto mb-2 mb-lg-0">
+                  {% block header_site_navigation_tabs %}
+                    {{ super() }}
+                  {% if c.userobj %}
+                  {% else %}
+                  {% block header_account_notlogged %}
+                  <li><a href="{{ h.url_for('/user/login')  }}">
+                      <div><img src="/base/images/login-icon.svg" /></div>
+                    </a></li>
+                  {% if h.check_access('user_create') %}
+                  <li><a href="{{ h.url_for('/user/register')  }}">
+                      <div><img src="/base/images/register-icon.svg" /></div>
+                    </a></li>
+                  {% endif %}
+                  {% endblock %}
+  
+                  {% endif %}
+                  {% endblock %}
+  
+                </ul>
               </ul>
-            </ul>
-            {% endblock %} {% block header_site_search %}
-          {% endblock %}
+              {% endblock %} {% block header_site_search %}
+            {% endblock %}
+          </div>
         </div>
+        
       </nav>
 {% endblock %}
