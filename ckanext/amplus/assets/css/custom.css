@@ -5574,9 +5574,25 @@ textarea.form-control-lg {
   color: #212529;
   background-color: #e9ecef;
 }
+.group-container .toggle-section .nav-justified {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center items horizontally */
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+}
 
-.list-group-item {
-  position: relative;
+.group-container .toggle-section .nav-justified li {
+  width: 300px;
+  justify-content: center; 
+  margin-right: 100px; /* Add some spacing between items if needed */
+  margin-left: 100px; /* Add some spacing between items if needed */
+
+}
+
+/* .group-container .toggle-section .nav-justified li:last-child {
+  margin-right: 0;} /* Remove margin from the last item */
+ 
+.js .tab-content {
   display: block;
   padding: 0.5rem 1rem;
   color: #212529;
@@ -6745,10 +6761,7 @@ textarea.form-control-lg {
   display: flex;
   justify-content: center;
   padding: 0;
-  margin-right: 15%;
-  margin-bottom: 1rem;
-  margin-left: 15%;
-  list-style: none;
+  justify-content: flex-end;
 }
 .carousel-indicators [data-bs-target] {
   box-sizing: content-box;
@@ -12508,7 +12521,10 @@ textarea.form-control-lg {
   background: #fff;
   padding: 60px 0px;
 }
-.blogs .form-row {
+
+.blogs .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
 }
@@ -13138,7 +13154,10 @@ a:hover, a:focus, a:active {
   > .control-order-by {
     padding-right: 0;
   }
-
+  .search-bar-custom{
+    background-color: #EFECF4;
+    margin: 0;
+  }
   .search-input-group {
     margin-bottom: 2rem;
   }
