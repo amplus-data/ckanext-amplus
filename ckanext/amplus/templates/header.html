@@ -25,11 +25,11 @@
           <span class="fa fa-bars"></span>
         </button>
       </div>
-      <div class="{{ g.header_class }} navbar-left">
+      <div class="{{ g.header_class }} navbar-left w-100 justify-md-between">
           {% block header_logo %} {{ super() }} {% endblock %}
 
       </div>
-      <div class="collapse navbar-collapse" id="main-navigation-toggle">
+      <div class="collapse navbar-collapse justify-content-end" id="main-navigation-toggle">
           {% block header_site_navigation %}
           <nav class="section navigation">
             <ul class="nav nav-pills">

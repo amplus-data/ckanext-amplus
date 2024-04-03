@@ -5,10 +5,17 @@
     {% endblock %}
   </div>
 </div>
+<div class="row w-100 pt-4 pb-3 search-bar-custom">
+  <div class="col-md-6 mx-auto">
+    {% block search %}
+      {% snippet 'home/snippets/search.html' %}
+    {% endblock %}
+  </div>
+</div>
 
 <div class="group-topics">
   <div class="container-fluid">
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-md-10 col-md-offset-1">
         {% snippet 'home/snippets/featured_groups.html', getGroups=true %}
       </div>
@@ -18,7 +25,7 @@
 
 <div class="stats-container">
   <div class="container-fluid">
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-md-10 col-md-offset-1">
         <p class="group-heading">{{_("Quick stats")}}</p>
         {% snippet 'home/snippets/stats.html' %} 
@@ -32,7 +39,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="toggle-section text-center">
-        <ul class="nav nav-tabs nav-justified">
+        <ul class="nav nav-tabs nav-justified custom-ui-li">
           <li>
             <a class="toggle-view" href="#data" data-toggle="tab">
               <p>{{_("Data")}}</p>
