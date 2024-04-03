@@ -1,4 +1,4 @@
-@media only screen and (max-width: @breakpoint-xs) {
+@include media-breakpoint-down(md)  {
     .footer-links div{
         padding: 20px 0px;
     }
@@ -9,11 +9,6 @@
           }
         }
     }
-    .homepage {
-      .group-topics {
-        padding: 100px 10px;
-      }
-    }
 
     .stats {
       height: auto;
@@ -23,7 +18,7 @@
         height: auto;
         .stat-content {
           width: 300px;
-          padding: @gutter-lg 0;
+          padding: $gutter-lg 0;
           a {
             width: 100%;
           }

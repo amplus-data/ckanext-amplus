@@ -1,10 +1,5 @@
-<div class="hero text-center">
-  <div class="container">
-    {% block promoted %}
-      {% snippet 'home/snippets/promoted.html' %}
-    {% endblock %}
-  </div>
-</div>
+{% block promoted %}
+{% endblock %}
 
 <div class="group-topics">
   <div class="container-fluid">
@@ -32,7 +27,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="toggle-section text-center">
-        <ul class="nav nav-tabs nav-justified">
+        <ul class="nav-justified">
           <li>
             <a class="toggle-view" href="#data" data-toggle="tab">
               <p>{{_("Data")}}</p>
@@ -71,7 +66,7 @@
             {% endif %}
         </div>
         
-        <div class="data tab-pane fade flex-column flex-align-center" id="locate">
+        <div class="data tab-pane fade flex-column flex-align-center align-items-center" id="locate">
           <!-- Map Section -->
           {% snippet 'snippets/coming_soon.html' %}
         </div>

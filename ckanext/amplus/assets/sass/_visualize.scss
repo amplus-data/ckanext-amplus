@@ -1,20 +1,24 @@
 .data {
-  .flex;
-  .flex-wrap;
+  display: flex;
+  flex-wrap: wrap;
+  // @extend flex;
+  // @extend flex-wrap;
 
   .visualize-card {
     text-align: center;
     flex: 1 0 33.3%;
     padding: 20px;
-    margin: @gutter-md;
-    background: @white;
-    box-shadow: 0 0 30px 0 fade(@black, 10%);
+    margin: $gutter-md;
+    background: $white;
+    box-shadow: 0 0 30px 0 fade($black, 10%);
   }
 }
 
 .c3chart{
-  .flex;
-  .flex-column;
+  display: flex;
+  flex-direction: column;
+  // @extend flex;
+  // @extend flex-column;
   margin: auto !important;
   svg{
     max-width: 100%;
@@ -23,39 +27,39 @@
 }
 
 .visualize-card {
-  .flex;
-  .flex-column;
-  .flex-justify-center;
-  .flex-align-center;
-  min-height: @chart-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: $chart-height;
 }
 
 .tab-content>.active {
-  .flex;
+  display: flex;
 }
 
 .title {
-  font-size: @font-size-20;
-  font-weight: @font-weight-500;
+  font-size: $font-size-20;
+  font-weight: $font-weight-500;
   text-decoration: underline;
 }
 
 .group-heading {
-  font-size: @font-size-40;
+  font-size: $font-size-40;
   text-align: center;
-  font-weight: @font-weight-400;
+  font-weight: $font-weight-400;
   padding: 80px 40px 40px;
 }
 
 .group-container {
-  background: @brand-background;
+  background: $bg-primary;
   padding: 100px 140px;
 
   .toggle-section {
     padding-bottom: 100px;
 
     .active {
-      border-bottom: 4px solid @brand-secondary;
+      border-bottom: 4px solid $secondary;
 
       >a {
         background: transparent;
@@ -67,7 +71,7 @@
       }
 
       .toggle-view {
-        color: @brand-secondary;
+        color: $secondary;
       }
     }
 
@@ -80,10 +84,10 @@
   }
 
   .toggle-view {
-    font-size: @font-size-18;
-    font-weight: @font-weight-700;
+    font-size: $font-size-18;
+    font-weight: $font-weight-700;
     letter-spacing: 1.8px;
-    color: @silver;
+    color: $silver;
     text-transform: uppercase;
   }
 }
