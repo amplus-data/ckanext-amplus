@@ -659,6 +659,7 @@ a:active {
   padding: 2.5rem 2rem;
   border-radius: 0;
   font-size: 18px;
+  color: white;
 }
 .masthead .navigation .nav-pills li a:hover,
 .masthead .navigation .nav-pills li a:focus {
