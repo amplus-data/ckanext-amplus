@@ -1,4 +1,4 @@
-[![Gitter][]][1] [![Python][]][2] [![CKAN][]][3]
+[![Gitter][]][1] [![Python][]][2] [![CKAN][]][3] [![Lint](https://github.com/amplus-data/ckanext-amplus/actions/workflows/lint.yml/badge.svg)](https://github.com/amplus-data/ckanext-amplus/actions/workflows/lint.yml)
 
 # ckanext-amplus
 
