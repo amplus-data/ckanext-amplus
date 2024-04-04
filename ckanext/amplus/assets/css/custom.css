@@ -401,6 +401,7 @@
   min-height: 360px;
 }
 .tab-content > .active {
+  justify-content: space-around;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
