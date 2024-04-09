@@ -657,7 +657,8 @@ a:active {
   background-color: #7A64A6;
 }
 .masthead .navigation .nav-pills li a {
-  padding: 2.5rem 2rem;
+  display: inline-block;
+  padding: 1.5rem 1rem;
   border-radius: 0;
   font-size: 18px;
   color: white;
