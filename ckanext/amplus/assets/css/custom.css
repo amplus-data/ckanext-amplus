@@ -6856,7 +6856,8 @@ textarea.form-control-lg {
   }
 }
 .masthead .navigation .nav-pills li a {
-  padding: 2.5rem 2rem;
+  display: inline-block;
+  padding: 1.5rem 1rem;
   border-radius: 0;
   font-size: 18px;
   color: white;
