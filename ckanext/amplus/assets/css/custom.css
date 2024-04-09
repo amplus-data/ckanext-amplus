@@ -1537,3 +1537,7 @@ a:active {
     width: 100%;
   }
 }
+
+.homepage .module-search .search-form{
+  background-color: #6033A7 !important;
+}
