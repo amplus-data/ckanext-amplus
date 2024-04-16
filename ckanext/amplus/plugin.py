@@ -12,10 +12,8 @@ class AmplusPlugin(plugins.SingletonPlugin):
         
         ckan_version = helpers.get_ckan_version()
         if(ckan_version.startswith('2.9')):
-            print("OOOOOOOOOOO 29")
             toolkit.add_template_directory(config_, 'templates')
         else:
-            print("PPPPPPPPPPPPP 210")
             toolkit.add_template_directory(config_, 'templates-2-10')
 
         toolkit.add_public_directory(config_, 'public')
