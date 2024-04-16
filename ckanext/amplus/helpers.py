@@ -70,3 +70,8 @@ def get_site_statistics(user):
         len(toolkit.get_action('organization_list')({}, {}))
 
     return stats
+
+def get_ckan_version():
+    data = toolkit.get_action('status_show')({})
+
+    return data['ckan_version']

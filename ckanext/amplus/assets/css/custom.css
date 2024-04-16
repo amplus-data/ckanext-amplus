@@ -1542,3 +1542,9 @@ a:active {
 .homepage .module-search .search-form{
   background-color: #6033A7 !important;
 }
+
+.search-bar-29 {
+  padding-top: 50px;
+  display: flex; 
+  justify-content: center;
+}
