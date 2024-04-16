@@ -40,17 +40,3 @@ class AmplusPlugin(plugins.SingletonPlugin):
         })
 
         return schema
-
-    def can_render_header_template(self):
-                # Logic to determine which template to use based on CKAN version
-                ckan_version = helpers.get_ckan_version()
-                return ckan_version.startswith('2.9')
-
-    def render_header_template(self):
-            if self.can_render_header_template():
-                # Render header template for CKAN 2.9
-                return 'header_ckan_2_10.html'
-            
-            else:
-                # Render header template for other CKAN versions
-                return 'header.html'
