@@ -1,0 +1,18 @@
+{% ckan_extends %}
+
+{% block search_sortby %}
+  {% if sorting %}
+    <div class="form-group form-group-display-end">
+      <select id="field-order-by" name="sort" class="form-select select">
+        {% for label, value in sorting %}
+          {% if label and value %}
+            <option value="{{ value }}"{% if sorting_selected == value %} selected="selected"{% endif %}>{{ label }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+      {% block search_sortby_button %}
+      <button class="btn btn-default js-hide" type="submit">{{ _('Go') }}</button>
+      {% endblock %}
+    </div>
+  {% endif %}
+{% endblock %}
