@@ -9,7 +9,15 @@ class AmplusPlugin(plugins.SingletonPlugin):
     # IConfigurer
 
     def update_config(self, config_):
-        toolkit.add_template_directory(config_, 'templates')
+        
+        ckan_version = helpers.get_ckan_version()
+        if(ckan_version.startswith('2.9')):
+            print("OOOOOOOOOOO 29")
+            toolkit.add_template_directory(config_, 'templates')
+        else:
+            print("PPPPPPPPPPPPP 210")
+            toolkit.add_template_directory(config_, 'templates-2-10')
+
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('assets', 'amplus')
 
