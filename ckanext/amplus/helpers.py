@@ -1,13 +1,9 @@
 """amplus custom helpers.
 """
-import os
-import json
-
 from ckan import authz
 from ckan.plugins import toolkit
 from ckan.lib import search, i18n
 from datetime import datetime
-from ckan.common import config
 from logging import getLogger
 
 log = getLogger(__name__)
