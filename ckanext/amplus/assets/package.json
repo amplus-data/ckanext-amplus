@@ -4,21 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass -w scss/ -o css/ --recursive"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "less --load-path=node_modules --no-source-map --style=compressed assets/less/custom.less assets/amplus.css"
   },
   "author": "Goce Mitevski",
   "license": "ISC",
   "dependencies": {
-    "gulp": "^5.0.0",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-clean-css": "^3.9.4",
-    "gulp-dart-sass": "^1.0.2",
-    "npm": "^10.5.1",
-    "sass": "^1.49.9",
+    "npm": "^6.14.11",
     "typeface-barlow": "0.0.71"
   },
   "devDependencies": {
-    "bootstrap": "^5.1.0",
-    "sass": "^1.49.9"
+    "bootstrap": "^3.3.7",
+    "less": "^3.13.1",
+    "less-plugin-clean-css": "^1.5.1",
+    "less-watch-compiler": "^1.16.3"
   }
 }
