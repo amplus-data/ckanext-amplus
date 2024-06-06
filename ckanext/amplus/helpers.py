@@ -2,7 +2,7 @@
 """
 from ckan import authz
 from ckan.plugins import toolkit
-from ckan.lib import search, i18n
+from ckan.lib import search
 from datetime import datetime
 from logging import getLogger
 
@@ -66,6 +66,7 @@ def get_site_statistics(user):
         len(toolkit.get_action('organization_list')({}, {}))
 
     return stats
+
 
 def get_ckan_version():
     data = toolkit.get_action('status_show')({})
