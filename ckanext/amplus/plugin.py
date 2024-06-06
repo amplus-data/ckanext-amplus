@@ -9,7 +9,12 @@ class AmplusPlugin(plugins.SingletonPlugin):
     # IConfigurer
 
     def update_config(self, config_):
-        toolkit.add_template_directory(config_, 'templates')
+        ckan_version = helpers.get_ckan_version()
+        if (ckan_version.startswithP('2.9')):
+            toolkit.add_template_directory(config_, 'templates')
+        else:
+            toolkit.add_template_directory(config_, 'templates-2-10')
+
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('assets', 'amplus')
 
@@ -18,7 +23,9 @@ class AmplusPlugin(plugins.SingletonPlugin):
             'amplus_get_recently_updated_datasets':
                 helpers.get_recently_updated_datasets,
             'amplus_get_site_statistics':
-                helpers.get_site_statistics
+                helpers.get_site_statistics,
+            'get_ckan_version':
+                helpers.get_ckan_version
         }
 
     def update_config_schema(self, schema):
