@@ -28,7 +28,6 @@ class AmplusPlugin(plugins.SingletonPlugin):
                 helpers.get_ckan_version
         }
 
-
     def update_config_schema(self, schema):
         ignore_missing = toolkit.get_validator('ignore_missing')
         validators = [ignore_missing, ignore_missing]
