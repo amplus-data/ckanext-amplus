@@ -70,6 +70,5 @@ def get_site_statistics(user):
 
 def get_ckan_version():
     data = toolkit.get_action('status_show')({})
-    print(data['ckan_version'])
 
     return data['ckan_version']
