@@ -1,0 +1,8 @@
+<div class="visualize-card">
+    <div data-module="c3charts_builder" data-module-resource-id="{{ featured_chart.resource_id }}" data-module-resource-view="{{ h.dump_json(featured_chart.resource_view) }}"
+        id="c3chart-{{ h.c3charts_uuid(featured_chart.resource_view_id) }}" class="c3chart">
+    </div>
+    <p class="title">
+        <a href="{{ featured_chart.resource_view_url }}">{{ featured_chart.title }}</a>
+    </p>
+</div>

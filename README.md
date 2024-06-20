@@ -41,18 +41,6 @@ To install ckanext-amplus:
    ```sudo service apache2 reload```
 
 
-## Front-end Setup
-
-The front-end is set up with gulp.js.
-
-Install the required Node.js modules in [assets](https://github.com/amplus-data/ckanext-amplus/tree/main/ckanext/amplus/assets), by executing:
-
-     npm install
-
-Rebuild front-end in [assets](https://github.com/amplus-data/ckanext-amplus/tree/main/ckanext/amplus/assets), by executing:
-     
-     npx gulp
-
 ## Config settings
 
 None at present

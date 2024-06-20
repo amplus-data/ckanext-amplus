@@ -1,0 +1,21 @@
+{% ckan_extends %}
+
+{% block resource_item_title %}
+<a class="heading" href="{{ url }}" title="{{ res.name or res.description }}">
+    <span class="format-label" property="dc:format" data-format="{{ res.format.lower() or 'data' }}">{{ h.get_translated(res, 'format') }}</span>
+</a>
+{% endblock %}
+
+{% block resource_item_description %}
+<a class="heading-wrap" href="{{ url }}" title="{{ res.name or res.description }}">
+    <span class="heading display-name">{{ h.resource_display_name(res) | truncate(50) }}</span>
+    {% if res.description %}
+      <p class="description">
+        {{ h.markdown_extract(h.get_translated(res, 'description'), extract_length=80) }}
+      </p>
+    {% endif %}
+</a>
+{% endblock %}
+
+
+
