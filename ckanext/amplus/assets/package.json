@@ -9,7 +9,6 @@
   "author": "Goce Mitevski",
   "license": "ISC",
   "dependencies": {
-    "npm": "^10.5.1",
     "typeface-barlow": "0.0.71"
   },
   "devDependencies": {
