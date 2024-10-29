@@ -4,21 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass -w scss/ -o css/ --recursive"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Goce Mitevski",
   "license": "ISC",
   "dependencies": {
-    "gulp": "^5.0.0",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-clean-css": "^3.9.4",
-    "gulp-dart-sass": "^1.0.2",
-    "npm": "^10.5.1",
-    "sass": "^1.49.9",
     "typeface-barlow": "0.0.71"
   },
   "devDependencies": {
-    "bootstrap": "^5.1.0",
-    "sass": "^1.49.9"
+    "bootstrap": "^5.1.0"
   }
 }

@@ -14,45 +14,47 @@
 {% endif %}
 {% endblock %}
 
-
-<nav class="navbar navbar-expand-sm navbar-static-top masthead">
+<header class="navbar navbar-static-top masthead">
   {% block header_debug %} 
     {{ super() }} 
   {% endblock %}
 
-     <button data-target="#main-navigation-toggle" data-toggle="collapse" class="navbar-toggler collapsed" type="button">
-        <span class="fa fa-bars"></span>
-      </button>
-      <div class="display-menu">
-        <div class="d-inline-flex p-2 {{ g.header_class }} navbar-brand">
-            {% block header_logo %} {{ super() }} {% endblock %}
-        </div>
-        <div class="collapse navbar-collapse" id="main-navigation-toggle">
-            {% block header_site_navigation %}
-            <ul class="section navigation">
-              <ul class="nav nav-pills navbar-nav me-auto mb-2 mb-lg-0">
-                {% block header_site_navigation_tabs %}
-                  {{ super() }}
-                {% if c.userobj %}
-                {% else %}
-                {% block header_account_notlogged %}
-                <li><a href="{{ h.url_for('/user/login')  }}">
-                    <div><img src="/base/images/login-icon.svg" /></div>
-                  </a></li>
-                {% if h.check_access('user_create') %}
-                <li><a href="{{ h.url_for('/user/register')  }}">
-                    <div><img src="/base/images/register-icon.svg" /></div>
-                  </a></li>
-                {% endif %}
-                {% endblock %}
+      <div class="navbar-right">
+        <button data-target="#main-navigation-toggle" data-toggle="collapse" class="navbar-toggle collapsed"
+          type="button">
+          <span class="fa fa-bars"></span>
+        </button>
+      </div>
+      <div class="{{ g.header_class }} navbar-left">
+          {% block header_logo %} {{ super() }} {% endblock %}
 
-                {% endif %}
-                {% endblock %}
+      </div>
+      <div class="collapse navbar-collapse" id="main-navigation-toggle">
+          {% block header_site_navigation %}
+          <nav class="section navigation">
+            <ul class="nav nav-pills">
+              {% block header_site_navigation_tabs %}
+                {{ super() }}
+              {% if c.userobj %}
+              {% else %}
+              {% block header_account_notlogged %}
+              <li><a href="{{ h.url_for('/user/login')  }}">
+                  <div><img src="/base/images/login-icon.svg" /></div>
+                </a></li>
+              {% if h.check_access('user_create') %}
+              <li><a href="{{ h.url_for('/user/register')  }}">
+                  <div><img src="/base/images/register-icon.svg" /></div>
+                </a></li>
+              {% endif %}
+              {% endblock %}
 
-              </ul>
+              {% endif %}
+              {% endblock %}
+  
             </ul>
-            {% endblock %} {% block header_site_search %}
-          {% endblock %}
-        </div>
-      </nav>
+          </nav>
+          {% endblock %} {% block header_site_search %}
+        {% endblock %}
+
+</header>
 {% endblock %}

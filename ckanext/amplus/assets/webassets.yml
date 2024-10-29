@@ -1,4 +1,4 @@
 amplus-style:
-  output: amplus/%(version)s_custom.css
+  output: amplus/%(version)s_amplus.css
   contents:
-    - css/custom.css
+    - amplus.css
