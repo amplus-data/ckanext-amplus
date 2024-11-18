@@ -1,5 +1,34 @@
 /* Please check https://docs.ckan.org/en/2.8/theming/ for the already existing stylesheets in CKAN core. */
 /* Add your custom LESS code here */
+:root {
+  --primary-color: #6033A7;
+  --secondary-color: #9F1A86;
+  --footer-bg-color: #000000;
+  --footer-text-color: #9E9E9E;
+  --footer-link-color: #9E9E9E;
+  --footer-hover-link-color: #9F1A86;
+
+  --bs-white: #fff;
+  --bs-border-radius: 0.25rem; 
+  --bs-blue: #007bff; 
+
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 3rem;
+  --spacing-xlarge: 6rem;
+
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+}
+
+body {
+  background-color: var(--bs-white); 
+}
+
 .stats-container {
   background: #efecf4;
   padding: 0;
@@ -1322,55 +1351,75 @@ a:active {
   min-width: 100%;
 }
 .featured-charts-wrap {
-  background: #9F1A86;
+  background: var(--secondary-color);
 }
+/* Footer styles */
 .footer-container {
-  padding-bottom: 5rem;
+  padding: var(--spacing-large);
 }
+
 .site-footer {
-  color: #9E9E9E;
-  background: #000000;
-  padding: 6rem 0;
+  color: var(--footer-text-color);
+  background: var(--footer-bg-color);
+  padding: var(--spacing-xlarge) 0;
 }
+
 .site-footer .logo img {
   max-height: 30px;
 }
+
 .text-description {
-  font-size: 15px;
-  font-weight: 500;
-  margin-top: 25px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  margin-top: var(--spacing-medium);
 }
+
 .footer-nav-title {
-  color: #9F1A86;
-  font-size: 18px;
-  font-weight: 600;
-  padding-top: 5rem;
+  color: var(--secondary-color);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  padding-top: 0;
 }
+
+@media (max-width: 768px) {
+  .footer-nav-title {
+    padding-top: var(--spacing-small);
+  }
+}
+
 .footer-nav {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: var(--spacing-small);
+  margin-bottom: var(--spacing-small);
 }
+
 .footer-nav li {
-  padding: 5px 0;
+  padding: var(--spacing-small) 0;
 }
+
 .footer-nav li a {
-  color: #9E9E9E;
-  font-size: 16px;
-  font-weight: 600;
+  color: var(--footer-link-color);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
 }
+
 .footer-links ul {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: var(--spacing-small);
+  margin-bottom: var(--spacing-small);
   padding-left: 0;
   list-style: none;
 }
+
 .footer-links ul li {
-  padding: 5px 0;
+  padding: var(--spacing-small) 0;
 }
+
 .footer-links ul li a {
-  color: #9E9E9E;
-  font-size: 16px;
-  font-weight: 600;
+  color: var(--footer-link-color);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+.footer-nav li a:hover, .footer-links ul li a:hover {
+  color: var(--footer-hover-link-color);
 }
 .homepage .blogs {
   background: #FFFFFF;
@@ -1461,7 +1510,7 @@ a:active {
   .masthead .logo {
     max-width: 250px;
   }
-   > .control-order-by {
+   .control-order-by {
     padding-right: 0;
   }
   .search-bar-custom{
@@ -1542,13 +1591,51 @@ a:active {
     width: 100%;
   }
 }
-
-.homepage .module-search .search-form{
-  background-color: #6033A7 !important;
+.homepage .module-search .search-form {
+  background-color: var(--primary-color) !important;
 }
 
+/* Search Bar */
 .search-bar-29 {
   padding-top: 50px;
-  display: flex; 
+  display: flex;
   justify-content: center;
 }
+
+/* Recent and Popular Data */
+.recent-data, .popular-data {
+  background-color: var(--bs-white);  
+  color: var(--primary-color);
+  border-radius: var(--bs-border-radius);
+  padding: 20px;
+}
+
+.recent-data h4, .popular-data h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.dataset-item {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.dataset-icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  color: var(--primary-color);
+}
+
+.dataset-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+
+
