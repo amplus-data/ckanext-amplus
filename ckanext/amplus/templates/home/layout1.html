@@ -5,11 +5,13 @@
     {% endblock %}
   </div>
 </div>
-<div class="row w-100 pt-4 pb-3 search-bar-custom search-bar-29" style="background-color: #EFECF4; margin: 0;">
-  <div class="col-md-6 mx-auto">
-    {% block search %}
-      {% snippet 'home/snippets/search.html' %}
-    {% endblock %}
+
+<div class="stats-container">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+        <p class="group-heading">{{_("Explore Topics")}}</p>
+        {% snippet '/home/snippets/featured_groups.html' %} 
+      </div>
   </div>
 </div>
 

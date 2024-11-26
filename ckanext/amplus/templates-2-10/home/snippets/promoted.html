@@ -1,16 +1,13 @@
 {% set intro = g.site_intro_text %}
 
-<div class="module-content">
-
-  {% block home_image %}
-    <section class="featured media-overlay hidden-xs">
-      {% block home_image_content %}
-        <a class="media-image" href="#">
-          <img class="img-responsive hero-img" src="{{ h.url_for_static('/base/images/hero-illustration.png') }}" alt="Placeholder" />
-        </a>
-      {% endblock %}
-    </section>
-  {% endblock %}
+<div class="hero-content-wrapper">
+  <section class="featured media-overlay hidden-xs">
+    {% block home_image_content %}
+      <a class="media-image" href="#">
+        <img class="img-responsive hero-img" src="{{ h.url_for_static('/base/images/hero-illustration.png') }}" alt="Placeholder" />
+      </a>
+    {% endblock %}
+  </section>
 
   <header>
     {% if intro %}
