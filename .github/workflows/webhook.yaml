@@ -1,0 +1,25 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  build:
+    name: Trigger ckan-docker-template pipeline
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: |
+          echo "Build"
+          sleep 10s
+      - uses: convictional/trigger-workflow-and-wait@v1.3.0
+        with:
+          owner: keitaroinc
+          repo: ckan-docker-template
+          github_token: ${{ secrets.G_ACCESS_TOKEN }}
+          workflow_file_name: buildandpush.yml
+          ref: ckan-demo-internal
+      - name: 
+        run: |
+          echo "Build"
+          sleep 10s
