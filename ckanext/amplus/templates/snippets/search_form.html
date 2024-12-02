@@ -3,7 +3,7 @@
 {% block search_sortby %}
   {% if sorting %}
     <div class="form-group form-group-display-end">
-      <select id="field-order-by" name="sort" class="form-select select">
+      <select id="field-order-by" name="sort" class="form-select select custom-order-by">
         {% for label, value in sorting %}
           {% if label and value %}
             <option value="{{ value }}"{% if sorting_selected == value %} selected="selected"{% endif %}>{{ label }}</option>
