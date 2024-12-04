@@ -501,7 +501,7 @@
 /* .group-container .toggle-section .nav-justified li:last-child {
   margin-right: 0;} /* Remove margin from the last item */
  
-.js .tab-content {
+.js .tab-content .tab-pane.active   {
   display: block;
 }
 .primary .dataset-list,
