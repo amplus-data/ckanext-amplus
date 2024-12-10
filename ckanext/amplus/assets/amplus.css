@@ -1588,7 +1588,7 @@ a:active {
 .custom-order-by option {
   font-size: 0.875rem;
 }
-#map {
+.map {
   height: 25rem;
   width: 37.5rem;
   border: 0.125rem solid var(--color-divider);
