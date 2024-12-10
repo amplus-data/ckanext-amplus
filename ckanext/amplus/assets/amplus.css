@@ -21,6 +21,8 @@
   --color-background-pink: #dbb0d2;
   --color-secundary-pink: #EBD3E6;
   --color-dark: #6033;
+  --color-gray: #7f8c8d;
+  --color-gray-dark: #5d6d7e; 
 }
 
 .stats-container {
@@ -501,7 +503,7 @@
 /* .group-container .toggle-section .nav-justified li:last-child {
   margin-right: 0;} /* Remove margin from the last item */
  
-.js .tab-content .tab-pane.active   {
+.js .tab-content {
   display: block;
 }
 .primary .dataset-list,
@@ -1585,4 +1587,10 @@ a:active {
 }
 .custom-order-by option {
   font-size: 0.875rem;
+}
+#map {
+  height: 25rem;
+  width: 37.5rem;
+  border: 0.125rem solid var(--color-divider);
+  overflow: hidden;
 }
