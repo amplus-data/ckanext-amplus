@@ -173,7 +173,7 @@
 .hover-box {
   border-radius: 0;
   -webkit-box-shadow: 0 0 0.625rem 0 rgba(96, 51, 167, 0.3); 
-  box-shadow: 0 0 0.625rem 0 rgba(96, 51, 167, 0.3); 
+  box-shadow: 0 0 0.625rem 0 rgba(96, 51, 167, 0.3);
 }
 .content-margin-fix {
   margin-left: -1.5rem;
@@ -558,7 +558,7 @@ body [role=main] {
 body .main .secondary,
 body [role=main] .secondary {
   padding-right: 0;
-  margin-top: 1.5rem;
+  margin-top: 0.7rem;
 }
 body [role=main] {
   min-height: auto;
@@ -603,6 +603,8 @@ a:active {
 .page-header {
   background-color: inherit;
   border-bottom: none;
+  margin-top: 3rem;
+  padding-top: 3rem;
 }
 .modal-content {
   border-radius: 0;
@@ -1071,6 +1073,7 @@ a:active {
   color: var(--color-featured-background);
   background-color: var(--color-secondary);
   border-radius: 0;
+  margin-top: -1rem;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -1588,4 +1591,3 @@ a:active {
 .custom-order-by option {
   font-size: 0.875rem;
 }
-

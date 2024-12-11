@@ -82,46 +82,8 @@
         </div>
         <div class="tab-pane fade" id="locate">
           <!-- Map Section -->
-          <!-- Link to Leaflet CSS -->
-          <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-          <div class="map"></div> 
-          <!-- Link to Leaflet JS -->
-          <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-        
-          <script>
-              // Initialize the map using the class selector
-              var map = L.map(document.querySelector('.map')).setView([41.9981, 21.4254], 13); // Coordinates for Skopje
-        
-              // Add tile layer from OpenStreetMap
-              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              }).addTo(map);
-        
-              // Add a marker to the map
-              L.marker([41.9981, 21.4254]).addTo(map)
-                  .bindPopup("Marker.")
-                  .openPopup();
-          </script>
         </div>        
       </div>  
     </div>
   </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const tabs = document.querySelectorAll('.group-container .toggle-section .nav-item');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', function() {
-      // Remove active class from all tabs
-      tabs.forEach(t => {
-        t.classList.remove('active');
-      });
-
-      // Add active class to the clicked tab
-      tab.classList.add('active');
-    });
-  });
-});
-</script>
