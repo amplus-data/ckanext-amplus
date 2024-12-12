@@ -1594,9 +1594,4 @@ a:active {
   height: 25rem;
   width: 37.5rem;
   border: 0.125rem solid var(--color-divider);
-  overflow: hidden;
-  position: relative;
-}
-.tab-pane {
-  display: block; 
 }

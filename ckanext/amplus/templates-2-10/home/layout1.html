@@ -30,7 +30,7 @@
     <div class="row justify-content-center">
       <div class="col-md-10 col-md-offset-1">
         <p class="group-heading">{{_("Quick stats")}}</p>
-        {% snippet 'home/snippets/stats.html' %} 
+        {% snippet 'home/snippets/stats.html' %}
       </div>
     </div>
   </div>
@@ -84,40 +84,12 @@
           <!-- Map Section -->
           <!-- Link to Leaflet CSS -->
           <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-          <div class="map"></div> 
+          <div class="map"></div>
           <!-- Link to Leaflet JS -->
           <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-        
-          <script>
-              // Initialize the map
-              var map = L.map(document.querySelector('.map')).setView([41.9981, 21.4254], 13); // Coordinates for Skopje
-        
-              // Add tile layer from OpenStreetMap
-              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              }).addTo(map);
-        
-              // Add a marker 
-              L.marker([41.9981, 21.4254]).addTo(map)
-                  .bindPopup("Marker.")
-                  .openPopup();
-          </script>
-        </div>        
-      </div>  
+          {% snippet 'snippets/coming_soon.html' %}
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const tabs = document.querySelectorAll('.group-container .toggle-section .nav-item');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', function() {
-      tabs.forEach(t => {
-        t.classList.remove('active');
-      });
-      tab.classList.add('active');
-    });
-  });
-});
-</script>

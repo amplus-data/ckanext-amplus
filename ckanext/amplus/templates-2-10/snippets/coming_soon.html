@@ -1,2 +1,39 @@
-<img class="img-fluid hero-img" src="{{ h.url_for_static('/base/images/ckan.svg') }}" width="150" alt="Map pin">
-<p class="empty">{{ _('Coming soon!') }}</p>
+<script>
+    window.onload = function () {
+      initializeMapAndTabs();
+    };
+  
+    function initializeMapAndTabs() {
+      const tabs = document.querySelectorAll('.group-container .toggle-section .nav-item');
+      const locateTab = document.querySelector('#locate-tab');
+      const mapContainer = document.querySelector('.map');
+      let mapInitialized = false;
+      let map;
+  
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+  
+          if (tab.id === 'locate-tab' && !mapInitialized) {
+            console.log("Initializing map");
+            map = L.map(mapContainer).setView([41.9981, 21.4254], 13);
+  
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+  
+            L.marker([41.9981, 21.4254]).addTo(map).bindPopup("Marker.").openPopup();
+            mapInitialized = true;
+          }
+  
+          if (tab.id === 'locate-tab' && map) {
+            console.log("Refreshing map size");
+            setTimeout(() => {
+              map.invalidateSize();
+            }, 200);
+          }
+        });
+      });
+    }
+  </script>
